@@ -19,6 +19,11 @@ const theme = {
       medium: '24px',
     },
   },
+  sizes: {
+    desktop: {
+      maxWidth: '1540px',
+    },
+  },
 };
 
 export default theme;
