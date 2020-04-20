@@ -6,6 +6,7 @@ import Footer from './Footer';
 import GlobalStyles from './styles/GlobalStyles';
 import 'normalize.css';
 import ContentContainer from './styles/ContentContainer';
+import ColorBar from './styles/ColorBar';
 import theme from './styles/theme';
 
 const LayoutContainer = styled(ContentContainer)`
@@ -18,11 +19,15 @@ const LayoutContainer = styled(ContentContainer)`
 `;
 
 const Layout = ({ children }) => (
-  <div>
-    <Header />
-    {children}
-    <Footer />
-  </div>
+  <>
+    <GlobalStyles />
+    <ColorBar />
+    <LayoutContainer>
+      <Header />
+      <main>{children}</main>
+      <Footer />
+    </LayoutContainer>
+  </>
 );
 
 export default Layout;
