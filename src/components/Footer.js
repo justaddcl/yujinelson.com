@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import theme from './styles/theme';
+import ContentContainer from './styles/ContentContainer';
 
 const StyledFooter = styled.footer`
   border-top: solid 1px ${theme.colors.purple500};
