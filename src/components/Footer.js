@@ -3,6 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import styled from 'styled-components';
 import theme from './styles/theme';
 import ContentContainer from './styles/ContentContainer';
+import CurrentYear from './CurrentYear';
 
 const StyledFooter = styled.footer`
   border-top: solid 1px ${theme.colors.purple500};
@@ -30,6 +31,9 @@ const Footer = () => {
   return (
     <StyledFooter>
       <FooterContainer>
+        <span>
+          ©<CurrentYear /> {data.site.siteMetadata.author}.
+        </span>
         <span>Made with ❤️ in Austin, TX.</span>
         <span>Soli deo gloria</span>
       </FooterContainer>
