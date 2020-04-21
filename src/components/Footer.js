@@ -1,4 +1,5 @@
 import React from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
 import styled from 'styled-components';
 import theme from './styles/theme';
 import ContentContainer from './styles/ContentContainer';
@@ -15,8 +16,17 @@ const FooterContainer = styled(ContentContainer)`
   text-transform: uppercase;
 `;
 
-const Footer = () => (
-  <StyledFooter>
+const Footer = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          author
+        }
+      }
+    }
+  `);
+
   return (
     <StyledFooter>
       <FooterContainer>
