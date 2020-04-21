@@ -1,5 +1,8 @@
 module.exports = {
-  /* Your site config here */
+  siteMetadata: {
+    title: 'Yuji Nelson',
+    author: 'Yuji Nelson',
+  },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
