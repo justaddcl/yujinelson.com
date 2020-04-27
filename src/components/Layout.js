@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import Header from './Header';
 import Footer from './Footer';
 import GlobalStyles from './styles/GlobalStyles';
-import 'normalize.css';
 import ContentContainer from './styles/ContentContainer';
 import ColorBar from './styles/ColorBar';
 import theme from './styles/theme';
