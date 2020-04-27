@@ -3,6 +3,7 @@ import theme from './theme';
 
 const GlobalStyles = createGlobalStyle`
   @import url("https://use.typekit.net/xoo3bkz.css");
+  @import url("https://use.typekit.net/kum8wap.css");
 
   * {
     background-color: ${theme.colors.background};
