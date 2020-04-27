@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import theme from './theme';
+import 'normalize.css';
 
 const GlobalStyles = createGlobalStyle`
   @import url("https://use.typekit.net/xoo3bkz.css");
