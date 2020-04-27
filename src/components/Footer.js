@@ -1,7 +1,8 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import styled from 'styled-components';
-import theme from './styles/theme';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import theme, { colors, fonts, padding } from './styles/theme';
 import ContentContainer from './styles/ContentContainer';
 import CurrentYear from './CurrentYear';
 
