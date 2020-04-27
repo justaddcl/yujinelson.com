@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import theme from './theme';
+import theme, { padding } from './theme';
 
 const ContentContainer = styled.div`
-  padding-left: ${theme.padding.mobile.medium};
-  padding-right: ${theme.padding.mobile.medium};
+  padding-left: ${padding.mobile.small};
+  padding-right: ${padding.mobile.small};
 
   @media screen and (min-width: ${theme.mq.desktop.small}) {
     max-width: ${theme.sizes.desktop.maxWidth};
