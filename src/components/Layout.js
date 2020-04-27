@@ -10,11 +10,11 @@ import theme from './styles/theme';
 
 const LayoutContainer = styled(ContentContainer)`
   display: grid;
-  grid-template-rows: 48px 1fr 32px;
+  grid-template-rows: 72px 1fr 305px;
   min-height: calc(100vh - 4px);
 
   @media screen and (min-width: ${theme.mq.desktop.small}) {
-    grid-template-rows: 80px 1fr 64px;
+    grid-template-rows: 80px 1fr 201px;
   }
 `;
 
