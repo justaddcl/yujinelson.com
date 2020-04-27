@@ -4,11 +4,10 @@ import styled from 'styled-components';
 import Header from './Header';
 import Footer from './Footer';
 import GlobalStyles from './styles/GlobalStyles';
-import ContentContainer from './styles/ContentContainer';
 import ColorBar from './styles/ColorBar';
 import theme from './styles/theme';
 
-const LayoutContainer = styled(ContentContainer)`
+const PageSections = styled.div`
   display: grid;
   grid-template-rows: 72px 1fr 305px;
   min-height: calc(100vh - 4px);
@@ -22,11 +21,11 @@ const Layout = ({ children }) => (
   <>
     <GlobalStyles />
     <ColorBar />
-    <LayoutContainer>
+    <PageSections>
       <Header />
       <main>{children}</main>
       <Footer />
-    </LayoutContainer>
+    </PageSections>
   </>
 );
 
