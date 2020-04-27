@@ -5,17 +5,50 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import theme, { colors, fonts, padding } from './styles/theme';
 import ContentContainer from './styles/ContentContainer';
 import CurrentYear from './CurrentYear';
+import SocialMediaIcons from './SocialMediaIcons';
 
 const StyledFooter = styled.footer`
-  border-top: solid 1px ${theme.colors.purple500};
-  height: 32px;
+  background-color: ${colors.purple[900]};
+  padding: ${padding.mobile.medium} 0;
+
+  p {
+    color: ${colors.grey[500]};
+    font-family: ${fonts.family.proximaNova};
+    font-size: 12px;
+    text-transform: uppercase;
+
+    &:not(:last-of-type) {
+      margin-bottom: 16px;
+    }
+  }
 `;
 
 const FooterContainer = styled(ContentContainer)`
   display: flex;
   flex-direction: column;
-  padding: 16px 0;
-  text-transform: uppercase;
+
+  h3 {
+    color: ${colors.blue[600]};
+    font-family: ${fonts.family.proximaNova};
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+`;
+
+const ConnectSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 48px;
+`;
+
+const StyledEmail = styled.span`
+  color: ${colors.grey[400]};
+  margin-bottom: 24px;
+
+  & .symbol {
+    color: ${colors.blue[600]};
+  }
 `;
 
 const Footer = () => {
@@ -32,11 +65,19 @@ const Footer = () => {
   return (
     <StyledFooter>
       <FooterContainer>
-        <span>
-          ©<CurrentYear /> {data.site.siteMetadata.author}.
-        </span>
-        <span>Made with ❤️ in Austin, TX.</span>
-        <span>Soli deo gloria</span>
+        <ConnectSection>
+          <h3>Let&apos;s connect!</h3>
+          <StyledEmail>
+            hello<span className="symbol">@</span>yujinelson
+            <span className="symbol">.com</span>
+          </StyledEmail>
+          <SocialMediaIcons />
+        </ConnectSection>
+        <p>
+          ©<CurrentYear /> {data.site.siteMetadata.author}. Made with{' '}
+          <FontAwesomeIcon icon="heart" /> in Austin, TX.
+        </p>
+        <p>Soli deo gloria</p>
       </FooterContainer>
     </StyledFooter>
   );
