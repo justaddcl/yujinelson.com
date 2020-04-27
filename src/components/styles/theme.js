@@ -1,24 +1,17 @@
+import colors from './colors';
+import fonts from './fonts';
+import padding from './padding';
+import './icons';
+
 const theme = {
-  colors: {
-    background: '#3E3C53',
-    font: '#D8DEE9',
-    blue900: '#3B4252',
-    purple500: '#B48EAD',
-    purple900: '#3E3C53',
-  },
-  font: {
-    family: 'source-code-pro, monospace',
-  },
+  colors,
+  fonts,
   mq: {
     desktop: {
       small: '1024px',
     },
   },
-  padding: {
-    mobile: {
-      medium: '24px',
-    },
-  },
+  padding,
   sizes: {
     desktop: {
       maxWidth: '1540px',
