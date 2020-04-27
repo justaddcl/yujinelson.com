@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import theme from './theme';
+import { colors } from './theme';
 
 const ColorBar = styled.div`
-  background-color: ${theme.colors.purple500};
+  background-color: ${colors.purple[500]};
   height: 4px;
   width: 100%;
 `;
