@@ -20,3 +20,4 @@ const theme = {
 };
 
 export default theme;
+export { colors, fonts, padding };
