@@ -13,11 +13,13 @@ const Head = ({ pageTitle = '' }) => {
     }
   `);
   return (
-    <Helmet
-      title={`${pageTitle ? `${pageTitle} - ` : ''}${
-        data.site.siteMetadata.title
-      }`}
-    />
+    <Helmet>
+      <title>
+        {`${pageTitle ? `${pageTitle} - ` : ''}${data.site.siteMetadata.title}`}
+      </title>
+      <link rel="stylesheet" href="https://use.typekit.net/xwd2wbi.css" />
+      <link rel="stylesheet" href="https://use.typekit.net/xoo3bkz.css" />
+    </Helmet>
   );
 };
 
