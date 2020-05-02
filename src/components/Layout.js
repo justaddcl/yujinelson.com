@@ -9,12 +9,8 @@ import theme from './styles/theme';
 
 const PageSections = styled.div`
   display: grid;
-  grid-template-rows: 72px 1fr 305px;
+  grid-template-rows: auto 1fr auto;
   min-height: calc(100vh - 4px);
-
-  @media screen and (min-width: ${theme.mq.desktop.small}) {
-    grid-template-rows: 80px 1fr 201px;
-  }
 `;
 
 const Layout = ({ children }) => (
