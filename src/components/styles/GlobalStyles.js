@@ -1,6 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
 import 'reset-css';
-import 'normalize.css';
 import theme, { colors, fonts } from './theme';
 
 const GlobalStyles = createGlobalStyle`
