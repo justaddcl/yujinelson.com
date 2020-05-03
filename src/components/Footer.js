@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import theme, { colors, fonts, padding } from './styles/theme';
+import theme, { colors, fonts, mq, padding } from './styles/theme';
 import ContentContainer from './styles/ContentContainer';
 import CurrentYear from './CurrentYear';
 import SocialMediaIcons from './SocialMediaIcons';
@@ -19,6 +19,10 @@ const StyledFooter = styled.footer`
 
     &:not(:last-of-type) {
       margin-bottom: 16px;
+
+      @media screen and (min-width: ${mq.desktop.small}) {
+        margin-bottom: 0;
+      }
     }
   }
 `;
@@ -34,17 +38,31 @@ const FooterContainer = styled(ContentContainer)`
     font-size: 24px;
     margin-bottom: 24px;
   }
+
+  @media screen and (min-width: ${mq.desktop.small}) {
+    align-items: flex-end;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 `;
 
 const ConnectSection = styled.section`
   display: flex;
   flex-direction: column;
   margin-bottom: 48px;
+
+  @media screen and (min-width: ${mq.desktop.small}) {
+    margin-bottom: 0;
+  }
 `;
 
 const StyledEmail = styled.span`
   color: ${colors.grey[400]};
   margin-bottom: 24px;
+
+  @media screen and (min-width: ${mq.desktop.small}) {
+    margin-bottom: 16px;
+  }
 
   & .symbol {
     color: ${colors.blue[600]};
