@@ -8,7 +8,7 @@ const SocialMediaGrid = styled.div`
   display: grid;
   font-size: 24px;
   grid-gap: 24px;
-  grid-template-columns: repeat(auto-fit, 24px);
+  grid-template-columns: repeat(6, 24px);
 
   a {
     color: ${colors.grey[500]};
