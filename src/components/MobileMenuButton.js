@@ -78,6 +78,9 @@ const StyledMobileMenuButton = styled.button`
 
 const clickHandler = ({ currentTarget }) => {
   currentTarget.classList.toggle('open');
+  document
+    .querySelector('nav[class*=StyledMobileMenu')
+    .classList.toggle('open');
 };
 
 const MobileMenuButton = () => (
