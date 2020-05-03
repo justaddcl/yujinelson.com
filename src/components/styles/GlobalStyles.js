@@ -8,6 +8,10 @@ const GlobalStyles = createGlobalStyle`
     color: ${colors.grey[300]};
     font-family: ${fonts.family.sourceCodePro};
   }
+
+  a {
+    text-decoration: none;
+  }
 `;
 
 export default GlobalStyles;
