@@ -3,6 +3,10 @@ import 'reset-css';
 import { colors, fonts } from './theme';
 
 const GlobalStyles = createGlobalStyle`
+  * {
+    box-sizing: border-box;
+  }
+
   body {
     background-color: ${colors.purple[800]};
     color: ${colors.grey[300]};
