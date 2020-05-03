@@ -5,8 +5,9 @@ import { colors, mq } from './styles/theme';
 import ContentContainer from './styles/ContentContainer';
 import Logo from './Logo';
 import MobileMenuButton from './MobileMenuButton';
+import MobileMenu from './MobileMenu';
 
-const StyledHeader = styled(ContentContainer)`
+const HeaderContainer = styled(ContentContainer)`
   align-items: center;
   display: flex;
   height: 72px;
@@ -56,25 +57,28 @@ const StyledNav = styled.nav`
 `;
 
 const Header = () => (
-  <StyledHeader as="header">
-    <LogoGroup>
-      <Link to="/">
-        <Logo />
-        Yuji
-      </Link>
-    </LogoGroup>
-    <MobileMenuButton />
-    <StyledNav>
-      <ul>
-        <li>
-          <Link to="/about">/about</Link>
-        </li>
-        <li>
-          <Link to="/uses">/uses</Link>
-        </li>
-      </ul>
-    </StyledNav>
-  </StyledHeader>
+  <header>
+    <HeaderContainer>
+      <LogoGroup>
+        <Link to="/">
+          <Logo />
+          Yuji
+        </Link>
+      </LogoGroup>
+      <MobileMenuButton />
+      <StyledNav>
+        <ul>
+          <li>
+            <Link to="/about">/about</Link>
+          </li>
+          <li>
+            <Link to="/uses">/uses</Link>
+          </li>
+        </ul>
+      </StyledNav>
+    </HeaderContainer>
+    <MobileMenu />
+  </header>
 );
 
 export default Header;
