@@ -1,16 +1,13 @@
 import colors from './colors';
 import fonts from './fonts';
+import mq from './mq';
 import padding from './padding';
 import './icons';
 
 const theme = {
   colors,
   fonts,
-  mq: {
-    desktop: {
-      small: '1024px',
-    },
-  },
+  mq,
   padding,
   sizes: {
     desktop: {
@@ -20,4 +17,4 @@ const theme = {
 };
 
 export default theme;
-export { colors, fonts, padding };
+export { colors, fonts, mq, padding };
