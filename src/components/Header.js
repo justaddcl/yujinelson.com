@@ -1,21 +1,37 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-import theme from './styles/theme';
+import { colors, mq } from './styles/theme';
+import ContentContainer from './styles/ContentContainer';
+import Logo from './Logo';
+import MobileMenuButton from './MobileMenuButton';
 
-const StyledHeader = styled.header`
+const StyledHeader = styled(ContentContainer)`
   align-items: center;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  height: 48px;
+  display: flex;
+  height: 72px;
+  justify-content: space-between;
 
-  @media screen and (min-width: ${theme.mq.desktop.small}) {
+  @media screen and (min-width: ${mq.desktop.small}) {
     height: 80px;
+    margin: inherit;
+  }
+
+  a {
+    align-items: center;
+    color: ${colors.grey[300]};
+    display: grid;
+    font-size: 24px;
+    font-weight: 700;
+    grid-gap: 12px;
+    grid-template-columns: auto 1fr;
   }
 `;
 
+const LogoGroup = styled.div``;
+
 const StyledNav = styled.nav`
-  justify-self: end;
+  display: none;
 
   ul {
     display: flex;
@@ -23,16 +39,31 @@ const StyledNav = styled.nav`
     list-style: none;
 
     li {
-      margin-left: 16px;
+      &:not(:last-child) {
+        margin-right: 48px;
+      }
+
+      a {
+        color: ${colors.grey[300]};
+        text-decoration: none;
+      }
     }
+  }
+
+  @media screen and (min-width: ${mq.desktop.small}) {
+    display: block;
   }
 `;
 
 const Header = () => (
-  <StyledHeader>
-    <div>
-      <Link to="/">Yuji Nelson</Link>
-    </div>
+  <StyledHeader as="header">
+    <LogoGroup>
+      <Link to="/">
+        <Logo />
+        Yuji
+      </Link>
+    </LogoGroup>
+    <MobileMenuButton />
     <StyledNav>
       <ul>
         <li>
