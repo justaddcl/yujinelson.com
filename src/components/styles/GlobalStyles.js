@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import 'reset-css';
-import { colors, fonts } from './theme';
+import { colors, fonts, mq } from './theme';
 
 const GlobalStyles = createGlobalStyle`
   * {
@@ -11,6 +11,11 @@ const GlobalStyles = createGlobalStyle`
     background-color: ${colors.purple[800]};
     color: ${colors.grey[300]};
     font-family: ${fonts.family.sourceCodePro};
+    font-size: ${fonts.size.mobile}px;
+
+    @media screen and (min-width: ${mq.desktop.small}) {
+      font-size: ${fonts.size.desktop}px;
+    }
   }
 
   a {
