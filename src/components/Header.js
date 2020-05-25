@@ -20,16 +20,19 @@ const HeaderContainer = styled(ContentContainer)`
 
   a {
     align-items: center;
-    color: ${colors.grey[300]};
     display: grid;
-    font-size: 24px;
-    font-weight: 700;
     grid-gap: 12px;
     grid-template-columns: auto 1fr;
   }
 `;
 
-const LogoGroup = styled.div``;
+const LogoGroup = styled.div`
+  & .name {
+    color: ${colors.grey[200]};
+    font-size: 24px;
+    font-weight: 700;
+  }
+`;
 
 const StyledNav = styled.nav`
   display: none;
@@ -62,7 +65,7 @@ const Header = () => (
       <LogoGroup>
         <Link to="/">
           <Logo />
-          Yuji
+          <span className="name">Yuji</span>
         </Link>
       </LogoGroup>
       <MobileMenuButton />
