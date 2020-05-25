@@ -2,6 +2,7 @@ const spacing = {
   tiny: '4px',
   xxs: 0.5,
   xs: 0.75,
+  base: 1,
   s: 1.5,
   m: 2,
   l: 3,
