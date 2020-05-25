@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-import { colors, mq } from './styles/theme';
+import { colors, fonts, mq } from './styles/theme';
 import ContentContainer from './styles/ContentContainer';
 import Logo from './Logo';
 import MobileMenuButton from './MobileMenuButton';
@@ -29,6 +29,7 @@ const HeaderContainer = styled(ContentContainer)`
 const LogoGroup = styled.div`
   & .name {
     color: ${colors.grey[200]};
+    font-family: ${fonts.family.sourceCodePro};
     font-size: 24px;
     font-weight: 700;
   }
