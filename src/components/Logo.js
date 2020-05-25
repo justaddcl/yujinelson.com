@@ -1,32 +1,28 @@
 import React from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
-import Img from 'gatsby-image';
+// import { graphql, useStaticQuery } from 'gatsby';
+// import Img from 'gatsby-image';
 import styled from 'styled-components';
-import { mq } from './styles/theme';
+import { colors, fonts, mq } from './styles/theme';
 
-const StyledLogo = styled(Img)`
+const StyledLogo = styled.div`
+  background-color: #4a4f68;
+  border-radius: 50%;
+  color: ${colors.grey[100]};
+  display: grid;
+  font-family: ${fonts.family.japanese};
+  font-size: 1rem;
   height: 36px;
+  padding-bottom: 6px;
+  place-content: center;
   width: 36px;
-
-  @media screen and (min-width: ${mq.desktop.small}) {
-    height: 48px;
-    width: 48px;
-  }
 `;
 
 const Logo = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      logo: file(relativePath: { eq: "logo.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 48) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `);
-  return <StyledLogo fluid={data.logo.childImageSharp.fluid} alt="Logo" />;
+  return (
+    <StyledLogo alt="Logo">
+      <span>&#12518;</span>
+    </StyledLogo>
+  );
 };
 
 export default Logo;
