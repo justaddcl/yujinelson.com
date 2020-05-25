@@ -2,6 +2,7 @@ const BASE = 16;
 
 const fonts = {
   family: {
+    japanese: 'kan415typos-std, sans-serif',
     proximaNova: 'proxima-nova, sans-serif',
     sourceCodePro: 'source-code-pro, monospace',
   },
