@@ -10,7 +10,7 @@ const GlobalStyles = createGlobalStyle`
   body {
     background-color: ${colors.purple[800]};
     color: ${colors.grey[300]};
-    font-family: ${fonts.family.sourceCodePro};
+    font-family: ${fonts.family.proximaNova};
     font-size: ${fonts.size.mobile}px;
 
     @media screen and (min-width: ${mq.desktop.small}) {
