@@ -3,8 +3,8 @@ exports.onRouteUpdate = () => {
     '[class*=StyledMobileMenu]'
   );
   mobileMenuElements.forEach((item) => {
-    if (item.classList.contains('open')) {
-      item.classList.remove('open');
+    if (item.classList.contains('is-open')) {
+      item.classList.remove('is-open');
     }
   });
 };
