@@ -16,9 +16,9 @@ const StyledFooter = styled.footer`
   }
 
   .nav {
-    &__item:not(:last-of-type) {
-      margin-bottom: ${spacing.base}rem;
-    }
+    display: flex;
+    flex-direction: column;
+    gap: ${spacing.base}rem;
 
     & a {
       color: ${colors.grey[200]};
