@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-import { colors, fonts, mq } from './styles/theme';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { colors, fonts, mq, spacing } from './styles/theme';
 import ContentContainer from './styles/ContentContainer';
 import Logo from './Logo';
 import MobileMenuButton from './MobileMenuButton';
@@ -15,7 +16,6 @@ const HeaderContainer = styled(ContentContainer)`
 
   @media screen and (min-width: ${mq.desktop.small}) {
     height: 80px;
-    margin: inherit;
   }
 
   a {
@@ -40,17 +40,36 @@ const StyledNav = styled.nav`
 
   ul {
     display: flex;
+    align-items: center;
     flex-direction: row;
+    gap: calc(${spacing.basePx}px * ${spacing.xl});
     list-style: none;
 
     li {
-      &:not(:last-child) {
-        margin-right: 48px;
-      }
-
       a {
-        color: ${colors.grey[300]};
+        color: ${colors.grey[50]};
+        font-family: ${fonts.family.sourceCodePro};
+        font-size: ${fonts.size.base}px;
         text-decoration: none;
+
+        &.button--primary {
+          background-color: ${colors.purple[500]};
+          border-radius: 2px;
+          color: ${colors.grey[100]};
+          display: grid;
+          column-gap: ${spacing.base}rem;
+          grid-template-columns: repeat(2, auto);
+          font-family: ${fonts.family.proximaNova};
+          font-size: 20px;
+          padding: ${spacing.xs}rem ${spacing.m}rem;
+
+          @media screen and (min-width: 375px) {
+            padding: ${spacing.base}rem ${spacing.m}rem;
+          }
+          .icon {
+            font-size: 0.875rem;
+          }
+        }
       }
     }
   }
@@ -73,10 +92,16 @@ const Header = () => (
       <StyledNav>
         <ul>
           <li>
-            <Link to="/about">/about</Link>
+            <Link to="/about">About</Link>
           </li>
           <li>
-            <Link to="/uses">/uses</Link>
+            <Link to="/contact">Contact</Link>
+          </li>
+          <li>
+            <Link to="/" className="button--primary">
+              Download resume{' '}
+              <FontAwesomeIcon icon="download" className="icon" />
+            </Link>
           </li>
         </ul>
       </StyledNav>
