@@ -10,6 +10,7 @@ const spacing = {
   // huge - before homepage hero, before footer
   // p - between paragraphs
 
+  // scale
   tiny: '4px',
   xxs: 0.5,
   xs: 0.75,
@@ -21,6 +22,9 @@ const spacing = {
   xxl: 6,
   xxxl: 8,
   huge: 9,
+
+  // values
+  basePx: 16,
 };
 
 export default spacing;
