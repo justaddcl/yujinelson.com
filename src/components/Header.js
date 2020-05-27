@@ -39,9 +39,9 @@ const StyledNav = styled.nav`
   display: none;
 
   ul {
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
     align-items: center;
-    flex-direction: row;
     gap: calc(${spacing.basePx}px * ${spacing.xl});
     list-style: none;
 
