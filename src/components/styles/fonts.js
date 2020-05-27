@@ -7,6 +7,7 @@ const fonts = {
     sourceCodePro: 'source-code-pro, monospace',
   },
   size: {
+    base: BASE,
     mobile: BASE,
     desktop: BASE * 1.125,
   },
