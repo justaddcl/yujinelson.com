@@ -18,8 +18,7 @@ const StyledMobileMenu = styled.nav`
     transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 
   ul {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     gap: ${spacing.l}rem;
     list-style: none;
 
