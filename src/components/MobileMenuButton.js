@@ -81,6 +81,7 @@ const clickHandler = ({ currentTarget }) => {
   document
     .querySelector('nav[class*=StyledMobileMenu')
     .classList.toggle('is-open');
+  document.querySelector('body').classList.toggle('menu-is-open');
 };
 
 const MobileMenuButton = () => (

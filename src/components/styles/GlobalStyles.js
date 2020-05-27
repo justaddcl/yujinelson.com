@@ -16,6 +16,10 @@ const GlobalStyles = createGlobalStyle`
     @media screen and (min-width: ${mq.desktop.small}) {
       font-size: ${fonts.size.desktop}px;
     }
+
+    &.menu-is-open {
+      overflow: hidden;
+    }
   }
 
   a {
