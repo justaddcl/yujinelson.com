@@ -46,7 +46,7 @@ const StyledMobileMenuButton = styled.button`
     }
   }
 
-  &.open {
+  &.is-open {
     .bars {
       transform: rotate(45deg);
       transition: transform 0.1s ease-in-out;
@@ -77,10 +77,10 @@ const StyledMobileMenuButton = styled.button`
 `;
 
 const clickHandler = ({ currentTarget }) => {
-  currentTarget.classList.toggle('open');
+  currentTarget.classList.toggle('is-open');
   document
     .querySelector('nav[class*=StyledMobileMenu')
-    .classList.toggle('open');
+    .classList.toggle('is-open');
 };
 
 const MobileMenuButton = () => (
