@@ -20,19 +20,12 @@ const StyledMobileMenu = styled.nav`
   ul {
     display: flex;
     flex-direction: column;
+    gap: ${spacing.l}rem;
     list-style: none;
 
     li {
-      &.nav-item {
-        margin-bottom: ${spacing.l}rem;
-
-        &:last-child {
-          margin-bottom: 0;
-        }
-      }
-
-      &.mb-xl {
-        margin-bottom: ${spacing.xl}rem;
+      &.mb-base {
+        margin-bottom: ${spacing.base}rem;
       }
 
       a {
@@ -43,6 +36,7 @@ const StyledMobileMenu = styled.nav`
 
         &.button--primary {
           background-color: ${colors.purple[500]};
+          border-radius: 2px;
           color: ${colors.grey[100]};
           display: grid;
           column-gap: ${spacing.base}rem;
@@ -89,7 +83,7 @@ const MobileMenu = () => (
         <li className="nav-item">
           <Link to="/about">About</Link>
         </li>
-        <li className="nav-item mb-xl">
+        <li className="nav-item mb-base">
           <Link to="/">Contact</Link>
         </li>
         <li className="nav-item">
