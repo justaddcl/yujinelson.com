@@ -11,7 +11,7 @@ const SocialMediaGrid = styled.div`
   grid-template-columns: repeat(6, 24px);
 
   a {
-    color: ${colors.grey[300]};
+    color: ${colors.grey[200]};
   }
 `;
 
