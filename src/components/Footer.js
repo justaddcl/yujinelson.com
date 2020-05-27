@@ -11,6 +11,10 @@ import Logo from './Logo';
 const StyledFooter = styled.footer`
   background-color: ${colors.purple[900]};
 
+  .logo {
+    justify-self: start;
+  }
+
   .nav {
     &__item:not(:last-of-type) {
       margin-bottom: ${spacing.base}rem;
