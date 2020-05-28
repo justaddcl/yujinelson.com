@@ -7,8 +7,8 @@ const ContentContainer = styled(Container)`
   padding-bottom: ${spacing.xxxl}rem;
 
   @media screen and (min-width: ${mq.desktop.small}) {
-    max-width: ${theme.sizes.desktop.maxWidth};
-    margin: 0 auto;
+    padding-top: ${spacing.huge}rem;
+    padding-bottom: ${spacing.huge}rem;
   }
 `;
 
