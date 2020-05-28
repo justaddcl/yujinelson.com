@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { colors, fonts, mq, spacing } from './styles/theme';
-import ContentContainer from './styles/ContentContainer';
+import Container from './styles/Container';
 
 const StyledMobileMenu = styled.nav`
   background-color: ${colors.purple[800]};
@@ -68,7 +68,7 @@ const StyledMobileMenu = styled.nav`
   }
 `;
 
-const MobileMenuContainer = styled(ContentContainer)`
+const MobileMenuContainer = styled(Container)`
   padding: ${spacing.xl}rem ${spacing.m}rem;
 `;
 

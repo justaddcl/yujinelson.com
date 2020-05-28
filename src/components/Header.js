@@ -3,12 +3,12 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { colors, fonts, mq, spacing } from './styles/theme';
-import ContentContainer from './styles/ContentContainer';
+import Container from './styles/Container';
 import Logo from './Logo';
 import MobileMenuButton from './MobileMenuButton';
 import MobileMenu from './MobileMenu';
 
-const HeaderContainer = styled(ContentContainer)`
+const HeaderContainer = styled(Container)`
   align-items: center;
   display: flex;
   height: 72px;

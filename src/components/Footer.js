@@ -3,7 +3,7 @@ import { graphql, Link, useStaticQuery } from 'gatsby';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { colors, fonts, mq, spacing } from './styles/theme';
-import ContentContainer from './styles/ContentContainer';
+import Container from './styles/Container';
 import CurrentYear from './CurrentYear';
 import SocialMediaIcons from './SocialMediaIcons';
 import Logo from './Logo';
@@ -39,7 +39,7 @@ const StyledFooter = styled.footer`
   }
 
   [class*='SocialMediaIcons'] {
-    justify-self: end;
+      justify-self: end;
   }
 
   .small {
@@ -83,7 +83,7 @@ const StyledFooter = styled.footer`
   }
 `;
 
-const FooterContainer = styled(ContentContainer)`
+const FooterContainer = styled(Container)`
   display: grid;
   padding-top: 80px;
   padding-bottom: 80px;
