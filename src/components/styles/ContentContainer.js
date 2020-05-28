@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 import theme, { mq, spacing } from './theme';
+import Container from './Container';
 
-const ContentContainer = styled.div`
-  padding-left: ${spacing.s}rem;
-  padding-right: ${spacing.s}rem;
+const ContentContainer = styled(Container)`
+  padding-top: ${spacing.xxxl}rem;
+  padding-bottom: ${spacing.xxxl}rem;
 
   @media screen and (min-width: ${mq.desktop.small}) {
     max-width: ${theme.sizes.desktop.maxWidth};
