@@ -39,7 +39,9 @@ const StyledFooter = styled.footer`
   }
 
   [class*='SocialMediaIcons'] {
+    @media screen and (min-width: ${mq.desktop.small}) {
       justify-self: end;
+    }
   }
 
   .small {
