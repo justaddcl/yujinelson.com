@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { H1, H2 } from '../components/styles/headers';
 import Head from '../components/Head';
 import ContentContainer from '../components/styles/ContentContainer';
 import Greeting from '../components/Greeting';
@@ -17,38 +18,6 @@ const HomePage = styled(ContentContainer)`
 
   .hero > p {
     line-height: ${spacing.s}rem;
-  }
-`;
-
-const H1 = styled.h1`
-  color: ${colors.grey[50]};
-  font-weight: 700;
-  font-size: 2.25rem;
-  margin-bottom: ${spacing.s}rem;
-
-  &::after {
-    background-color: ${colors.purple[500]};
-    content: '';
-    display: block;
-    margin-top: ${spacing.xs}rem;
-    height: 2px;
-    width: 64px;
-  }
-`;
-
-const H2 = styled.h2`
-  color: ${colors.grey[50]};
-  font-weight: 700;
-  font-size: 2rem;
-  margin-bottom: ${spacing.m}rem;
-
-  &::after {
-    background-color: ${colors.purple[500]};
-    content: '';
-    display: block;
-    margin-top: ${spacing.xxs}rem;
-    height: 2px;
-    width: 64px;
   }
 `;
 
