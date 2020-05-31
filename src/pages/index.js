@@ -1,10 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
+import { colors, fonts, spacing } from '../components/styles/theme';
 import { H1, H2 } from '../components/styles/headers';
 import Head from '../components/Head';
 import ContentContainer from '../components/styles/ContentContainer';
 import Greeting from '../components/Greeting';
-import { colors, fonts, spacing } from '../components/styles/theme';
+import ExperienceCard from '../components/ExperienceCard';
+import ExperienceTag from '../components/ExperienceTag';
 
 const HomePage = styled(ContentContainer)`
   display: grid;
@@ -47,6 +49,45 @@ const Home = () => {
       </section>
       <section id="experience">
         <H2>Experience</H2>
+        <ExperienceCard
+          startDate="03/17"
+          rolePrimary="Front-end Developer"
+          roleSecondary="Magpul"
+          roleTeam="Marketing"
+        >
+          <ExperienceTag tag="dev" />
+          <ExperienceTag tag="ux" />
+          <ExperienceTag tag="ecommerce" />
+        </ExperienceCard>
+        <ExperienceCard
+          startDate="07/16"
+          endDate="06/17"
+          rolePrimary="Company Name"
+          roleSecondary="Lorem ipsum dolor sit amet rotation program"
+          roles={[
+            {
+              title: 'Position Title',
+              team: 'Enterprise Communications',
+              startDate: '07/16',
+              endDate: '06/17',
+            },
+            {
+              title: 'Position Title',
+              team: 'Enterprise Communications',
+              startDate: '07/16',
+              endDate: '06/17',
+            },
+            {
+              title: 'Position Title',
+              team: 'Enterprise Communications',
+              startDate: '07/16',
+              endDate: '06/17',
+            },
+          ]}
+        >
+          <ExperienceTag tag="dev" />
+          <ExperienceTag tag="ux" />
+        </ExperienceCard>
       </section>
     </HomePage>
   );
