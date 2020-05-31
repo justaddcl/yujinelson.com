@@ -23,11 +23,11 @@ const colors = {
     500: '#a3be8c',
   },
   yellow: {
-    100: '##fdfbf1',
+    100: '#fdfbf1',
     500: '#ebcb8b',
   },
   blue: {
-    400: '##88c0d0',
+    400: '#88c0d0',
     500: '#8fbcbb',
     600: '#81a1c1',
   },
