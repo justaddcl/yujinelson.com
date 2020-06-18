@@ -35,7 +35,7 @@ const Home = () => {
           for business and marketing strategy.
         </p>
       </section>
-      <img width="327" height="247" />
+      <img width="100%" height="247" src="" alt="" />
       <section id="intro">
         <H2>Introduction</H2>
         <p>
