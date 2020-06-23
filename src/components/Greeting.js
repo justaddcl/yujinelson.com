@@ -1,17 +1,35 @@
 import React from 'react';
 import styled from 'styled-components';
-import { colors, fonts, spacing } from './styles/theme';
+import { colors, fonts, mq, spacing } from './styles/theme';
 
 const StyledGreeting = styled.div`
   margin-bottom: ${spacing.m}rem;
+
+  @media screen and (min-width: ${mq.desktop.small}) {
+    margin-bottom: ${spacing.l}rem;
+  }
+
   ruby {
     color: ${colors.grey[100]};
     font-family: ${fonts.family.japanese};
     font-size: 1.5rem;
 
+    @media screen and (min-width: ${mq.mobile.large}) {
+      font-size: ${spacing.l}rem;
+    }
+
+    @media screen and (min-width: ${mq.desktop.small}) {
+      font-size: ${spacing.xl}rem;
+    }
+
     & > rt {
       color: ${colors.purple[500]};
       font-family: ${fonts.family.proximaNova};
+      font-size: ${spacing.xs}rem;
+
+      @media screen and (min-width: ${mq.desktop.small}) {
+        font-size: ${spacing.base}rem;
+      }
     }
   }
 
