@@ -7,6 +7,16 @@ const H1 = styled.h1`
   font-size: 2.25rem;
   margin-bottom: ${spacing.s}rem;
 
+  @media screen and (min-width: ${mq.mobile.large}) {
+    font-size: ${spacing.xl}rem;
+    margin-bottom: ${spacing.m}rem;
+  }
+
+  @media screen and (min-width: ${mq.desktop.small}) {
+    font-size: ${spacing.xxl}rem;
+    margin-bottom: ${spacing.l}rem;
+  }
+
   &::after {
     background-color: ${colors.purple[500]};
     content: '';
@@ -16,6 +26,7 @@ const H1 = styled.h1`
     width: ${spacing.m}rem;
 
     @media screen and (min-width: ${mq.desktop.small}) {
+      margin-top: ${spacing.m}rem;
       width: ${spacing.xl}rem;
     }
   }
@@ -27,6 +38,11 @@ const H2 = styled.h2`
   font-size: 2rem;
   margin-bottom: ${spacing.m}rem;
 
+  @media screen and (min-width: ${mq.desktop.small}) {
+    font-size: 2.5rem;
+    margin-bottom: ${spacing.l}rem;
+  }
+
   &::after {
     background-color: ${colors.purple[500]};
     content: '';
@@ -36,6 +52,7 @@ const H2 = styled.h2`
     width: ${spacing.m}rem;
 
     @media screen and (min-width: ${mq.desktop.small}) {
+      margin-top: ${spacing.xs}rem;
       width: ${spacing.xl}rem;
     }
   }
