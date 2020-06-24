@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { colors, fonts, mq, spacing } from '../components/styles/theme';
 import { H1, H2 } from '../components/styles/headers';
+import P from '../components/styles/Text';
 import Head from '../components/Head';
 import ContentContainer from '../components/styles/ContentContainer';
 import Greeting from '../components/Greeting';
@@ -15,10 +16,8 @@ const HomePage = styled(ContentContainer)`
   display: grid;
   row-gap: ${spacing.xxl}rem;
 
-  p {
-    color: ${colors.grey[50]};
-    font-family: ${fonts.family.sourceCodePro};
-    line-height: ${spacing.m}rem;
+  @media screen and (min-width: ${mq.desktop.small}) {
+    row-gap: ${spacing.xxxl}rem;
   }
 
   .hero > p {
@@ -60,14 +59,14 @@ const Home = () => {
       <img width="100%" height="247" src="" alt="" />
       <section id="intro">
         <H2>Introduction</H2>
-        <p>
+        <P>
           I design and build mobile-first, responsive websites and web apps
           using modern HTML, CSS, and JavaScript. As a developer, I love solving
           puzzles and constantly look for ways to better apply my code and
           deliver a better product. As a designer, my passion lies in delivering
           intuitive and delightful experiences through well crafted, beautiful
           design. Currently, I work at Magpul in Austin, TX.
-        </p>
+        </P>
         <Link to="/about">
           <Button as="span">
             Read my story{' '}
