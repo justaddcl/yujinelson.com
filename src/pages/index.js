@@ -1,10 +1,13 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import styled from 'styled-components';
-import { colors, fonts, spacing } from '../components/styles/theme';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { colors, fonts, mq, spacing } from '../components/styles/theme';
 import { H1, H2 } from '../components/styles/headers';
 import Head from '../components/Head';
 import ContentContainer from '../components/styles/ContentContainer';
 import Greeting from '../components/Greeting';
+import Button from '../components/styles/Button';
 import ExperienceCard from '../components/ExperienceCard';
 import ExperienceTag from '../components/ExperienceTag';
 
@@ -20,6 +23,25 @@ const HomePage = styled(ContentContainer)`
 
   .hero > p {
     line-height: ${spacing.s}rem;
+  }
+`;
+
+const ButtonContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: -${spacing.xxs}rem;
+
+  & > * {
+    margin: ${spacing.xxs}rem;
+  }
+
+  @media screen and (min-width: ${mq.desktop.small}) {
+    flex-direction: row;
+    margin: -${spacing.base}rem;
+
+    & > * {
+      margin: ${spacing.base}rem;
+    }
   }
 `;
 
@@ -46,6 +68,12 @@ const Home = () => {
           intuitive and delightful experiences through well crafted, beautiful
           design. Currently, I work at Magpul in Austin, TX.
         </p>
+        <Link to="/about">
+          <Button as="span">
+            Read my story{' '}
+            <FontAwesomeIcon icon="arrow-right" className="icon--right" />
+          </Button>
+        </Link>
       </section>
       <section id="experience">
         <H2>Experience</H2>
@@ -88,6 +116,20 @@ const Home = () => {
           <ExperienceTag tag="dev" />
           <ExperienceTag tag="ux" />
         </ExperienceCard>
+        <ButtonContainer>
+          <Link to="/resume">
+            <Button as="span">
+              See resume{' '}
+              <FontAwesomeIcon icon="arrow-right" className="icon--right" />
+            </Button>
+          </Link>
+          <Link to="/about#skills">
+            <Button as="span">
+              My skillset{' '}
+              <FontAwesomeIcon icon="arrow-right" className="icon--right" />
+            </Button>
+          </Link>
+        </ButtonContainer>
       </section>
     </HomePage>
   );
