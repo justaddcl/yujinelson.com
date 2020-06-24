@@ -10,7 +10,7 @@ const StyledGreeting = styled.div`
   }
 
   ruby {
-    color: ${colors.grey[100]};
+    color: ${colors.grey[200]};
     font-family: ${fonts.family.japanese};
     font-size: 1.5rem;
 
