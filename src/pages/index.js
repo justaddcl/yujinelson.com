@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link, graphql } from 'gatsby';
+import Img from 'gatsby-image';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { colors, fonts, mq, spacing } from '../components/styles/theme';
@@ -44,7 +45,7 @@ const ButtonContainer = styled.ul`
   }
 `;
 
-const Home = () => {
+const Home = ({ data }) => {
   return (
     <HomePage>
       <Head />
@@ -56,7 +57,7 @@ const Home = () => {
           for business and marketing strategy.
         </P>
       </section>
-      <img width="100%" height="247" src="" alt="" />
+      <Img fluid={data.portrait.childImageSharp.fluid} />
       <section id="intro">
         <H2>Introduction</H2>
         <P>
@@ -80,6 +81,7 @@ const Home = () => {
           startDate="03/17"
           rolePrimary="Front-end Developer"
           roleSecondary="Magpul"
+          logo={data.magpulLogo}
           roleTeam="Marketing"
           location="Austin, TX"
         >
@@ -92,6 +94,7 @@ const Home = () => {
           endDate="06/17"
           rolePrimary="Company Name"
           roleSecondary="Lorem ipsum dolor sit amet rotation program"
+          logo={data.boeingLogo}
           location="Bellevue, WA"
           roles={[
             {
@@ -139,5 +142,31 @@ const Home = () => {
     </HomePage>
   );
 };
+
+export const query = graphql`
+  query {
+    portrait: file(relativePath: { eq: "Moiwayama-portrait.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1540) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    magpulLogo: file(relativePath: { eq: "experience/magpul-logo-white.png" }) {
+      childImageSharp {
+        fixed(width: 48, height: 48) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    boeingLogo: file(relativePath: { eq: "experience/boeing-logo-white.png" }) {
+      childImageSharp {
+        fixed(width: 48, height: 48) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+  }
+`;
 
 export default Home;
