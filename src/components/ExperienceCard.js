@@ -1,4 +1,5 @@
 import React from 'react';
+import Img from 'gatsby-image';
 import styled from 'styled-components';
 import { colors, fonts, mq, spacing } from './styles/theme';
 
@@ -157,19 +158,14 @@ const ExperienceCard = ({
   rolePrimary,
   roleSecondary,
   roleTeam,
+  logo,
   location,
   roles,
   children,
 }) => {
   return (
     <StyledExperienceCard>
-      <img
-        className="company-logo"
-        width={`${spacing.l * spacing.basePx}px`}
-        height={`${spacing.l * spacing.basePx}px`}
-        src=""
-        alt=""
-      />
+      <Img fixed={logo.childImageSharp.fixed} />
       <div className="role-summary">
         <div className="role-dates token--blue">
           {startDate} -{' '}
