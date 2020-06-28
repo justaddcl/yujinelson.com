@@ -25,6 +25,24 @@ const GlobalStyles = createGlobalStyle`
   a {
     text-decoration: none;
   }
+
+  .token {
+    &--purple {
+      color: ${colors.tokens.purple};
+    }
+
+    &--green {
+      color: ${colors.tokens.green};
+    }
+
+    &--yellow {
+      color: ${colors.tokens.yellow};
+    }
+
+    &--blue {
+      color: ${colors.tokens.blue};
+    }
+  }
 `;
 
 export default GlobalStyles;
