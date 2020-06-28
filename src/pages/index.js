@@ -25,7 +25,7 @@ const HomePage = styled(ContentContainer)`
   }
 `;
 
-const ButtonContainer = styled.div`
+const ButtonContainer = styled.ul`
   display: flex;
   flex-direction: column;
   margin: -${spacing.xxs}rem;
@@ -51,10 +51,10 @@ const Home = () => {
       <section className="hero">
         <Greeting />
         <H1>I'm Yuji Nelson.</H1>
-        <p>
+        <P>
           A front-end developer and user experience (UX) designer with a knack
           for business and marketing strategy.
-        </p>
+        </P>
       </section>
       <img width="100%" height="247" src="" alt="" />
       <section id="intro">
@@ -81,6 +81,7 @@ const Home = () => {
           rolePrimary="Front-end Developer"
           roleSecondary="Magpul"
           roleTeam="Marketing"
+          location="Austin, TX"
         >
           <ExperienceTag tag="dev" />
           <ExperienceTag tag="ux" />
@@ -91,6 +92,7 @@ const Home = () => {
           endDate="06/17"
           rolePrimary="Company Name"
           roleSecondary="Lorem ipsum dolor sit amet rotation program"
+          location="Bellevue, WA"
           roles={[
             {
               title: 'Position Title',
@@ -116,18 +118,22 @@ const Home = () => {
           <ExperienceTag tag="ux" />
         </ExperienceCard>
         <ButtonContainer>
-          <Link to="/resume">
-            <Button as="span">
-              See resume{' '}
-              <FontAwesomeIcon icon="arrow-right" className="icon--right" />
-            </Button>
-          </Link>
-          <Link to="/about#skills">
-            <Button as="span">
-              My skillset{' '}
-              <FontAwesomeIcon icon="arrow-right" className="icon--right" />
-            </Button>
-          </Link>
+          <li>
+            <Link to="/resume">
+              <Button as="span">
+                See resume{' '}
+                <FontAwesomeIcon icon="arrow-right" className="icon--right" />
+              </Button>
+            </Link>
+          </li>
+          <li>
+            <Link to="/about#skills">
+              <Button as="span">
+                My skillset{' '}
+                <FontAwesomeIcon icon="arrow-right" className="icon--right" />
+              </Button>
+            </Link>
+          </li>
         </ButtonContainer>
       </section>
     </HomePage>
