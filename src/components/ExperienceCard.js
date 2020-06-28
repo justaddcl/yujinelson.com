@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { colors, fonts, spacing } from './styles/theme';
+import { colors, fonts, mq, spacing } from './styles/theme';
 
 const StyledExperienceCard = styled.div`
   --role-node-size: calc(${spacing.xxs} * ${spacing.basePx}px);
@@ -12,11 +12,20 @@ const StyledExperienceCard = styled.div`
   --inner-role-primary-size: 1rem;
 
   display: grid;
+  grid-template: auto / var(--role-left-column) 1fr;
+  column-gap: var(--role-column-gap);
   row-gap: ${spacing.s}rem;
   font-family: ${fonts.family.sourceCodePro};
   margin-bottom: ${spacing.base}rem;
   padding-top: ${spacing.base}rem;
   padding-bottom: ${spacing.base}rem;
+
+  @media screen and (min-width: ${mq.desktop.small}) {
+    --role-column-gap: ${spacing.m}rem;
+    background: ${colors.purple[700]};
+    border-radius: 4px;
+    padding: ${spacing.m}rem;
+  }
 
   .company-logo {
     background-color: ${colors.grey[500]};
@@ -25,24 +34,36 @@ const StyledExperienceCard = styled.div`
 
   .role-summary {
     display: grid;
-    grid-template-columns: var(--role-left-column) 1fr;
-    column-gap: var(--role-column-gap);
-  }
-
-  .role-column--right {
-    display: grid;
-    row-gap: ${spacing.base}rem;
-  }
-
-  .role-details {
-    display: grid;
     row-gap: ${spacing.xxs}rem;
+
+    @media screen and (min-width: ${mq.desktop.small}) {
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: ${spacing.m}rem;
+    }
   }
 
   .role-dates {
-    color: ${colors.blue[500]};
     font-size: 0.875rem;
+    margin-bottom: ${spacing.xxs}rem;
     text-transform: uppercase;
+    line-height: 1.25rem;
+  }
+
+  .role-location-group {
+    display: none;
+    @media screen and (min-width: ${mq.desktop.small}) {
+      display: block;
+      margin-top: ${spacing.xxs}rem;
+      text-transform: none;
+    }
+  }
+
+  .role-primary-group {
+    margin-bottom: ${spacing.base}rem;
+
+    @media screen and (min-width: ${mq.desktop.small}) {
+      order: -1;
+    }
   }
 
   .role-primary {
@@ -50,19 +71,16 @@ const StyledExperienceCard = styled.div`
     font-family: ${fonts.family.proximaNova};
     font-size: 1.25rem;
     font-weight: 700;
+    margin-bottom: ${spacing.xxs}rem;
   }
 
   .role-secondary {
-    color: ${colors.grey[200]};
+    color: ${colors.grey[300]};
     text-transform: uppercase;
 
     .role-team {
       color: ${colors.grey[500]};
     }
-  }
-
-  .role-highlight {
-    color: ${colors.yellow[500]};
   }
 
   .inner-roles {
@@ -80,9 +98,9 @@ const StyledExperienceCard = styled.div`
     width: var(--role-node-size);
   }
 
-  .inner-role {
+  .sub-role {
     display: grid;
-    gap: ${spacing.xxs}rem;
+    row-gap: ${spacing.xxs}rem;
     position: relative;
 
     &:not(:last-of-type)::before {
@@ -102,12 +120,7 @@ const StyledExperienceCard = styled.div`
     }
 
     .role-primary {
-      color: ${colors.grey[100]};
       font-size: var(--inner-role-primary-size);
-    }
-
-    .role-secondary {
-      color: ${colors.grey[400]};
     }
 
     .role-dates {
@@ -119,6 +132,7 @@ const StyledExperienceCard = styled.div`
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    align-content: start;
     justify-content: start;
     margin: -${spacing.xxs}rem;
 
@@ -131,6 +145,10 @@ const StyledExperienceCard = styled.div`
     border-top: 1px solid ${colors.purple[700]};
     padding-top: ${spacing.m}rem;
   }
+
+  &:last-of-type {
+    margin-bottom: ${spacing.l}rem;
+  }
 `;
 
 const ExperienceCard = ({
@@ -139,42 +157,44 @@ const ExperienceCard = ({
   rolePrimary,
   roleSecondary,
   roleTeam,
+  location,
   roles,
   children,
 }) => {
   return (
     <StyledExperienceCard>
+      <img
+        className="company-logo"
+        width={`${spacing.l * spacing.basePx}px`}
+        height={`${spacing.l * spacing.basePx}px`}
+        src=""
+        alt=""
+      />
       <div className="role-summary">
-        <img
-          className="company-logo"
-          width={`${spacing.l * spacing.basePx}px`}
-          height={`${spacing.l * spacing.basePx}px`}
-          src=""
-          alt=""
-        />
-        <div className="role-column--right">
-          <div className="role-details">
-            <div className="role-dates">
-              {startDate} -{' '}
-              {endDate || <span className="role-highlight">Present</span>}
-            </div>
-            <div className="role-primary">{rolePrimary}</div>
-            <div className="role-secondary">
-              {roleSecondary}{' '}
-              {roleTeam && <span className="role-team">/ {roleTeam}</span>}
-            </div>
+        <div className="role-dates token--blue">
+          {startDate} -{' '}
+          {endDate || <span className="token--yellow">Present</span>}
+          <div className="role-location-group">
+            <span className="token--purple">in</span> {location}
           </div>
-          <div className="experience-tags">{children}</div>
         </div>
+        <div className="role-primary-group">
+          <div className="role-primary">{rolePrimary}</div>
+          <div className="role-secondary">
+            {roleSecondary}{' '}
+            {roleTeam && <span className="role-team">/ {roleTeam}</span>}
+          </div>
+        </div>
+        <div className="experience-tags">{children}</div>
       </div>
       {roles && (
-        <div className="inner-roles">
+        <>
           {roles.map((role) => (
             <>
               <span className="role-node" />
-              <div className="inner-role">
+              <div className="sub-role">
                 <div className="role-primary">{role.title}</div>
-                <div className="role-secondary role-secondary">{role.team}</div>
+                <div className="role-secondary">{role.team}</div>
                 <div className="role-dates">
                   {role.startDate} -{' '}
                   {role.endDate || (
@@ -184,7 +204,7 @@ const ExperienceCard = ({
               </div>
             </>
           ))}
-        </div>
+        </>
       )}
     </StyledExperienceCard>
   );
