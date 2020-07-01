@@ -3,7 +3,7 @@ import { Link, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { colors, fonts, mq, spacing } from '../components/styles/theme';
+import { mq, spacing } from '../components/styles/theme';
 import { H1, H2 } from '../components/styles/headers';
 import P from '../components/styles/Text';
 import Head from '../components/Head';
