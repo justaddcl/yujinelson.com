@@ -162,48 +162,46 @@ const ExperienceCard = ({
   location,
   roles,
   children,
-}) => {
-  return (
-    <StyledExperienceCard>
-      <Img fixed={logo.childImageSharp.fixed} />
-      <div className="role-summary">
-        <div className="role-dates token--blue">
-          {startDate} -{' '}
-          {endDate || <span className="token--yellow">Present</span>}
-          <div className="role-location-group">
-            <span className="token--purple">in</span> {location}
-          </div>
+}) => (
+  <StyledExperienceCard>
+    <Img fixed={logo.childImageSharp.fixed} />
+    <div className="role-summary">
+      <div className="role-dates token--blue">
+        {startDate} -{' '}
+        {endDate || <span className="token--yellow">Present</span>}
+        <div className="role-location-group">
+          <span className="token--purple">in</span> {location}
         </div>
-        <div className="role-primary-group">
-          <div className="role-primary">{rolePrimary}</div>
-          <div className="role-secondary">
-            {roleSecondary}{' '}
-            {roleTeam && <span className="role-team">/ {roleTeam}</span>}
-          </div>
-        </div>
-        <div className="experience-tags">{children}</div>
       </div>
-      {roles && (
-        <>
-          {roles.map((role) => (
-            <>
-              <span className="role-node" />
-              <div className="sub-role">
-                <div className="role-primary">{role.title}</div>
-                <div className="role-secondary">{role.team}</div>
-                <div className="role-dates">
-                  {role.startDate} -{' '}
-                  {role.endDate || (
-                    <span className="role-highlight">Present</span>
-                  )}
-                </div>
+      <div className="role-primary-group">
+        <div className="role-primary">{rolePrimary}</div>
+        <div className="role-secondary">
+          {roleSecondary}{' '}
+          {roleTeam && <span className="role-team">/ {roleTeam}</span>}
+        </div>
+      </div>
+      <div className="experience-tags">{children}</div>
+    </div>
+    {roles && (
+      <>
+        {roles.map((role) => (
+          <>
+            <span className="role-node" />
+            <div className="sub-role">
+              <div className="role-primary">{role.title}</div>
+              <div className="role-secondary">{role.team}</div>
+              <div className="role-dates">
+                {role.startDate} -{' '}
+                {role.endDate || (
+                  <span className="role-highlight">Present</span>
+                )}
               </div>
-            </>
-          ))}
-        </>
-      )}
-    </StyledExperienceCard>
-  );
-};
+            </div>
+          </>
+        ))}
+      </>
+    )}
+  </StyledExperienceCard>
+);
 
 export default ExperienceCard;
