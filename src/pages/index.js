@@ -14,13 +14,6 @@ import ExperienceCard from '../components/ExperienceCard';
 import ExperienceTag from '../components/ExperienceTag';
 
 const HomePage = styled(ContentContainer)`
-  display: grid;
-  row-gap: ${spacing.xxl}rem;
-
-  @media screen and (min-width: ${mq.desktop.small}) {
-    row-gap: ${spacing.xxxl}rem;
-  }
-
   .hero > p {
     line-height: ${spacing.s}rem;
   }
