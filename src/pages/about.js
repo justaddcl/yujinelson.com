@@ -100,7 +100,33 @@ const About = ({ data }) => {
           roleTeam="Marketing"
           location="Austin, TX"
           tags={['dev', 'ux', 'ecommerce']}
-        />
+        >
+          <ul className="role-bullets">
+            <li>
+              Develop all Magpul business-to-business (B2B) and
+              business-to-customer (B2C) website content and eCommerce
+              activities
+            </li>
+            <li>
+              Provide oversight, guidance, and act as subject matter expert to
+              all implementation partners on user experience (UX) design and
+              website development
+            </li>
+            <li>
+              Collaborate with the marketing team for website innovation and
+              wireframe design, to build responsive web pages
+            </li>
+            <li>
+              Designed, developed and implemented new website and product pages
+              using HTML, Less, CSS, JavaScript, and Adobe XD which resulted in
+              increased customer engagement and product sales
+            </li>
+            <li>
+              Created website style guide to drive interface consistency and
+              maintain the integrity of the Magpul family of websites
+            </li>
+          </ul>
+        </ExperienceCard>
         <Link to="/resume">
           <Button as="span">
             See resume{' '}
