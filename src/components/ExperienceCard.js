@@ -2,6 +2,7 @@ import React from 'react';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
 import { colors, fonts, mq, spacing } from './styles/theme';
+import ExperienceTag from './ExperienceTag';
 
 const StyledExperienceCard = styled.div`
   --role-node-size: calc(${spacing.xxs} * ${spacing.basePx}px);
@@ -161,6 +162,7 @@ const ExperienceCard = ({
   logo,
   location,
   roles,
+  tags,
   children,
 }) => (
   <StyledExperienceCard>
@@ -180,7 +182,10 @@ const ExperienceCard = ({
           {roleTeam && <span className="role-team">/ {roleTeam}</span>}
         </div>
       </div>
-      <div className="experience-tags">{children}</div>
+      <div className="experience-tags">
+        {tags && tags.map((tag) => <ExperienceTag tag={tag} />)}
+      </div>
+      {children}
     </div>
     {roles && (
       <>
