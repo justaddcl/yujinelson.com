@@ -99,11 +99,8 @@ const About = ({ data }) => {
           logo={data.magpulLogo}
           roleTeam="Marketing"
           location="Austin, TX"
-        >
-          <ExperienceTag tag="dev" />
-          <ExperienceTag tag="ux" />
-          <ExperienceTag tag="ecommerce" />
-        </ExperienceCard>
+          tags={['dev', 'ux', 'ecommerce']}
+        />
         <Link to="/resume">
           <Button as="span">
             See resume{' '}

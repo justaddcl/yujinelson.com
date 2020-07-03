@@ -11,7 +11,6 @@ import ContentContainer from '../components/styles/ContentContainer';
 import Greeting from '../components/Greeting';
 import Button from '../components/styles/Button';
 import ExperienceCard from '../components/ExperienceCard';
-import ExperienceTag from '../components/ExperienceTag';
 
 const HomePage = styled(ContentContainer)`
   .hero > p {
@@ -77,11 +76,8 @@ const Home = ({ data }) => {
           logo={data.magpulLogo}
           roleTeam="Marketing"
           location="Austin, TX"
-        >
-          <ExperienceTag tag="dev" />
-          <ExperienceTag tag="ux" />
-          <ExperienceTag tag="ecommerce" />
-        </ExperienceCard>
+          tags={['dev', 'ux', 'ecommerce']}
+        />
         <ExperienceCard
           startDate="07/16"
           endDate="06/17"
@@ -109,10 +105,8 @@ const Home = ({ data }) => {
               endDate: '06/17',
             },
           ]}
-        >
-          <ExperienceTag tag="dev" />
-          <ExperienceTag tag="ux" />
-        </ExperienceCard>
+          tags={['dev', 'ux']}
+        />
         <ButtonContainer>
           <li>
             <Link to="/resume">
