@@ -111,7 +111,7 @@ const About = ({ data }) => {
       <section>
         <H2>Skills</H2>
         <SkillsList>
-          <dt>Language</dt>
+          <dt>Languages</dt>
           <dd>
             <ul>
               <li>Javascript (ES6)</li>
