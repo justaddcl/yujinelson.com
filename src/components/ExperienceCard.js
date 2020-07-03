@@ -85,6 +85,18 @@ const StyledExperienceCard = styled.div`
     }
   }
 
+  .role-bullets {
+    list-style-type: disc;
+    margin-top: ${spacing.s}rem;
+    display: grid;
+    row-gap: ${spacing.base}rem;
+    line-height: 1.5;
+
+    @media screen and (min-width: ${mq.desktop.small}) {
+      grid-column: 1 / 3;
+    }
+  }
+
   .inner-roles {
     display: grid;
     grid-template-columns: var(--role-left-column) 1fr;
