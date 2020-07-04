@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { mq, spacing } from '../components/styles/theme';
 import { H1, H2 } from '../components/styles/headers';
+import Hero from '../components/Hero';
 import P from '../components/styles/Text';
 import Head from '../components/Head';
 import ContentContainer from '../components/styles/ContentContainer';
@@ -41,15 +42,18 @@ const Home = ({ data }) => {
   return (
     <HomePage>
       <Head />
-      <section className="hero">
+      <Hero>
         <Greeting />
         <H1>I'm Yuji Nelson.</H1>
         <P>
           A front-end developer and user experience (UX) designer with a knack
           for business and marketing strategy.
         </P>
-      </section>
-      <Img fluid={data.portrait.childImageSharp.fluid} />
+        <Img
+          fluid={data.portrait.childImageSharp.fluid}
+          className="hero-image"
+        />
+      </Hero>
       <section id="intro">
         <H2>Introduction</H2>
         <P>
