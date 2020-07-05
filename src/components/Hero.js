@@ -5,16 +5,15 @@ import { H1 } from './styles/headers';
 
 const StyledHero = styled.section`
   ${(props) =>
-    props.responsiveSplit
-      ? `
-    @media screen and (min-width: ${mq.desktop.small}) {
+    props.responsiveSplit &&
+    `
+    @media screen and (min-width: ${mq.mobile.large}) {
       display: grid;
       align-items: end;
       grid-template-columns: repeat(2, 1fr);
       column-gap: ${spacing.l}rem;
     }
-  `
-      : ''}
+  `}
   ${H1} {
     &::after {
       background-color: ${colors.purple[500]};
