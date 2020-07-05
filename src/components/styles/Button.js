@@ -10,7 +10,10 @@ const Button = styled.button`
   cursor: pointer;
   display: inline-block;
   font: inherit;
-  padding: ${spacing.xs}rem ${spacing.s}rem;
+  padding: ${(props) =>
+    props.large
+      ? `${spacing.base}rem ${spacing.m}rem`
+      : `${spacing.xs}rem ${spacing.s}rem`};
 
   .icon {
     &--right {
