@@ -81,12 +81,12 @@ const StyledExperienceCard = styled.div`
   }
 
   .role-secondary {
-    color: ${colors.grey[300]};
+    color: ${colors.grey[200]};
     text-transform: uppercase;
     font-size: ${spacing.base}rem;
 
     .role-team {
-      color: ${colors.grey[500]};
+      color: ${colors.grey[400]};
     }
   }
 
