@@ -6,7 +6,7 @@ import { colors, mq, spacing } from './styles/theme';
 import Button from './styles/Button';
 
 const StyledContactCard = styled.div`
-  background: ${colors.purple[700]};
+  background: ${colors.grey[700]};
   border-radius: 2px;
   padding: ${spacing.m}rem ${spacing.s}rem;
   display: grid;
