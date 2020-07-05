@@ -4,6 +4,8 @@ const mq = {
   },
   desktop: {
     small: '1024px',
+    medium: '1200px',
+    large: '1540px',
   },
 };
 
