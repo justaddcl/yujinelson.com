@@ -45,13 +45,8 @@ const StyledFooter = styled.footer`
   }
 
   .small {
-    color: ${colors.grey[300]};
     font-size: 12px;
     text-transform: uppercase;
-
-    &:not(:last-of-type) {
-      /* margin-bottom: 16px; */
-    }
   }
 
   .made-in {
@@ -112,6 +107,7 @@ const FooterContainer = styled(Container)`
   }
 
   .secondary {
+    color: ${colors.grey[300]};
     @media screen and (min-width: ${mq.desktop.small}) {
       align-items: flex-end;
     }
@@ -160,10 +156,10 @@ const Footer = () => {
             </span>
             <span> in Austin, TX.</span>
           </div>
-          <p className="small copyright">
+          <span className="small copyright">
             ©<CurrentYear /> {data.site.siteMetadata.author}.
-          </p>
-          <p className="small motto">Soli deo gloria</p>
+          </span>
+          <span className="small motto">Soli deo gloria</span>
         </div>
       </FooterContainer>
     </StyledFooter>
