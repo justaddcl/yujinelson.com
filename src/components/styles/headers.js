@@ -16,20 +16,6 @@ const H1 = styled.h1`
     font-size: ${spacing.xxl}rem;
     margin-bottom: ${spacing.l}rem;
   }
-
-  &::after {
-    background-color: ${colors.purple[500]};
-    content: '';
-    display: block;
-    margin-top: ${spacing.xs}rem;
-    height: 2px;
-    width: ${spacing.m}rem;
-
-    @media screen and (min-width: ${mq.desktop.small}) {
-      margin-top: ${spacing.m}rem;
-      width: ${spacing.xl}rem;
-    }
-  }
 `;
 
 const H2 = styled.h2`
