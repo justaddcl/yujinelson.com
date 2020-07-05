@@ -22,11 +22,15 @@ const StyledExperienceCard = styled.div`
   padding-top: ${spacing.base}rem;
   padding-bottom: ${spacing.base}rem;
 
-  @media screen and (min-width: ${mq.desktop.small}) {
-    --role-column-gap: ${spacing.m}rem;
+  @media screen and (min-width: ${mq.mobile.large}) {
     background: ${colors.purple[700]};
     border-radius: 4px;
     padding: ${spacing.m}rem;
+    --role-column-gap: ${spacing.s}rem;
+  }
+
+  @media screen and (min-width: ${mq.desktop.small}) {
+    --role-column-gap: ${spacing.m}rem;
   }
 
   .company-logo {
@@ -79,6 +83,7 @@ const StyledExperienceCard = styled.div`
   .role-secondary {
     color: ${colors.grey[300]};
     text-transform: uppercase;
+    font-size: ${spacing.base}rem;
 
     .role-team {
       color: ${colors.grey[500]};
@@ -88,6 +93,7 @@ const StyledExperienceCard = styled.div`
   .role-bullets {
     list-style-type: disc;
     margin-top: ${spacing.s}rem;
+    margin-left: 1.25rem;
     display: grid;
     row-gap: ${spacing.base}rem;
     line-height: 1.5;
