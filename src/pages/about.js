@@ -10,12 +10,17 @@ import { H1, H2, H3 } from '../components/styles/headers';
 import P from '../components/styles/Text';
 import Button from '../components/styles/Button';
 import ExperienceCard from '../components/ExperienceCard';
-import ExperienceTag from '../components/ExperienceTag';
 import ContactCard from '../components/ContactCard';
 
 const AboutPage = styled(ContentContainer)``;
 
 const SkillsList = styled.dl`
+  @media screen and (min-width: ${mq.mobile.large}) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: ${spacing.m}rem;
+  }
+
   dt {
     color: ${colors.blue[400]};
     font-size: ${spacing.s}rem;
@@ -137,45 +142,53 @@ const About = ({ data }) => {
       <section>
         <H2>Skills</H2>
         <SkillsList>
-          <dt>Languages</dt>
-          <dd>
-            <ul>
-              <li>Javascript (ES6)</li>
-              <li>CSS / Sass / Less / Styled Components</li>
-              <li>HTML / Pug</li>
-              <li>GraphQL</li>
-            </ul>
-          </dd>
-          <dt>Frameworks</dt>
-          <dd>
-            <ul>
-              <li>React</li>
-              <li>Gatsby</li>
-              <li>Prisma</li>
-              <li>Apollo</li>
-              <li>Ruby on Rails</li>
-              <li>Bootstrap</li>
-            </ul>
-          </dd>
-          <dt>Tools</dt>
-          <dd>
-            <ul>
-              <li>Git / GitHub</li>
-              <li>ESLint / Prettier</li>
-              <li>Chrome / Firefox Dev Tools</li>
-              <li>Jest</li>
-              <li>Postman</li>
-            </ul>
-          </dd>
-          <dt>Design</dt>
-          <dd>
-            <ul>
-              <li>Adobe XD, Illustrator, Photoshop</li>
-              <li>Mobile-First Responsive Design</li>
-              <li>User Interface & Experience</li>
-              <li>Prototyping</li>
-            </ul>
-          </dd>
+          <div>
+            <dt>Languages</dt>
+            <dd>
+              <ul>
+                <li>Javascript (ES6)</li>
+                <li>CSS / Sass / Less / Styled Components</li>
+                <li>HTML / Pug</li>
+                <li>GraphQL</li>
+              </ul>
+            </dd>
+          </div>
+          <div>
+            <dt>Frameworks</dt>
+            <dd>
+              <ul>
+                <li>React</li>
+                <li>Gatsby</li>
+                <li>Prisma</li>
+                <li>Apollo</li>
+                <li>Ruby on Rails</li>
+                <li>Bootstrap</li>
+              </ul>
+            </dd>
+          </div>
+          <div>
+            <dt>Tools</dt>
+            <dd>
+              <ul>
+                <li>Git / GitHub</li>
+                <li>ESLint / Prettier</li>
+                <li>Chrome / Firefox Dev Tools</li>
+                <li>Jest</li>
+                <li>Postman</li>
+              </ul>
+            </dd>
+          </div>
+          <div>
+            <dt>Design</dt>
+            <dd>
+              <ul>
+                <li>Adobe XD, Illustrator, Photoshop</li>
+                <li>Mobile-First Responsive Design</li>
+                <li>User Interface & Experience</li>
+                <li>Prototyping</li>
+              </ul>
+            </dd>
+          </div>
         </SkillsList>
         <Link to="/resume">
           <Button as="span">
