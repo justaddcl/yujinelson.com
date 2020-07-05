@@ -29,7 +29,7 @@ const StyledFooter = styled.footer`
     & a {
       color: ${colors.grey[200]};
       font-family: ${fonts.family.sourceCodePro};
-      font-weight: 700;
+      font-size: ${spacing.basePx}px;
       letter-spacing: 0.05em;
 
       & .icon {
