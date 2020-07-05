@@ -7,6 +7,7 @@ import Head from '../components/Head';
 import ContentContainer from '../components/styles/ContentContainer';
 import { colors, fonts, mq, spacing } from '../components/styles/theme';
 import { H1, H2, H3 } from '../components/styles/headers';
+import Hero from '../components/Hero';
 import P from '../components/styles/Text';
 import Button from '../components/styles/Button';
 import ExperienceCard from '../components/ExperienceCard';
@@ -44,14 +45,21 @@ const About = ({ data }) => {
   return (
     <AboutPage>
       <Head pageTitle="About me" />
-      <section className="hero">
-        <H1>My story</H1>
-        <P>
-          I’m Yuji, a front-end developer and user experience designer,
-          originally from Seattle, WA, who now works and lives in Austin, TX.
-        </P>
-      </section>
-      <Img fluid={data.headshot.childImageSharp.fluid} />
+      <Hero responsiveSplit>
+        <div>
+          <H1>My story</H1>
+          <P>
+            I’m Yuji, a front-end developer and user experience designer,
+            originally from Seattle, WA, who now works and lives in Austin, TX.
+          </P>
+        </div>
+        <div>
+          <Img
+            fluid={data.headshot.childImageSharp.fluid}
+            className="hero-image"
+          />
+        </div>
+      </Hero>
       <section>
         <P>
           From watching my dad work on computers when I was a kid, I cultivated
