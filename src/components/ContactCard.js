@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
-import { colors, spacing } from './styles/theme';
+import { colors, mq, spacing } from './styles/theme';
 import Button from './styles/Button';
 
 const StyledContactCard = styled.div`
@@ -13,22 +13,50 @@ const StyledContactCard = styled.div`
   row-gap: ${spacing.m}rem;
   width: 100%;
 
+  @media screen and (min-width: ${mq.mobile.large}) {
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center end;
+    padding: ${spacing.l}rem;
+  }
+
+  @media screen and (min-width: ${mq.desktop.small}) {
+    padding: 5rem ${spacing.xxl}rem;
+  }
+
   h2 {
     color: ${colors.blue[600]};
     font-size: 1.75rem;
     font-weight: 700;
+    margin-bottom: ${spacing.m}rem;
+
+    @media screen and (min-width: ${mq.mobile.large}) {
+      font-size: ${spacing.m};
+      margin-bottom: ${spacing.s}rem;
+    }
+
+    @media screen and (min-width: ${mq.desktop.small}) {
+      font-size: 2.25rem;
+    }
+  }
+
+  p {
+    @media screen and (min-width: ${mq.desktop.small}) {
+      font-size: 1.25rem;
+    }
   }
 `;
 
 const ContactCard = () => (
   <StyledContactCard>
-    <h2>Let's work together</h2>
-    <p>
-      Have an opportunity for me, or questions about my work and skills? Let’s
-      chat!
-    </p>
+    <div>
+      <h2>Let's work together</h2>
+      <p>
+        Have an opportunity for me, or questions about my work and skills? Let’s
+        chat!
+      </p>
+    </div>
     <Link to="/contact">
-      <Button primary as="span">
+      <Button primary large as="span">
         Get in touch{' '}
         <FontAwesomeIcon icon="arrow-right" className="icon--right" />
       </Button>
