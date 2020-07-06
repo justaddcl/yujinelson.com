@@ -20,6 +20,7 @@ const SkillsList = styled.dl`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: ${spacing.m}rem;
+    margin-bottom: ${spacing.m}rem;
   }
 
   dt {
