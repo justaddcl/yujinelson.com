@@ -83,7 +83,7 @@ const MobileMenu = () => (
           <Link to="/about">About</Link>
         </li>
         <li className="nav-item mb-base">
-          <Link to="/">Contact</Link>
+          <Link to="/contact">Contact</Link>
         </li>
         <li className="nav-item">
           <Link to="/" className="button--primary">
