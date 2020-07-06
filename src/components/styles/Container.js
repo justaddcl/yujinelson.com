@@ -1,12 +1,12 @@
 import styled from 'styled-components';
-import theme, { mq, spacing } from './theme';
+import { mq, spacing } from './theme';
 
 const Container = styled.div`
   padding-left: ${spacing.s}rem;
   padding-right: ${spacing.s}rem;
 
   @media screen and (min-width: ${mq.desktop.small}) {
-    max-width: ${theme.sizes.desktop.maxWidth};
+    max-width: ${mq.desktop.large};
     margin: 0 auto;
   }
 `;

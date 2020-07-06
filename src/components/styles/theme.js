@@ -8,11 +8,6 @@ const theme = {
   colors,
   fonts,
   mq,
-  sizes: {
-    desktop: {
-      maxWidth: '1540px',
-    },
-  },
   spacing,
 };
 

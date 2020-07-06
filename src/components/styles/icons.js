@@ -4,6 +4,7 @@ import {
   faHeart,
   faTimes,
   faDownload,
+  faArrowRight,
 } from '@fortawesome/free-solid-svg-icons';
 import {
   faGithub,
@@ -15,6 +16,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 
 library.add(
+  faArrowRight,
   faBars,
   faDownload,
   faHeart,
