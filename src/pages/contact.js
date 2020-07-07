@@ -37,7 +37,7 @@ const Contact = ({ data }) => (
             href={`https://www.linkedin.com/in/${data.site.siteMetadata.linkedin}/`}
             target="_blank"
             rel="noopener noreferrer"
-            className="token--blue"
+            className="token--light-blue"
           >
             LinkedIn
           </a>

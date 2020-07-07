@@ -55,7 +55,7 @@ const SocialsList = () => {
           href={`https://github.com/${github}/`}
           target="_blank"
           rel="noopener noreferrer"
-          className="token--blue"
+          className="token--light-blue"
         >
           {github}
         </a>
@@ -66,7 +66,7 @@ const SocialsList = () => {
           href={`https://codepen.io/${codepen}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="token--blue"
+          className="token--light-blue"
         >
           {codepen}
         </a>
@@ -77,7 +77,7 @@ const SocialsList = () => {
           href={`https://dribbble.com/${dribbble}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="token--blue"
+          className="token--light-blue"
         >
           {dribbble}
         </a>
@@ -88,7 +88,7 @@ const SocialsList = () => {
           href={`https://www.last.fm/user/${lastfm}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="token--blue"
+          className="token--light-blue"
         >
           {lastfm}
         </a>
@@ -99,7 +99,7 @@ const SocialsList = () => {
           href={`https://twitter.com/${twitter}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="token--blue"
+          className="token--light-blue"
         >
           @{twitter}
         </a>
