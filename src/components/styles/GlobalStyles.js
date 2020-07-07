@@ -48,6 +48,14 @@ const GlobalStyles = createGlobalStyle`
     &--blue {
       color: ${colors.tokens.blue};
     }
+
+    &--light-blue {
+      color: ${colors.tokens.lightBlue};
+    }
+
+    &--teal {
+      color: ${colors.tokens.teal};
+    }
   }
 `;
 
