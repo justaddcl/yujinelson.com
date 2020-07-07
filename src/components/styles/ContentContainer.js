@@ -6,7 +6,8 @@ const ContentContainer = styled(Container)`
   padding-top: ${spacing.xxxl}rem;
   padding-bottom: ${spacing.xxxl}rem;
   display: grid;
-  row-gap: ${spacing.xxl}rem;
+  row-gap: ${(props) =>
+    props.gap ? `${spacing[props.gap]}rem` : `${spacing.xxl}rem`};
 
   @media screen and (min-width: ${mq.mobile.large}) {
     padding-left: ${spacing.l}rem;
