@@ -45,7 +45,9 @@ const colors = {
     purple: purple[500],
     green: green[500],
     yellow: yellow[500],
-    blue: blue[500],
+    blue: blue[600],
+    lightBlue: blue[400],
+    teal: blue[500],
   },
 };
 
