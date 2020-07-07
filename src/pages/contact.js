@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
-import { fonts } from '../components/styles/theme';
+import { fonts, mq, spacing } from '../components/styles/theme';
 import Head from '../components/Head';
 import ContentContainer from '../components/styles/ContentContainer';
 import Hero from '../components/Hero';
@@ -13,7 +13,11 @@ const ContactPage = styled(ContentContainer)``;
 
 const StyledEmail = styled.div`
   font-family: ${fonts.family.sourceCodePro};
-  font-size: 1.25rem;
+  font-size: ${spacing.s}rem;
+
+  @media screen and (min-width: ${mq.mobile.large}) {
+    font-size: ${spacing.m}rem;
+  }
 `;
 
 const Contact = ({ data }) => (
