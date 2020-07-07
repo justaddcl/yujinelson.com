@@ -17,7 +17,8 @@ const ContentContainer = styled(Container)`
   @media screen and (min-width: ${mq.desktop.small}) {
     padding-top: ${spacing.huge}rem;
     padding-bottom: ${spacing.huge}rem;
-    row-gap: ${spacing.xxxl}rem;
+    row-gap: ${(props) =>
+      props.gap ? `${spacing[props.gap]}rem` : `${spacing.xxxl}rem`};
     max-width: ${mq.desktop.small};
   }
 `;
