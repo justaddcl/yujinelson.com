@@ -9,7 +9,7 @@ const StyledGreeting = styled.div`
 
   @media screen and (min-width: ${mq.mobile.small}) {
     grid-template-columns: auto 1fr;
-    align-items: end;
+    align-items: baseline;
   }
 
   @media screen and (min-width: ${mq.mobile.large}) {
