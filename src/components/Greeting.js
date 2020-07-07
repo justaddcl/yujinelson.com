@@ -3,9 +3,17 @@ import styled from 'styled-components';
 import { colors, fonts, mq, spacing } from './styles/theme';
 
 const StyledGreeting = styled.div`
+  display: grid;
+  grid-gap: ${spacing.base}rem;
   margin-bottom: ${spacing.m}rem;
 
-  @media screen and (min-width: ${mq.desktop.small}) {
+  @media screen and (min-width: ${mq.mobile.small}) {
+    grid-template-columns: auto 1fr;
+    align-items: end;
+  }
+
+  @media screen and (min-width: ${mq.mobile.large}) {
+    grid-gap: ${spacing.m}rem;
     margin-bottom: ${spacing.l}rem;
   }
 
@@ -36,7 +44,6 @@ const StyledGreeting = styled.div`
   .translation {
     color: ${colors.grey[400]};
     font-family: ${fonts.family.sourceCodePro};
-    margin-left: ${spacing.xxs}rem;
   }
 `;
 
