@@ -8,11 +8,9 @@ import Container from './styles/Container';
 const StyledMobileMenu = styled.nav`
   background-color: ${colors.purple[800]};
   bottom: 0;
-  height: calc(100vh - 76px);
   opacity: 0;
   position: fixed;
   transform: translateX(100%);
-  width: 100vw;
   z-index: 1;
   transition: opacity 0.15s cubic-bezier(0.86, 0, 0.07, 1),
     transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -62,14 +60,22 @@ const StyledMobileMenu = styled.nav`
     transition: opacity 0.15s cubic-bezier(0.86, 0, 0.07, 1),
       transform 0.25s cubic-bezier(0, 0, 0.2, 1);
 
-    @media screen and (min-width: ${mq.desktop.small}) {
+    @media screen and (min-width: ${mq.mobile.large}) {
       display: none;
     }
   }
 `;
 
 const MobileMenuContainer = styled(Container)`
-  padding: ${spacing.xl}rem ${spacing.m}rem;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-items: center;
+
+  @media screen and (min-width: ${mq.mobile.medium}) {
+    justify-items: start;
+    padding-left: ${spacing.xl}rem;
+  }
 `;
 
 const MobileMenu = () => (

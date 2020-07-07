@@ -27,6 +27,8 @@ const HeaderContainer = styled(Container)`
 `;
 
 const LogoGroup = styled.div`
+  z-index: 9;
+
   & .name {
     color: ${colors.grey[200]};
     font-family: ${fonts.family.sourceCodePro};
@@ -74,7 +76,7 @@ const StyledNav = styled.nav`
     }
   }
 
-  @media screen and (min-width: ${mq.desktop.small}) {
+  @media screen and (min-width: ${mq.mobile.large}) {
     display: block;
   }
 `;
