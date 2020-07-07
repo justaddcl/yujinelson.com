@@ -71,6 +71,17 @@ const SocialsList = () => {
           {codepen}
         </a>
       </dd>
+      <dt>Twitter</dt>
+      <dd>
+        <a
+          href={`https://twitter.com/${twitter}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="token--light-blue"
+        >
+          @{twitter}
+        </a>
+      </dd>
       <dt>Dribbble</dt>
       <dd>
         <a
@@ -91,17 +102,6 @@ const SocialsList = () => {
           className="token--light-blue"
         >
           {lastfm}
-        </a>
-      </dd>
-      <dt>Twitter</dt>
-      <dd>
-        <a
-          href={`https://twitter.com/${twitter}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="token--light-blue"
-        >
-          @{twitter}
         </a>
       </dd>
     </StyledSocialList>
