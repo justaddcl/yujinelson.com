@@ -76,7 +76,7 @@ const StyledNav = styled.nav`
     }
   }
 
-  @media screen and (min-width: ${mq.desktop.small}) {
+  @media screen and (min-width: ${mq.mobile.large}) {
     display: block;
   }
 `;

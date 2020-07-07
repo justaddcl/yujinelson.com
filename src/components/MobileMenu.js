@@ -60,7 +60,7 @@ const StyledMobileMenu = styled.nav`
     transition: opacity 0.15s cubic-bezier(0.86, 0, 0.07, 1),
       transform 0.25s cubic-bezier(0, 0, 0.2, 1);
 
-    @media screen and (min-width: ${mq.desktop.small}) {
+    @media screen and (min-width: ${mq.mobile.large}) {
       display: none;
     }
   }
