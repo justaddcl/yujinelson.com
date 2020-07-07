@@ -36,7 +36,6 @@ const SocialsList = () => {
       site {
         siteMetadata {
           github
-          linkedin
           twitter
           dribbble
           codepen
@@ -46,14 +45,7 @@ const SocialsList = () => {
     }
   `);
 
-  const {
-    github,
-    linkedin,
-    twitter,
-    dribbble,
-    codepen,
-    lastfm,
-  } = data.site.siteMetadata;
+  const { github, twitter, dribbble, codepen, lastfm } = data.site.siteMetadata;
 
   return (
     <StyledSocialList>
