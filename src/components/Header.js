@@ -27,6 +27,8 @@ const HeaderContainer = styled(Container)`
 `;
 
 const LogoGroup = styled.div`
+  z-index: 9;
+
   & .name {
     color: ${colors.grey[200]};
     font-family: ${fonts.family.sourceCodePro};
