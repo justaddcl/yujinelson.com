@@ -10,6 +10,7 @@ import { H1, H2, H3 } from '../components/styles/headers';
 import Hero from '../components/Hero';
 import P from '../components/styles/Text';
 import Button from '../components/styles/Button';
+import ResumeLink from '../components/ResumeLink';
 import ExperienceCard from '../components/ExperienceCard';
 import ContactCard from '../components/ContactCard';
 
@@ -138,12 +139,12 @@ const About = ({ data }) => (
           </li>
         </ul>
       </ExperienceCard>
-      <Link to="/resume">
-        <Button as="span">
+      <ResumeLink>
+        <Button>
           See resume{' '}
           <FontAwesomeIcon icon="arrow-right" className="icon--right" />
         </Button>
-      </Link>
+      </ResumeLink>
     </section>
     <section id="skills">
       <H2>Skills</H2>
@@ -196,12 +197,12 @@ const About = ({ data }) => (
           </dd>
         </div>
       </SkillsList>
-      <Link to="/resume">
-        <Button as="span">
+      <ResumeLink>
+        <Button>
           See resume{' '}
           <FontAwesomeIcon icon="arrow-right" className="icon--right" />
         </Button>
-      </Link>
+      </ResumeLink>
     </section>
     <ContactCard />
   </AboutPage>
