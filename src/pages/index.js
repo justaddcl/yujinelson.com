@@ -11,6 +11,7 @@ import Head from '../components/Head';
 import ContentContainer from '../components/styles/ContentContainer';
 import Greeting from '../components/Greeting';
 import Button from '../components/styles/Button';
+import ResumeLink from '../components/ResumeLink';
 import ExperienceCard from '../components/ExperienceCard';
 
 const HomePage = styled(ContentContainer)`
@@ -109,16 +110,16 @@ const Home = ({ data }) => (
       />
       <ButtonContainer>
         <li>
-          <Link to="/resume">
-            <Button as="span">
+          <ResumeLink>
+            <Button>
               See resume{' '}
               <FontAwesomeIcon icon="arrow-right" className="icon--right" />
             </Button>
-          </Link>
+          </ResumeLink>
         </li>
         <li>
           <Link to="/about#skills">
-            <Button as="span">
+            <Button>
               My skillset{' '}
               <FontAwesomeIcon icon="arrow-right" className="icon--right" />
             </Button>

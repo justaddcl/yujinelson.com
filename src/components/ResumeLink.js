@@ -9,9 +9,13 @@ const StyledResumeLink = styled.a`
   }
 `;
 
-const ResumeLink = () => (
+const ResumeLink = ({ children }) => (
   <StyledResumeLink href={resume} target="_blank" rel="noopener noreferrer">
-    Download resume <FontAwesomeIcon icon="download" className="icon" />
+    {children || (
+      <>
+        Download resume <FontAwesomeIcon icon="download" className="icon" />
+      </>
+    )}
   </StyledResumeLink>
 );
 
