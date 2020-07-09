@@ -11,7 +11,7 @@ const StyledMobileMenu = styled.nav`
   bottom: 0;
   opacity: 0;
   position: fixed;
-  transform: translateX(100%);
+  transform: translateX(125%);
   z-index: 1;
   transition: opacity 0.15s cubic-bezier(0.86, 0, 0.07, 1),
     transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
