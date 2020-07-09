@@ -186,7 +186,7 @@ const ExperienceCard = ({
   <StyledExperienceCard>
     <Img fixed={logo.childImageSharp.fixed} />
     <div className="role-summary">
-      <div className="role-dates token--blue">
+      <div className="role-dates token--teal">
         {startDate} -{' '}
         {endDate || <span className="token--yellow">Present</span>}
         <div className="role-location-group">
@@ -215,9 +215,7 @@ const ExperienceCard = ({
               <div className="role-secondary">{role.team}</div>
               <div className="role-dates">
                 {role.startDate} -{' '}
-                {role.endDate || (
-                  <span className="role-highlight">Present</span>
-                )}
+                {role.endDate || <span className="token--yellow">Present</span>}
               </div>
             </div>
           </>

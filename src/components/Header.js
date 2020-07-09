@@ -3,10 +3,12 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { colors, fonts, mq, spacing } from './styles/theme';
-import Container from './styles/Container';
 import Logo from './Logo';
 import MobileMenuButton from './MobileMenuButton';
 import MobileMenu from './MobileMenu';
+import ResumeLink from './ResumeLink';
+import Container from './styles/Container';
+import Button from './styles/Button';
 
 const HeaderContainer = styled(Container)`
   align-items: center;
@@ -27,6 +29,8 @@ const HeaderContainer = styled(Container)`
 `;
 
 const LogoGroup = styled.div`
+  z-index: 9;
+
   & .name {
     color: ${colors.grey[200]};
     font-family: ${fonts.family.sourceCodePro};
@@ -52,7 +56,7 @@ const StyledNav = styled.nav`
         font-size: ${fonts.size.base}px;
         text-decoration: none;
 
-        &.button--primary {
+        /* &.button--primary {
           background-color: ${colors.purple[500]};
           border-radius: 2px;
           color: ${colors.grey[100]};
@@ -69,12 +73,12 @@ const StyledNav = styled.nav`
           .icon {
             font-size: 0.875rem;
           }
-        }
+        } */
       }
     }
   }
 
-  @media screen and (min-width: ${mq.desktop.small}) {
+  @media screen and (min-width: ${mq.mobile.large}) {
     display: block;
   }
 `;
@@ -98,10 +102,9 @@ const Header = () => (
             <Link to="/contact">Contact</Link>
           </li>
           <li>
-            <Link to="/" className="button--primary">
-              Download resume{' '}
-              <FontAwesomeIcon icon="download" className="icon" />
-            </Link>
+            <Button primary>
+              <ResumeLink />
+            </Button>
           </li>
         </ul>
       </StyledNav>

@@ -9,8 +9,9 @@ const StyledMobileMenuButton = styled.button`
   justify-self: end;
   padding: 12px;
   width: 48px;
+  z-index: 9;
 
-  @media screen and (min-width: ${mq.desktop.small}) {
+  @media screen and (min-width: ${mq.mobile.large}) {
     display: none;
   }
 

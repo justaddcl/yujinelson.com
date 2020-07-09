@@ -45,6 +45,9 @@ const SocialMediaIcons = () => {
       <a href={`https://github.com/${github}/`}>
         <FontAwesomeIcon icon={['fab', 'github']} />
       </a>
+      <a href={`https://codepen.io/${codepen}`}>
+        <FontAwesomeIcon icon={['fab', 'codepen']} />
+      </a>
       <a href={`https://www.linkedin.com/in/${linkedin}/`}>
         <FontAwesomeIcon icon={['fab', 'linkedin']} />
       </a>
@@ -53,9 +56,6 @@ const SocialMediaIcons = () => {
       </a>
       <a href={`https://dribbble.com/${dribbble}`}>
         <FontAwesomeIcon icon={['fab', 'dribbble']} />
-      </a>
-      <a href={`https://codepen.io/${codepen}`}>
-        <FontAwesomeIcon icon={['fab', 'codepen']} />
       </a>
       <a href={`https://www.last.fm/user/${lastfm}`}>
         <FontAwesomeIcon icon={['fab', 'lastfm']} />
