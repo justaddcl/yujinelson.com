@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { colors, fonts, mq, spacing } from './styles/theme';
+import ResumeLink from './ResumeLink';
 import Container from './styles/Container';
+import Button from './styles/Button';
 
 const StyledMobileMenu = styled.nav`
   background-color: ${colors.purple[800]};
@@ -28,10 +29,10 @@ const StyledMobileMenu = styled.nav`
       a {
         color: ${colors.grey[100]};
         font-family: ${fonts.family.sourceCodePro};
-        font-size: 1.5rem;
+        font-size: ${spacing.s}rem;
         text-decoration: none;
 
-        &.button--primary {
+        /* &.button--primary {
           background-color: ${colors.purple[500]};
           border-radius: 2px;
           color: ${colors.grey[100]};
@@ -49,7 +50,11 @@ const StyledMobileMenu = styled.nav`
           & .icon {
             font-size: 0.875rem;
           }
-        }
+        } */
+      }
+
+      & button > a {
+        font-size: 1.25rem;
       }
     }
   }
@@ -82,20 +87,19 @@ const MobileMenu = () => (
   <StyledMobileMenu>
     <MobileMenuContainer>
       <ul>
-        <li className="nav-item">
+        <li>
           <Link to="/">Home</Link>
         </li>
-        <li className="nav-item">
+        <li>
           <Link to="/about">About</Link>
         </li>
         <li className="nav-item mb-base">
           <Link to="/contact">Contact</Link>
         </li>
-        <li className="nav-item">
-          <Link to="/" className="button--primary">
-            <span>Download resume</span>
-            <FontAwesomeIcon icon="download" className="icon" />
-          </Link>
+        <li>
+          <Button primary>
+            <ResumeLink />
+          </Button>
         </li>
       </ul>
     </MobileMenuContainer>

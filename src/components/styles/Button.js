@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colors, spacing } from './theme';
+import { colors, mq, spacing } from './theme';
 
 const Button = styled.button`
   background: ${(props) => (props.primary ? colors.purple[500] : 'none')};
@@ -14,6 +14,10 @@ const Button = styled.button`
     props.large
       ? `${spacing.base}rem ${spacing.m}rem`
       : `${spacing.xs}rem ${spacing.s}rem`};
+
+  @media screen and (min-width: ${mq.mobile.small}) {
+    padding: ${spacing.base}rem ${spacing.m}rem;
+  }
 
   .icon {
     &--right {
