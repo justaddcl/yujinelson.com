@@ -7,6 +7,7 @@ import Container from './styles/Container';
 import CurrentYear from './CurrentYear';
 import SocialMediaIcons from './SocialMediaIcons';
 import Logo from './Logo';
+import ResumeLink from './ResumeLink';
 
 const StyledFooter = styled.footer`
   background-color: ${colors.purple[900]};
@@ -140,10 +141,7 @@ const Footer = () => {
               <Link to="/contact">Contact</Link>
             </li>
             <li className="nav__item">
-              <Link to="/">
-                Download resume{' '}
-                <FontAwesomeIcon icon="download" className="icon" />
-              </Link>
+              <ResumeLink />
             </li>
           </ul>
           <SocialMediaIcons />
