@@ -29,7 +29,7 @@ const StyledMobileMenu = styled.nav`
       a {
         color: ${colors.grey[100]};
         font-family: ${fonts.family.sourceCodePro};
-        font-size: 1.5rem;
+        font-size: ${spacing.s}rem;
         text-decoration: none;
 
         /* &.button--primary {
