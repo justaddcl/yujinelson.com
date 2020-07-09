@@ -145,7 +145,7 @@ const About = ({ data }) => (
         </Button>
       </Link>
     </section>
-    <section>
+    <section id="skills">
       <H2>Skills</H2>
       <SkillsList>
         <div>
