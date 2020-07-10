@@ -10,6 +10,12 @@ module.exports = {
     lastfm: 'yneo97',
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-s3`,
+      options: {
+        bucketName: 'dev.yujinelson.com',
+      },
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
     {
