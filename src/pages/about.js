@@ -97,7 +97,7 @@ const About = ({ data }) => (
         audiobook, or occasionally DJing a wedding.
       </P>
       <Link to="/contact">
-        <Button as="span">
+        <Button primary as="span">
           Get in touch{' '}
           <FontAwesomeIcon icon="arrow-right" className="icon--right" />
         </Button>
