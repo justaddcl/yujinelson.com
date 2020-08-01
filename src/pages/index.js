@@ -62,7 +62,7 @@ const Home = ({ data }) => (
         Currently, I work at Magpul in Austin, TX.
       </P>
       <Link to="/about">
-        <Button as="span">
+        <Button primary as="span">
           Read my story{' '}
           <FontAwesomeIcon icon="arrow-right" className="icon--right" />
         </Button>
