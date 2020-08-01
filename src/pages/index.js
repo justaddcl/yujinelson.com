@@ -3,7 +3,7 @@ import { Link, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { mq, spacing } from '../components/styles/theme';
+import { spacing } from '../components/styles/theme';
 import { H1, H2 } from '../components/styles/headers';
 import Hero from '../components/Hero';
 import P from '../components/styles/Text';
@@ -17,25 +17,6 @@ import ExperienceCard from '../components/ExperienceCard';
 const HomePage = styled(ContentContainer)`
   .hero > p {
     line-height: ${spacing.s}rem;
-  }
-`;
-
-const ButtonContainer = styled.ul`
-  display: flex;
-  flex-direction: column;
-  margin: -${spacing.xxs}rem;
-
-  & > * {
-    margin: ${spacing.xxs}rem;
-  }
-
-  @media screen and (min-width: ${mq.desktop.small}) {
-    flex-direction: row;
-    margin: -${spacing.base}rem;
-
-    & > * {
-      margin: ${spacing.base}rem;
-    }
   }
 `;
 
@@ -108,24 +89,12 @@ const Home = ({ data }) => (
         ]}
         tags={['dev', 'ux']}
       />
-      <ButtonContainer>
-        <li>
-          <ResumeLink>
-            <Button>
-              See resume{' '}
-              <FontAwesomeIcon icon="arrow-right" className="icon--right" />
-            </Button>
-          </ResumeLink>
-        </li>
-        <li>
-          <Link to="/about#skills">
-            <Button>
-              My skillset{' '}
-              <FontAwesomeIcon icon="arrow-right" className="icon--right" />
-            </Button>
-          </Link>
-        </li>
-      </ButtonContainer>
+      <ResumeLink>
+        <Button>
+          See resume{' '}
+          <FontAwesomeIcon icon="arrow-right" className="icon--right" />
+        </Button>
+      </ResumeLink>
     </section>
   </HomePage>
 );
