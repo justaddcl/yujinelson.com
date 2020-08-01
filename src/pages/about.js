@@ -98,7 +98,7 @@ const About = ({ data }) => (
       </P>
       <Link to="/contact">
         <Button primary as="span">
-          Get in touch{' '}
+          Contact me{' '}
           <FontAwesomeIcon icon="arrow-right" className="icon--right" />
         </Button>
       </Link>
