@@ -12,6 +12,7 @@ const GlobalStyles = createGlobalStyle`
     color: ${colors.grey[200]};
     font-family: ${fonts.family.proximaNova};
     font-size: ${fonts.size.mobile}px;
+    -webkit-text-size-adjust: 100%;
 
     @media screen and (min-width: ${mq.desktop.small}) {
       font-size: ${fonts.size.desktop}px;
