@@ -31,26 +31,6 @@ const StyledMobileMenu = styled.nav`
         font-family: ${fonts.family.sourceCodePro};
         font-size: ${spacing.s}rem;
         text-decoration: none;
-
-        /* &.button--primary {
-          background-color: ${colors.purple[500]};
-          border-radius: 2px;
-          color: ${colors.grey[100]};
-          display: grid;
-          column-gap: ${spacing.base}rem;
-          grid-template-columns: repeat(2, auto);
-          font-family: ${fonts.family.proximaNova};
-          font-size: 20px;
-          padding: ${spacing.base}rem ${spacing.s}rem;
-
-          @media screen and (min-width: 375px) {
-            padding: ${spacing.base}rem ${spacing.m}rem;
-          }
-
-          & .icon {
-            font-size: 0.875rem;
-          }
-        } */
       }
 
       & button > a {
@@ -83,27 +63,38 @@ const MobileMenuContainer = styled(Container)`
   }
 `;
 
-const MobileMenu = () => (
-  <StyledMobileMenu>
-    <MobileMenuContainer>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/about">About</Link>
-        </li>
-        <li className="nav-item mb-base">
-          <Link to="/contact">Contact</Link>
-        </li>
-        <li>
-          <Button primary>
-            <ResumeLink />
-          </Button>
-        </li>
-      </ul>
-    </MobileMenuContainer>
-  </StyledMobileMenu>
-);
+const MobileMenu = ({ isMenuOpen, toggleMenu }) => {
+  const handleMobileMenuClick = ({ target, currentTarget }) => {
+    if (target.hasAttribute('href')) {
+      toggleMenu();
+    }
+  };
+
+  return (
+    <StyledMobileMenu
+      className={isMenuOpen ? 'is-open' : ''}
+      onClick={handleMobileMenuClick}
+    >
+      <MobileMenuContainer>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li className="nav-item mb-base">
+            <Link to="/contact">Contact</Link>
+          </li>
+          <li>
+            <Button primary>
+              <ResumeLink />
+            </Button>
+          </li>
+        </ul>
+      </MobileMenuContainer>
+    </StyledMobileMenu>
+  );
+};
 
 export default MobileMenu;
