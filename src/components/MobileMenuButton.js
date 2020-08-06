@@ -77,16 +77,12 @@ const StyledMobileMenuButton = styled.button`
   }
 `;
 
-const clickHandler = ({ currentTarget }) => {
-  currentTarget.classList.toggle('is-open');
-  document
-    .querySelector('nav[class*=StyledMobileMenu')
-    .classList.toggle('is-open');
-  document.querySelector('body').classList.toggle('menu-is-open');
-};
-
-const MobileMenuButton = () => (
-  <StyledMobileMenuButton type="button" onClick={clickHandler}>
+const MobileMenuButton = ({ isMenuOpen, toggleMenu }) => (
+  <StyledMobileMenuButton
+    type="button"
+    onClick={toggleMenu}
+    className={isMenuOpen ? 'is-open' : ''}
+  >
     <div className="bars">
       <div className="bar" />
       <div className="bar" />

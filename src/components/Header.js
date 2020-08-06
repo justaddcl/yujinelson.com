@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { colors, fonts, mq, spacing } from './styles/theme';
 import Logo from './Logo';
 import MobileMenuButton from './MobileMenuButton';
@@ -55,25 +55,6 @@ const StyledNav = styled.nav`
         font-family: ${fonts.family.sourceCodePro};
         font-size: ${fonts.size.base}px;
         text-decoration: none;
-
-        /* &.button--primary {
-          background-color: ${colors.purple[500]};
-          border-radius: 2px;
-          color: ${colors.grey[100]};
-          display: grid;
-          column-gap: ${spacing.base}rem;
-          grid-template-columns: repeat(2, auto);
-          font-family: ${fonts.family.proximaNova};
-          font-size: 20px;
-          padding: ${spacing.xs}rem ${spacing.m}rem;
-
-          @media screen and (min-width: 375px) {
-            padding: ${spacing.base}rem ${spacing.m}rem;
-          }
-          .icon {
-            font-size: 0.875rem;
-          }
-        } */
       }
     }
   }
@@ -83,34 +64,53 @@ const StyledNav = styled.nav`
   }
 `;
 
-const Header = () => (
-  <header>
-    <HeaderContainer>
-      <LogoGroup>
-        <Link to="/">
-          <Logo />
-          <span className="name">Yuji</span>
-        </Link>
-      </LogoGroup>
-      <MobileMenuButton />
-      <StyledNav>
-        <ul>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/contact">Contact</Link>
-          </li>
-          <li>
-            <Button primary>
-              <ResumeLink />
-            </Button>
-          </li>
-        </ul>
-      </StyledNav>
-    </HeaderContainer>
-    <MobileMenu />
-  </header>
-);
+const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const toggleMobileMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleHeaderClick = () => {
+    if (isMenuOpen) toggleMobileMenu();
+  };
+
+  return (
+    <>
+      <Helmet>
+        <body className={isMenuOpen ? 'menu-is-open' : ''} />
+      </Helmet>
+      <header>
+        <HeaderContainer onClick={handleHeaderClick}>
+          <LogoGroup>
+            <Link to="/">
+              <Logo />
+              <span className="name">Yuji</span>
+            </Link>
+          </LogoGroup>
+          <MobileMenuButton
+            isMenuOpen={isMenuOpen}
+            toggleMenu={toggleMobileMenu}
+          />
+          <StyledNav>
+            <ul>
+              <li>
+                <Link to="/about">About</Link>
+              </li>
+              <li>
+                <Link to="/contact">Contact</Link>
+              </li>
+              <li>
+                <Button primary>
+                  <ResumeLink />
+                </Button>
+              </li>
+            </ul>
+          </StyledNav>
+        </HeaderContainer>
+        <MobileMenu isMenuOpen={isMenuOpen} toggleMenu={toggleMobileMenu} />
+      </header>
+    </>
+  );
+};
 
 export default Header;
