@@ -16,8 +16,17 @@ const mixins = {
         ? `${spacing.base}rem ${spacing.m}rem`
         : `${spacing.xs}rem ${spacing.s}rem`};
 
+    .icon {
+      &--right {
+        margin-left: ${spacing.base}rem;
+      }
+    }
+
     @media screen and (min-width: ${mq.mobile.small}) {
-      padding: ${spacing.base}rem ${spacing.m}rem;
+      padding: ${(props) =>
+        props.small
+          ? `${spacing.xs}rem ${spacing.base}rem`
+          : `${spacing.base}rem ${spacing.m}rem`};
     }
   `,
 };
