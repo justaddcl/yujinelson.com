@@ -24,6 +24,10 @@ const GlobalStyles = createGlobalStyle`
   }
 
   a {
+    display: inline-block;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
     text-decoration: none;
   }
 
