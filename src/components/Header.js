@@ -8,7 +8,6 @@ import MobileMenuButton from './MobileMenuButton';
 import MobileMenu from './MobileMenu';
 import ResumeLink from './ResumeLink';
 import Container from './styles/Container';
-import Button from './styles/Button';
 
 const HeaderContainer = styled(Container)`
   align-items: center;
@@ -19,6 +18,10 @@ const HeaderContainer = styled(Container)`
   @media screen and (min-width: ${mq.desktop.small}) {
     height: 80px;
   }
+`;
+
+const LogoGroup = styled.div`
+  z-index: 9;
 
   a {
     align-items: center;
@@ -26,10 +29,6 @@ const HeaderContainer = styled(Container)`
     grid-gap: 12px;
     grid-template-columns: auto 1fr;
   }
-`;
-
-const LogoGroup = styled.div`
-  z-index: 9;
 
   & .name {
     color: ${colors.grey[200]};
@@ -41,6 +40,9 @@ const LogoGroup = styled.div`
 
 const StyledNav = styled.nav`
   display: none;
+  color: ${colors.grey[50]};
+  font-family: ${fonts.family.sourceCodePro};
+  font-size: ${fonts.size.base}px;
 
   ul {
     display: grid;
@@ -48,15 +50,6 @@ const StyledNav = styled.nav`
     align-items: center;
     gap: calc(${spacing.basePx}px * ${spacing.xl});
     list-style: none;
-
-    li {
-      a {
-        color: ${colors.grey[50]};
-        font-family: ${fonts.family.sourceCodePro};
-        font-size: ${fonts.size.base}px;
-        text-decoration: none;
-      }
-    }
   }
 
   @media screen and (min-width: ${mq.mobile.large}) {
@@ -100,9 +93,7 @@ const Header = () => {
                 <Link to="/contact">Contact</Link>
               </li>
               <li>
-                <Button primary>
-                  <ResumeLink />
-                </Button>
+                <ResumeLink button />
               </li>
             </ul>
           </StyledNav>
