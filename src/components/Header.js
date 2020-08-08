@@ -93,7 +93,7 @@ const Header = () => {
                 <Link to="/contact">Contact</Link>
               </li>
               <li>
-                <ResumeLink button />
+                <ResumeLink button small />
               </li>
             </ul>
           </StyledNav>
