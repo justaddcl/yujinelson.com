@@ -89,11 +89,9 @@ const Home = ({ data }) => (
         ]}
         tags={['dev', 'ux']}
       />
-      <ResumeLink>
-        <Button>
-          See resume{' '}
-          <FontAwesomeIcon icon="arrow-right" className="icon--right" />
-        </Button>
+      <ResumeLink button icon>
+        See resume{' '}
+        <FontAwesomeIcon icon="arrow-right" className="icon--right" />
       </ResumeLink>
     </section>
   </HomePage>

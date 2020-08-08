@@ -139,11 +139,9 @@ const About = ({ data }) => (
           </li>
         </ul>
       </ExperienceCard>
-      <ResumeLink>
-        <Button>
-          See resume{' '}
-          <FontAwesomeIcon icon="arrow-right" className="icon--right" />
-        </Button>
+      <ResumeLink button>
+        See resume{' '}
+        <FontAwesomeIcon icon="arrow-right" className="icon--right" />
       </ResumeLink>
     </section>
     <section id="skills">
@@ -197,11 +195,9 @@ const About = ({ data }) => (
           </dd>
         </div>
       </SkillsList>
-      <ResumeLink>
-        <Button>
-          See resume{' '}
-          <FontAwesomeIcon icon="arrow-right" className="icon--right" />
-        </Button>
+      <ResumeLink button>
+        See resume{' '}
+        <FontAwesomeIcon icon="arrow-right" className="icon--right" />
       </ResumeLink>
     </section>
     <ContactCard />
