@@ -10,6 +10,7 @@ const StyledContactCard = styled.div`
   padding: ${spacing.m}rem ${spacing.s}rem;
   display: grid;
   row-gap: ${spacing.m}rem;
+  place-items: center start;
   width: 100%;
 
   @media screen and (min-width: ${mq.mobile.large}) {
