@@ -2,31 +2,42 @@ import { css } from 'styled-components';
 import { colors, spacing, mq } from './theme';
 
 const mixins = {
-  button: css`
-    background: ${(props) => (props.primary ? colors.purple[500] : 'none')};
-    border: ${(props) =>
-      props.primary ? 'none' : `1px solid ${colors.purple[500]}`};
-    border-radius: 2px;
-    color: ${(props) => (props.primary ? colors.grey[50] : 'inherit')};
+  link: css`
+    color: inherit;
     cursor: pointer;
     display: inline-block;
+    font: inherit;
+    text-decoration: none;
+  `,
+  button: css`
+    background: none;
+    border: 1px solid ${colors.purple[500]};
+    border-radius: 2px;
+    padding: ${spacing.xs}rem ${spacing.s}rem;
 
-    padding: ${(props) =>
-      props.large
-        ? `${spacing.base}rem ${spacing.m}rem`
-        : `${spacing.xs}rem ${spacing.s}rem`};
+    &--primary {
+      background: ${colors.purple[500]};
+      border: none;
+      color: ${colors.grey[50]};
+    }
 
-    .icon {
+    &--large {
+      padding: ${spacing.base}rem ${spacing.m}rem;
+    }
+
+    & .icon {
+      font-size: 0.875rem;
       &--right {
         margin-left: ${spacing.base}rem;
       }
     }
 
     @media screen and (min-width: ${mq.mobile.small}) {
-      padding: ${(props) =>
-        props.small
-          ? `${spacing.xs}rem ${spacing.base}rem`
-          : `${spacing.base}rem ${spacing.m}rem`};
+      padding: ${spacing.base}rem ${spacing.m}rem;
+
+      &--small {
+        padding: ${spacing.xs}rem ${spacing.base}rem;
+      }
     }
   `,
 };
