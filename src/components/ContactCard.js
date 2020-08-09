@@ -55,11 +55,9 @@ const ContactCard = () => (
         chat!
       </p>
     </div>
-    <Link to="/contact">
-      <Button primary large as="span">
-        Get in touch{' '}
-        <FontAwesomeIcon icon="arrow-right" className="icon--right" />
-      </Button>
+    <Link to="/contact" className="button button--primary">
+      Get in touch{' '}
+      <FontAwesomeIcon icon="arrow-right" className="icon--right" />
     </Link>
   </StyledContactCard>
 );
