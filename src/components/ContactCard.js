@@ -3,7 +3,6 @@ import { Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
 import { colors, mq, spacing } from './styles/theme';
-import Button from './styles/Button';
 
 const StyledContactCard = styled.div`
   background: ${colors.grey[700]};
@@ -11,6 +10,7 @@ const StyledContactCard = styled.div`
   padding: ${spacing.m}rem ${spacing.s}rem;
   display: grid;
   row-gap: ${spacing.m}rem;
+  place-items: center start;
   width: 100%;
 
   @media screen and (min-width: ${mq.mobile.large}) {
@@ -55,11 +55,9 @@ const ContactCard = () => (
         chat!
       </p>
     </div>
-    <Link to="/contact">
-      <Button primary large as="span">
-        Get in touch{' '}
-        <FontAwesomeIcon icon="arrow-right" className="icon--right" />
-      </Button>
+    <Link to="/contact" className="button button--primary">
+      Get in touch{' '}
+      <FontAwesomeIcon icon="arrow-right" className="icon--right" />
     </Link>
   </StyledContactCard>
 );

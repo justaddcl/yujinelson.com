@@ -10,7 +10,6 @@ import P from '../components/styles/Text';
 import Head from '../components/Head';
 import ContentContainer from '../components/styles/ContentContainer';
 import Greeting from '../components/Greeting';
-import Button from '../components/styles/Button';
 import ResumeLink from '../components/ResumeLink';
 import ExperienceCard from '../components/ExperienceCard';
 
@@ -42,11 +41,9 @@ const Home = ({ data }) => (
         and delightful experiences through well crafted, beautiful design.
         Currently, I work at Magpul in Austin, TX.
       </P>
-      <Link to="/about">
-        <Button primary as="span">
-          Read my story{' '}
-          <FontAwesomeIcon icon="arrow-right" className="icon--right" />
-        </Button>
+      <Link to="/about" className="button button--primary">
+        Read my story{' '}
+        <FontAwesomeIcon icon="arrow-right" className="icon icon--right" />
       </Link>
     </section>
     <section id="experience">
@@ -89,11 +86,9 @@ const Home = ({ data }) => (
         ]}
         tags={['dev', 'ux']}
       />
-      <ResumeLink>
-        <Button>
-          See resume{' '}
-          <FontAwesomeIcon icon="arrow-right" className="icon--right" />
-        </Button>
+      <ResumeLink button>
+        See resume{' '}
+        <FontAwesomeIcon icon="arrow-right" className="icon icon--right" />
       </ResumeLink>
     </section>
   </HomePage>

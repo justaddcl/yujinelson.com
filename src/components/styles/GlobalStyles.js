@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 import 'reset-css';
 import { colors, fonts, mq, spacing } from './theme';
+import mixins from './mixins';
 
 const GlobalStyles = createGlobalStyle`
   * {
@@ -24,7 +25,11 @@ const GlobalStyles = createGlobalStyle`
   }
 
   a {
-    text-decoration: none;
+    ${mixins.link}
+
+    &.button {
+      ${mixins.button};
+    }
   }
 
   p {

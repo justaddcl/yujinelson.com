@@ -9,7 +9,6 @@ import { colors, fonts, mq, spacing } from '../components/styles/theme';
 import { H1, H2, H3 } from '../components/styles/headers';
 import Hero from '../components/Hero';
 import P from '../components/styles/Text';
-import Button from '../components/styles/Button';
 import ResumeLink from '../components/ResumeLink';
 import ExperienceCard from '../components/ExperienceCard';
 import ContactCard from '../components/ContactCard';
@@ -96,11 +95,9 @@ const About = ({ data }) => (
         friends, watching Marvel movies with my wife, listening to a Mitch Rapp
         audiobook, or occasionally DJing a wedding.
       </P>
-      <Link to="/contact">
-        <Button primary as="span">
-          Contact me{' '}
-          <FontAwesomeIcon icon="arrow-right" className="icon--right" />
-        </Button>
+      <Link to="/contact" className="button button--primary">
+        Contact me{' '}
+        <FontAwesomeIcon icon="arrow-right" className="icon--right" />
       </Link>
     </section>
     <section>
@@ -139,11 +136,9 @@ const About = ({ data }) => (
           </li>
         </ul>
       </ExperienceCard>
-      <ResumeLink>
-        <Button>
-          See resume{' '}
-          <FontAwesomeIcon icon="arrow-right" className="icon--right" />
-        </Button>
+      <ResumeLink button>
+        See resume{' '}
+        <FontAwesomeIcon icon="arrow-right" className="icon--right" />
       </ResumeLink>
     </section>
     <section id="skills">
@@ -197,11 +192,9 @@ const About = ({ data }) => (
           </dd>
         </div>
       </SkillsList>
-      <ResumeLink>
-        <Button>
-          See resume{' '}
-          <FontAwesomeIcon icon="arrow-right" className="icon--right" />
-        </Button>
+      <ResumeLink button>
+        See resume{' '}
+        <FontAwesomeIcon icon="arrow-right" className="icon--right" />
       </ResumeLink>
     </section>
     <ContactCard />

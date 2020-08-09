@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import { colors, fonts, mq, spacing } from './styles/theme';
 import ResumeLink from './ResumeLink';
 import Container from './styles/Container';
-import Button from './styles/Button';
 
 const StyledMobileMenu = styled.nav`
   background-color: ${colors.purple[800]};
@@ -20,6 +19,8 @@ const StyledMobileMenu = styled.nav`
     display: grid;
     gap: ${spacing.l}rem;
     list-style: none;
+    padding: ${spacing.xxs}rem;
+    justify-self: stretch;
 
     li {
       &.mb-base {
@@ -30,7 +31,6 @@ const StyledMobileMenu = styled.nav`
         color: ${colors.grey[100]};
         font-family: ${fonts.family.sourceCodePro};
         font-size: ${spacing.s}rem;
-        text-decoration: none;
       }
 
       & button > a {
@@ -83,13 +83,11 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }) => {
           <li>
             <Link to="/about">About</Link>
           </li>
-          <li className="nav-item mb-base">
+          <li>
             <Link to="/contact">Contact</Link>
           </li>
           <li>
-            <Button primary>
-              <ResumeLink />
-            </Button>
+            <ResumeLink button />
           </li>
         </ul>
       </MobileMenuContainer>
