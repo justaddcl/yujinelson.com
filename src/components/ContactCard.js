@@ -3,7 +3,6 @@ import { Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
 import { colors, mq, spacing } from './styles/theme';
-import Button from './styles/Button';
 
 const StyledContactCard = styled.div`
   background: ${colors.grey[700]};
