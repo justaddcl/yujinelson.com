@@ -5,7 +5,6 @@ module.exports = {
     description:
       'Yuji Nelson is a front-end developer user experience (UX) designer who designs and builds mobile-first, responsive websites and web apps using modern HTML, CSS, and JavaScript.',
     url: 'https://www.yujinelson.com',
-    image: '/assets/images/Moiwayama-portrait.jpg',
     author: 'Yuji Nelson',
     github: 'justaddcl',
     linkedin: 'yujinelson',
