@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import { fonts, mq, spacing } from '../components/styles/theme';
-import Head from '../components/Head';
+import SEO from '../components/SEO';
 import ContentContainer from '../components/styles/ContentContainer';
 import Hero from '../components/Hero';
 import { H1 } from '../components/styles/headers';
@@ -22,7 +22,7 @@ const StyledEmail = styled.div`
 
 const Contact = ({ data }) => (
   <ContactPage gap="xl">
-    <Head pageTitle="Contact" />
+    <SEO title="Connect with me" />
     <Hero>
       <H1>Let's connect</H1>
       <P>

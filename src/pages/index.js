@@ -5,9 +5,9 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { spacing } from '../components/styles/theme';
 import { H1, H2 } from '../components/styles/headers';
+import SEO from '../components/SEO';
 import Hero from '../components/Hero';
 import P from '../components/styles/Text';
-import Head from '../components/Head';
 import ContentContainer from '../components/styles/ContentContainer';
 import Greeting from '../components/Greeting';
 import ResumeLink from '../components/ResumeLink';
@@ -21,7 +21,7 @@ const HomePage = styled(ContentContainer)`
 
 const Home = ({ data }) => (
   <HomePage>
-    <Head />
+    <SEO />
     <Hero>
       <Greeting />
       <H1>I'm Yuji Nelson.</H1>

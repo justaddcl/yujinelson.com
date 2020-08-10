@@ -3,7 +3,7 @@ import { Link, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Head from '../components/Head';
+import SEO from '../components/SEO';
 import ContentContainer from '../components/styles/ContentContainer';
 import { colors, fonts, mq, spacing } from '../components/styles/theme';
 import { H1, H2, H3 } from '../components/styles/headers';
@@ -44,7 +44,7 @@ const SkillsList = styled.dl`
 
 const About = ({ data }) => (
   <AboutPage>
-    <Head pageTitle="About me" />
+    <SEO title="About me" />
     <Hero responsiveSplit>
       <div>
         <H1>My story</H1>
