@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import Head from './Head';
 import Header from './Header';
 import Footer from './Footer';
 import GlobalStyles from './styles/GlobalStyles';
@@ -13,6 +13,7 @@ const PageSections = styled.div`
 
 const Layout = ({ children }) => (
   <>
+    <Head />
     <GlobalStyles />
     <ColorBar />
     <PageSections>
