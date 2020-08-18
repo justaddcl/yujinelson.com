@@ -36,9 +36,9 @@ const Home = ({ data }) => (
       <H2>Introduction</H2>
       <P>
         I design and build mobile-first, responsive websites and web apps using
-        modern HTML, CSS, and JavaScript. As a developer, I love solving puzzles
-        and constantly look for ways to better apply my code and deliver a
-        better product. As a designer, my passion lies in delivering intuitive
+        modern HTML, CSS, and JavaScript (ES6+). As a developer, I love solving
+        puzzles and constantly look for ways to better apply my code and deliver
+        a better product. As a designer, my passion lies in delivering intuitive
         and delightful experiences through well crafted, beautiful design.
         Currently based in Austin, TX.
       </P>

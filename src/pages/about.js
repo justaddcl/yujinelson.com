@@ -130,7 +130,7 @@ const About = ({ data }) => (
           <dt>Languages</dt>
           <dd>
             <ul>
-              <li>Javascript (ES6)</li>
+              <li>Javascript (ES6+)</li>
               <li>CSS / Sass / Less / Styled Components</li>
               <li>HTML / Pug</li>
               <li>GraphQL</li>
