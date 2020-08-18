@@ -8,6 +8,11 @@ const mixins = {
     display: inline-block;
     font: inherit;
     text-decoration: none;
+
+    &:hover:not(.button) {
+      color: ${colors.purple[500]};
+      transition: color 0.2s ease;
+    }
   `,
   button: css`
     background: none;
