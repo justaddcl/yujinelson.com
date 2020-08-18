@@ -12,6 +12,7 @@ import P from '../components/styles/Text';
 import ResumeLink from '../components/ResumeLink';
 import ExperienceCard from '../components/ExperienceCard';
 import ContactCard from '../components/ContactCard';
+import experience from '../data/experience';
 
 const AboutPage = styled(ContentContainer)``;
 
@@ -49,8 +50,8 @@ const About = ({ data }) => (
       <div>
         <H1>My story</H1>
         <P>
-          I’m Yuji, a front-end developer and user experience designer,
-          originally from Seattle, WA, who now works and lives in Austin, TX.
+          I’m Yuji, a front-end developer and user experience designer based in
+          Austin, TX.
         </P>
       </div>
       <div>
@@ -103,37 +104,18 @@ const About = ({ data }) => (
     <section>
       <H2>Current role</H2>
       <ExperienceCard
-        startDate="03/17"
-        rolePrimary="Front-end Developer"
-        roleSecondary="Magpul"
+        startDate={experience.magpul.startDate}
+        rolePrimary={experience.magpul.primary}
+        roleSecondary={experience.magpul.secondary}
         logo={data.magpulLogo}
-        roleTeam="Marketing"
-        location="Austin, TX"
-        tags={['dev', 'ux', 'ecommerce']}
+        roleTeam={experience.magpul.team}
+        location={experience.magpul.location}
+        tags={experience.magpul.tags}
       >
         <ul className="role-bullets">
-          <li>
-            Develop all Magpul business-to-business (B2B) and
-            business-to-customer (B2C) website content and eCommerce activities
-          </li>
-          <li>
-            Provide oversight, guidance, and act as subject matter expert to all
-            implementation partners on user experience (UX) design and
-            website development
-          </li>
-          <li>
-            Collaborate with the marketing team for website innovation and
-            wireframe design, to build responsive web pages
-          </li>
-          <li>
-            Designed, developed and implemented new website and product pages
-            using HTML, Less, CSS, JavaScript, and Adobe XD which resulted in
-            increased customer engagement and product sales
-          </li>
-          <li>
-            Created website style guide to drive interface consistency and
-            maintain the integrity of the Magpul family of websites
-          </li>
+          {experience.magpul.bullets.map((bullet, index) => (
+            <li key={`magpul-bullet-${index}`}>{bullet}</li>
+          ))}
         </ul>
       </ExperienceCard>
       <ResumeLink button>
@@ -148,7 +130,7 @@ const About = ({ data }) => (
           <dt>Languages</dt>
           <dd>
             <ul>
-              <li>Javascript (ES6)</li>
+              <li>Javascript (ES6+)</li>
               <li>CSS / Sass / Less / Styled Components</li>
               <li>HTML / Pug</li>
               <li>GraphQL</li>

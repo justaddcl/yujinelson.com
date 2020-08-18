@@ -12,6 +12,7 @@ import ContentContainer from '../components/styles/ContentContainer';
 import Greeting from '../components/Greeting';
 import ResumeLink from '../components/ResumeLink';
 import ExperienceCard from '../components/ExperienceCard';
+import experience from '../data/experience';
 
 const HomePage = styled(ContentContainer)`
   .hero > p {
@@ -35,11 +36,11 @@ const Home = ({ data }) => (
       <H2>Introduction</H2>
       <P>
         I design and build mobile-first, responsive websites and web apps using
-        modern HTML, CSS, and JavaScript. As a developer, I love solving puzzles
-        and constantly look for ways to better apply my code and deliver a
-        better product. As a designer, my passion lies in delivering intuitive
+        modern HTML, CSS, and JavaScript (ES6+). As a developer, I love solving
+        puzzles and constantly look for ways to better apply my code and deliver
+        a better product. As a designer, my passion lies in delivering intuitive
         and delightful experiences through well crafted, beautiful design.
-        Currently, I work at Magpul in Austin, TX.
+        Currently based in Austin, TX.
       </P>
       <Link to="/about" className="button button--primary">
         Read my story{' '}
@@ -49,42 +50,23 @@ const Home = ({ data }) => (
     <section id="experience">
       <H2>Experience</H2>
       <ExperienceCard
-        startDate="03/17"
-        rolePrimary="Front-end Developer"
-        roleSecondary="Magpul"
+        startDate={experience.magpul.startDate}
+        rolePrimary={experience.magpul.primary}
+        roleSecondary={experience.magpul.secondary}
         logo={data.magpulLogo}
-        roleTeam="Marketing"
-        location="Austin, TX"
-        tags={['dev', 'ux', 'ecommerce']}
+        roleTeam={experience.magpul.team}
+        location={experience.magpul.location}
+        tags={experience.magpul.tags}
       />
       <ExperienceCard
-        startDate="07/16"
-        endDate="06/17"
-        rolePrimary="Company Name"
-        roleSecondary="Lorem ipsum dolor sit amet rotation program"
+        startDate={experience.boeing.startDate}
+        endDate={experience.boeing.endDate}
+        rolePrimary={experience.boeing.primary}
+        roleSecondary={experience.boeing.secondary}
         logo={data.boeingLogo}
-        location="Bellevue, WA"
-        roles={[
-          {
-            title: 'Position Title',
-            team: 'Enterprise Communications',
-            startDate: '07/16',
-            endDate: '06/17',
-          },
-          {
-            title: 'Position Title',
-            team: 'Enterprise Communications',
-            startDate: '07/16',
-            endDate: '06/17',
-          },
-          {
-            title: 'Position Title',
-            team: 'Enterprise Communications',
-            startDate: '07/16',
-            endDate: '06/17',
-          },
-        ]}
-        tags={['dev', 'ux']}
+        location={experience.boeing.location}
+        roles={experience.boeing.roles}
+        tags={experience.boeing.tags}
       />
       <ResumeLink button>
         See resume{' '}
