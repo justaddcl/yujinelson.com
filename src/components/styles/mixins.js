@@ -14,11 +14,27 @@ const mixins = {
     border: 1px solid ${colors.purple[500]};
     border-radius: 2px;
     padding: ${spacing.xs}rem ${spacing.s}rem;
+    transition: background 0.2s ease;
+
+    &:hover {
+      background: ${colors.purple[500]}20;
+    }
+
+    &:active {
+      background: ${colors.purple[500]}33;
+    }
 
     &--primary {
       background: ${colors.purple[500]};
-      border: none;
       color: ${colors.grey[50]};
+
+      &:hover {
+        background: ${colors.purple[500]}aa;
+      }
+
+      &:active {
+        background: ${colors.purple[500]}85;
+      }
     }
 
     &--large {
