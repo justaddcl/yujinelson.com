@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
-import { fonts, mq, spacing } from '../components/styles/theme';
+import { colors, fonts, mq, spacing } from '../components/styles/theme';
 import SEO from '../components/SEO';
 import ContentContainer from '../components/styles/ContentContainer';
 import Hero from '../components/Hero';
@@ -9,11 +9,23 @@ import { H1 } from '../components/styles/headers';
 import P from '../components/styles/Text';
 import SocialsList from '../components/SocialsList';
 
-const ContactPage = styled(ContentContainer)``;
+const ContactPage = styled(ContentContainer)`
+  #contact-email {
+    justify-self: start;
+  }
+`;
 
 const StyledEmail = styled.div`
   font-family: ${fonts.family.sourceCodePro};
   font-size: ${spacing.s}rem;
+  padding: ${spacing.base}rem ${spacing.m}rem;
+  background: ${colors.purple[700]};
+  border-radius: 2px;
+
+  &:hover {
+    background: ${colors.purple[700]}cc;
+    color: ${colors.grey[100]};
+  }
 
   @media screen and (min-width: ${mq.mobile.large}) {
     font-size: ${spacing.m}rem;
@@ -45,10 +57,12 @@ const Contact = ({ data }) => (
         .
       </P>
     </Hero>
-    <StyledEmail>
-      hello<span className="token--blue">@</span>yujinelson
-      <span className="token--blue">.com</span>
-    </StyledEmail>
+    <a id="contact-email" href="mailto:hello@yujinelson.com">
+      <StyledEmail>
+        hello<span className="token--blue">@</span>yujinelson
+        <span className="token--blue">.com</span>
+      </StyledEmail>
+    </a>
     <P>
       You can also find me on these other platforms:
       <SocialsList />
