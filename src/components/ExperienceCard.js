@@ -201,14 +201,14 @@ const ExperienceCard = ({
         </div>
       </div>
       <div className="experience-tags">
-        {tags && tags.map((tag) => <ExperienceTag tag={tag} />)}
+        {tags && tags.map((tag) => <ExperienceTag tag={tag} key={tag} />)}
       </div>
       {children}
     </div>
     {roles && (
       <>
         {roles.map((role) => (
-          <>
+          <React.Fragment key={`${rolePrimary}-${role.team}-${role.title}`}>
             <span className="role-node" />
             <div className="sub-role">
               <div className="role-primary">{role.title}</div>
@@ -218,7 +218,7 @@ const ExperienceCard = ({
                 {role.endDate || <span className="token--yellow">Present</span>}
               </div>
             </div>
-          </>
+          </React.Fragment>
         ))}
       </>
     )}
