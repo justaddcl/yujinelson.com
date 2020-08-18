@@ -17,7 +17,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-s3`,
       options: {
-        bucketName: 'dev.yujinelson.com',
+        bucketName: process.env.S3_BUCKET_NAME,
       },
     },
     `gatsby-plugin-react-helmet`,
