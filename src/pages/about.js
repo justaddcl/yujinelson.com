@@ -50,8 +50,8 @@ const About = ({ data }) => (
       <div>
         <H1>My story</H1>
         <P>
-          I’m Yuji, a front-end developer and user experience designer,
-          originally from Seattle, WA, who now works and lives in Austin, TX.
+          I’m Yuji, a front-end developer and user experience designer based in
+          Austin, TX.
         </P>
       </div>
       <div>

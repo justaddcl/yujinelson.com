@@ -40,7 +40,7 @@ const Home = ({ data }) => (
         and constantly look for ways to better apply my code and deliver a
         better product. As a designer, my passion lies in delivering intuitive
         and delightful experiences through well crafted, beautiful design.
-        Currently, I work at Magpul in Austin, TX.
+        Currently based in Austin, TX.
       </P>
       <Link to="/about" className="button button--primary">
         Read my story{' '}
