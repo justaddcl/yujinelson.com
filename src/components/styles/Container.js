@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { mq, spacing } from './theme';
 
 const Container = styled.div`
+  position: relative;
   padding-left: ${spacing.s}rem;
   padding-right: ${spacing.s}rem;
 
