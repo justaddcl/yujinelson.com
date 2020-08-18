@@ -17,7 +17,7 @@ const ContactPage = styled(ContentContainer)`
 
 const StyledEmail = styled.div`
   font-family: ${fonts.family.sourceCodePro};
-  font-size: ${spacing.s}rem;
+
   padding: ${spacing.base}rem ${spacing.m}rem;
   background: ${colors.purple[700]};
   border-radius: 2px;
@@ -25,6 +25,10 @@ const StyledEmail = styled.div`
   &:hover {
     background: ${colors.purple[700]}cc;
     color: ${colors.grey[100]};
+  }
+
+  @media screen and (min-width: ${mq.mobile.small}) {
+    font-size: ${spacing.s}rem;
   }
 
   @media screen and (min-width: ${mq.mobile.large}) {
