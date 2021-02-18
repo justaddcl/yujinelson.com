@@ -18,6 +18,7 @@ module.exports = {
       resolve: `gatsby-plugin-s3`,
       options: {
         bucketName: process.env.S3_BUCKET_NAME,
+        generateRedirectObjectsForPermanentRedirects: true,
       },
     },
     `gatsby-plugin-react-helmet`,
