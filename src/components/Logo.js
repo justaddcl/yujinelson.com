@@ -2,7 +2,7 @@ import React from 'react';
 // import { graphql, useStaticQuery } from 'gatsby';
 // import Img from 'gatsby-image';
 import styled from 'styled-components';
-import { colors, fonts, mq } from './styles/theme';
+import { colors, fonts } from './styles/theme';
 
 const StyledLogo = styled.div`
   background-color: #4a4f68;
@@ -12,7 +12,6 @@ const StyledLogo = styled.div`
   font-family: ${fonts.family.japanese};
   font-size: 1rem;
   height: 36px;
-  padding-bottom: 6px;
   place-content: center;
   width: 36px;
 `;
