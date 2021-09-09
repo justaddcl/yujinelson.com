@@ -1,7 +1,7 @@
 # yujinelson.com
 
 ![Screenshot of yujinelson.com](static/yujinelson.com.png)
-This is the codebase for my [personal website](yujinelson.com) built with Gatsby and hosted on AWS.
+This is the codebase for my [personal website](https://yujinelson.com) built with Gatsby and hosted on AWS.
 
 ## Change log
 
