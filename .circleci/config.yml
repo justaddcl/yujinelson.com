@@ -35,6 +35,3 @@ workflows:
   deploy-production-workflow:
     jobs:
       - deploy-production:
-          filters:
-            branches:
-              only: master
