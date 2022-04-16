@@ -34,4 +34,7 @@ workflows:
   version: 2
   deploy-production-workflow:
     jobs:
-      - deploy-production
+      - deploy-production:
+          filters:
+            branches:
+              only: master
