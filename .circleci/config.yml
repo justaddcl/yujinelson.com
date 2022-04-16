@@ -1,0 +1,31 @@
+version: 2.1
+orbs:
+  aws-s3: circleci/aws-s3@3.0.0
+jobs:
+  deploy-production:
+    docker:
+      - image: cimg/node:14.15.5
+    environment:
+      AWS_REGION: eu-west-2
+    steps:
+      - checkout
+      - run:
+          name: "Node version check"
+          command: "node -v"
+      - run: npm install
+      - run: npm run build
+      - aws-s3/sync:
+          from: dist
+          to: "s3://yujinelson.com/"
+          arguments: |
+            --acl public-read \
+            --cache-control "max-age=86400" \
+          overwrite: true
+workflows:
+  version: 2.1
+  deploy-production:
+    jobs:
+      - deploy-production:
+          filters:
+            branches:
+              only: master
