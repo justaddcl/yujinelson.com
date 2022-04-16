@@ -1,16 +1,28 @@
 version: 2.1
 orbs:
   aws-s3: circleci/aws-s3@3.0.0
-jobs:
-  deploy-production:
+executors:
+  node-executor:
     docker:
       - image: cimg/node:14.15.5
+commands:
+  verify-node-version:
+    description: Check Node.js version used for the build
+    steps:
+      - run:
+          name: "Check Node.js version used for the build"
+          command: "node -v"
+  setup:
+    description: Set up the project to run commands against
     steps:
       - checkout
-      - run:
-          name: "Node version check"
-          command: "node -v"
+      - verify-node-version
       - run: npm install
+jobs:
+  deploy-production:
+    executor: node-executor
+    steps:
+      - setup
       - run: npm run build
       - aws-s3/sync:
           from: dist
@@ -18,13 +30,6 @@ jobs:
           arguments: |
             --acl public-read \
             --cache-control "max-age=86400" \
-  check-node-version:
-    docker:
-      - image: cimg/node:14.15.5
-    steps:
-      - run:
-          name: "Node version check"
-          command: "node -v"
 workflows:
   version: 2
   deploy-production-workflow:
@@ -33,6 +38,3 @@ workflows:
           filters:
             branches:
               only: master
-  check-node-version-workflow:
-    jobs:
-      - check-node-version
