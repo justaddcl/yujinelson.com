@@ -1,42 +1,42 @@
 module.exports = {
-  "extends": ["airbnb", "prettier", "prettier/react"],
-  "env": {
-    "node": true,
-    "browser": true,
-    "es6": true
+  extends: ['airbnb', 'prettier'],
+  env: {
+    node: true,
+    browser: true,
+    es6: true,
   },
-  "parser": "babel-eslint",
-  "parserOptions": {
-    "ecmaVersion": 2020
+  parser: '@babel/eslint-parser',
+  parserOptions: {
+    ecmaVersion: 2022,
+    requireConfigFile: false,
   },
-  "plugins": ["prettier", "html", "react-hooks"],
-  "rules": {
-    "jsx-a11y/accessible-emoji": 0,
-    "jsx-a11y/anchor-is-valid": [
-      "warn",
+  plugins: ['prettier', 'html', 'react-hooks'],
+  rules: {
+    'jsx-a11y/anchor-is-valid': [
+      'warn',
       {
-        "aspects": ["invalidHref"]
-      }
+        aspects: ['invalidHref'],
+      },
     ],
-    "no-unused-expressions": [
+    'no-unused-expressions': [
       2,
       {
-        "allowTaggedTemplates": true
-      }
+        allowTaggedTemplates: true,
+      },
     ],
-    "prettier/prettier": [
-      "error",
+    'prettier/prettier': [
+      'error',
       {
-        "trailingComma": "es5",
-        "singleQuote": true,
-        "printWidth": 80
-      }
+        trailingComma: 'es5',
+        singleQuote: true,
+        printWidth: 80,
+      },
     ],
-    "react/jsx-filename-extension": [
+    'react/jsx-filename-extension': [
       1,
       {
-        "extensions": [".js", ".jsx"]
-      }
-    ]
-  }
-}
+        extensions: ['.js', '.jsx'],
+      },
+    ],
+  },
+};
