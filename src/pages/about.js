@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import SEO from '../components/SEO';
@@ -55,8 +55,8 @@ const About = ({ data }) => (
         </P>
       </div>
       <div>
-        <Img
-          fluid={data.headshot.childImageSharp.fluid}
+        <GatsbyImage
+          image={data.headshot.childImageSharp.gatsbyImageData}
           className="hero-image"
         />
       </div>
@@ -183,23 +183,18 @@ const About = ({ data }) => (
   </AboutPage>
 );
 
-export const query = graphql`
-  query {
-    headshot: file(relativePath: { eq: "headshot.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 500) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    magpulLogo: file(relativePath: { eq: "experience/magpul-logo-white.png" }) {
-      childImageSharp {
-        fixed(width: 48, height: 48) {
-          ...GatsbyImageSharpFixed
-        }
-      }
+export const query = graphql`{
+  headshot: file(relativePath: {eq: "headshot.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(width: 500, layout: CONSTRAINED)
     }
   }
+  magpulLogo: file(relativePath: {eq: "experience/magpul-logo-white.png"}) {
+    childImageSharp {
+      gatsbyImageData(width: 48, height: 48, layout: FIXED)
+    }
+  }
+}
 `;
 
 export default About;

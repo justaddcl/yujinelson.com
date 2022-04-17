@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { spacing } from '../components/styles/theme';
@@ -30,7 +30,7 @@ const Home = ({ data }) => (
         A front-end developer and user experience (UX) designer with a knack for
         business and marketing strategy.
       </P>
-      <Img fluid={data.portrait.childImageSharp.fluid} className="hero-image" />
+      <GatsbyImage image={data.portrait.childImageSharp.gatsbyImageData} className="hero-image" />
     </Hero>
     <section id="intro">
       <H2>Introduction</H2>
@@ -76,30 +76,23 @@ const Home = ({ data }) => (
   </HomePage>
 );
 
-export const query = graphql`
-  query {
-    portrait: file(relativePath: { eq: "Moiwayama-portrait.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 1540) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    magpulLogo: file(relativePath: { eq: "experience/magpul-logo-white.png" }) {
-      childImageSharp {
-        fixed(width: 48, height: 48) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    boeingLogo: file(relativePath: { eq: "experience/boeing-logo-white.png" }) {
-      childImageSharp {
-        fixed(width: 48, height: 48) {
-          ...GatsbyImageSharpFixed
-        }
-      }
+export const query = graphql`{
+  portrait: file(relativePath: { eq: "Moiwayama-portrait.jpg" }) {
+    childImageSharp {
+      gatsbyImageData(layout: FULL_WIDTH)
     }
   }
+  magpulLogo: file(relativePath: { eq: "experience/magpul-logo-white.png" }) {
+    childImageSharp {
+      gatsbyImageData(width: 48, height: 48, layout: FIXED)
+    }
+  }
+  boeingLogo: file(relativePath: { eq: "experience/boeing-logo-white.png" }) {
+    childImageSharp {
+      gatsbyImageData(width: 48, height: 48, layout: FIXED)
+    }
+  }
+}
 `;
 
 export default Home;

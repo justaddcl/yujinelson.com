@@ -1,5 +1,5 @@
 import React from 'react';
-import Img from 'gatsby-image';
+import { GatsbyImage } from "gatsby-plugin-image"
 import styled from 'styled-components';
 import { colors, fonts, mq, spacing } from './styles/theme';
 import ExperienceTag from './ExperienceTag';
@@ -184,7 +184,7 @@ const ExperienceCard = ({
   children,
 }) => (
   <StyledExperienceCard>
-    <Img fixed={logo.childImageSharp.fixed} />
+    <GatsbyImage image={logo.childImageSharp.gatsbyImageData} />
     <div className="role-summary">
       <div className="role-dates token--teal">
         {startDate} -{' '}
