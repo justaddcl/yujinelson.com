@@ -10,6 +10,8 @@
     "dev-m": "env-cmd -f .env.development gatsby develop -H 192.168.1.93 -p 8000",
     "deploy-dev": "env-cmd -f .env.development npm run build && gatsby-plugin-s3 deploy",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "lint": "eslint src/ --ext .js,.jsx",
+    "prettier": "prettier --write --loglevel=warn .",
     "start": "npm run dev",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
