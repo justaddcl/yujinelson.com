@@ -19,6 +19,11 @@
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run pre-commit-check"
+    }
+  },
   "lint-staged": {
     "*.{js,jsx}": [
       "eslint",
