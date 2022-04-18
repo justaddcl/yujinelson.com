@@ -47,25 +47,23 @@ const StyledGreeting = styled.div`
   }
 `;
 
-const Greeting = () => {
-  return (
-    <StyledGreeting>
-      <ruby>
-        こ<rp>(</rp>
-        <rt>ko</rt>
-        <rp>)</rp>ん<rp>(</rp>
-        <rt>n</rt>
-        <rp>)</rp>に<rp>(</rp>
-        <rt>ni</rt>
-        <rp>)</rp>ち<rp>(</rp>
-        <rt>chi</rt>
-        <rp>)</rp>は<rp>(</rp>
-        <rt>wa</rt>
-        <rp>)</rp>!
-      </ruby>
-      <span className="translation">// means hello!</span>
-    </StyledGreeting>
-  );
-};
+const Greeting = () => (
+  <StyledGreeting>
+    <ruby>
+      こ<rp>(</rp>
+      <rt>ko</rt>
+      <rp>)</rp>ん<rp>(</rp>
+      <rt>n</rt>
+      <rp>)</rp>に<rp>(</rp>
+      <rt>ni</rt>
+      <rp>)</rp>ち<rp>(</rp>
+      <rt>chi</rt>
+      <rp>)</rp>は<rp>(</rp>
+      <rt>wa</rt>
+      <rp>)</rp>!
+    </ruby>
+    <span className="translation">// means hello!</span>
+  </StyledGreeting>
+);
 
 export default Greeting;

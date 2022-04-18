@@ -1,6 +1,4 @@
 import React from 'react';
-// import { graphql, useStaticQuery } from 'gatsby';
-// import Img from 'gatsby-image';
 import styled from 'styled-components';
 import { colors, fonts } from './styles/theme';
 
@@ -16,12 +14,10 @@ const StyledLogo = styled.div`
   width: 36px;
 `;
 
-const Logo = () => {
-  return (
-    <StyledLogo alt="Logo">
-      <span>&#12518;</span>
-    </StyledLogo>
-  );
-};
+const Logo = () => (
+  <StyledLogo alt="Logo">
+    <span>&#12518;</span>
+  </StyledLogo>
+);
 
 export default Logo;

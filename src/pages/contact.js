@@ -40,11 +40,11 @@ const Contact = ({ data }) => (
   <ContactPage gap="xl">
     <SEO title="Connect with me" />
     <Hero>
-      <H1>Let's connect</H1>
+      <H1>Let&apos;s connect</H1>
       <P>
-        I'd love to hear from you if you have an opportunity that may be a good
-        fit for me, or if you want to know more about me or my work. Let's see
-        how we can work together to solve your next challenge!
+        I&apos;d love to hear from you if you have an opportunity that may be a
+        good fit for me, or if you want to know more about me or my work.
+        Let&apos;s see how we can work together to solve your next challenge!
       </P>
       <P>
         The best way to reach me is through email or by connecting with me on{' '}

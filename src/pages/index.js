@@ -25,12 +25,15 @@ const Home = ({ data }) => (
     <SEO />
     <Hero>
       <Greeting />
-      <H1>I'm Yuji Nelson.</H1>
+      <H1>I&apos;m Yuji Nelson.</H1>
       <P>
         A front-end developer and user experience (UX) designer with a knack for
         business and marketing strategy.
       </P>
-      <GatsbyImage image={data.portrait.childImageSharp.gatsbyImageData} className="hero-image" />
+      <GatsbyImage
+        image={data.portrait.childImageSharp.gatsbyImageData}
+        className="hero-image"
+      />
     </Hero>
     <section id="intro">
       <H2>Introduction</H2>
@@ -76,23 +79,24 @@ const Home = ({ data }) => (
   </HomePage>
 );
 
-export const query = graphql`{
-  portrait: file(relativePath: { eq: "Moiwayama-portrait.jpg" }) {
-    childImageSharp {
-      gatsbyImageData(layout: FULL_WIDTH)
+export const query = graphql`
+  {
+    portrait: file(relativePath: { eq: "Moiwayama-portrait.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(layout: FULL_WIDTH)
+      }
+    }
+    magpulLogo: file(relativePath: { eq: "experience/magpul-logo-white.png" }) {
+      childImageSharp {
+        gatsbyImageData(width: 48, height: 48, layout: FIXED)
+      }
+    }
+    boeingLogo: file(relativePath: { eq: "experience/boeing-logo-white.png" }) {
+      childImageSharp {
+        gatsbyImageData(width: 48, height: 48, layout: FIXED)
+      }
     }
   }
-  magpulLogo: file(relativePath: { eq: "experience/magpul-logo-white.png" }) {
-    childImageSharp {
-      gatsbyImageData(width: 48, height: 48, layout: FIXED)
-    }
-  }
-  boeingLogo: file(relativePath: { eq: "experience/boeing-logo-white.png" }) {
-    childImageSharp {
-      gatsbyImageData(width: 48, height: 48, layout: FIXED)
-    }
-  }
-}
 `;
 
 export default Home;

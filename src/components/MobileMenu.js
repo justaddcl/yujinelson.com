@@ -64,7 +64,7 @@ const MobileMenuContainer = styled(Container)`
 `;
 
 const MobileMenu = ({ isMenuOpen, toggleMenu }) => {
-  const handleMobileMenuClick = ({ target, currentTarget }) => {
+  const handleMobileMenuClick = ({ target }) => {
     if (target.hasAttribute('href')) {
       toggleMenu();
     }

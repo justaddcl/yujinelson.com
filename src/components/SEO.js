@@ -1,6 +1,5 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { useLocation } from '@reach/router';
 import { useStaticQuery, graphql } from 'gatsby';
 
 const siteMetadataQuery = graphql`
@@ -18,22 +17,16 @@ const siteMetadataQuery = graphql`
 `;
 
 const SEO = ({ title, description, image }) => {
-  const { pathname } = useLocation();
   const { site } = useStaticQuery(siteMetadataQuery);
 
-  const {
-    defaultTitle,
-    titleTemplate,
-    defaultDescription,
-    siteUrl,
-    twitter,
-  } = site.siteMetadata;
+  const { defaultTitle, titleTemplate, defaultDescription, siteUrl, twitter } =
+    site.siteMetadata;
 
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
     image: image && image.src ? `${siteUrl}${image}` : null,
-    url: `${siteUrl}${pathname}`,
+    // url: `${siteUrl}${pathname}`, // TODO: add URL back in #26pmf79
   };
 
   return (

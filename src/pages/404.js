@@ -34,7 +34,10 @@ const FourOhFour = () => (
     <div id="background-404">404</div>
     <Hero>
       <H1>Oh yikes!</H1>
-      <P>It doesn't look like I have the page you're looking for (yet)...</P>
+      <P>
+        It doesn&apos;t look like I have the page you&apos;re looking for
+        (yet)...
+      </P>
       <Link to="/" className="button button--primary">
         Go home
       </Link>
