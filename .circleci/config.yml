@@ -10,8 +10,8 @@ commands:
     description: Check Node.js version used for the build
     steps:
       - run:
-          name: "Check Node.js version used for the build"
-          command: "node -v"
+          name: 'Check Node.js version used for the build'
+          command: 'node -v'
   setup:
     description: Set up the project to run commands against
     steps:
@@ -26,7 +26,7 @@ jobs:
       - run: npm run build
       - aws-s3/sync:
           from: public
-          to: "s3://yujinelson.com/"
+          to: 's3://yujinelson.com/'
           arguments: |
             --acl public-read \
             --cache-control "max-age=86400" \
