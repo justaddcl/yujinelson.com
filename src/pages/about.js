@@ -50,8 +50,8 @@ const About = ({ data }) => (
       <div>
         <H1>My story</H1>
         <P>
-          I’m Yuji, a front-end developer and user experience designer based in
-          Austin, TX.
+          I&apos;m Yuji, a front-end developer and user experience designer
+          based in Austin, TX.
         </P>
       </div>
       <div>
@@ -81,12 +81,12 @@ const About = ({ data }) => (
         and well-written code could solve real needs.
       </P>
       <P>
-        Over the last few years, I’ve continued to use these skills in the
-        corporate world, but through personal projects, I’ve been able to more
-        fully express my passion for front-end development and UX. Whether, it’s
-        building a landing page for work, or an app on the side for my church to
-        help coordinate events, I’m always looking for ways to improve and
-        deliver my best work yet.{' '}
+        Over the last few years, I&apos;ve continued to use these skills in the
+        corporate world, but through personal projects, I&apos;ve been able to
+        more fully express my passion for front-end development and UX. Whether,
+        it&apos;s building a landing page for work, or an app on the side for my
+        church to help coordinate events, I&apos;m always looking for ways to
+        improve and deliver my best work yet.{' '}
       </P>
       <H3>At the end of the day</H3>
       <P>
@@ -183,18 +183,19 @@ const About = ({ data }) => (
   </AboutPage>
 );
 
-export const query = graphql`{
-  headshot: file(relativePath: {eq: "headshot.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(width: 500, layout: CONSTRAINED)
+export const query = graphql`
+  {
+    headshot: file(relativePath: { eq: "headshot.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(width: 500, layout: CONSTRAINED)
+      }
+    }
+    magpulLogo: file(relativePath: { eq: "experience/magpul-logo-white.png" }) {
+      childImageSharp {
+        gatsbyImageData(width: 48, height: 48, layout: FIXED)
+      }
     }
   }
-  magpulLogo: file(relativePath: {eq: "experience/magpul-logo-white.png"}) {
-    childImageSharp {
-      gatsbyImageData(width: 48, height: 48, layout: FIXED)
-    }
-  }
-}
 `;
 
 export default About;

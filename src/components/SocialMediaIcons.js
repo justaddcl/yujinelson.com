@@ -31,14 +31,8 @@ const SocialMediaIcons = () => {
     }
   `);
 
-  const {
-    github,
-    linkedin,
-    twitter,
-    dribbble,
-    codepen,
-    lastfm,
-  } = data.site.siteMetadata;
+  const { github, linkedin, twitter, dribbble, codepen, lastfm } =
+    data.site.siteMetadata;
 
   return (
     <SocialMediaGrid>

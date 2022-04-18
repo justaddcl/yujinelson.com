@@ -1,5 +1,5 @@
 import React from 'react';
-import { GatsbyImage } from "gatsby-plugin-image"
+import { GatsbyImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import { colors, fonts, mq, spacing } from './styles/theme';
 import ExperienceTag from './ExperienceTag';

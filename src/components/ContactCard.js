@@ -49,7 +49,7 @@ const StyledContactCard = styled.div`
 const ContactCard = () => (
   <StyledContactCard>
     <div>
-      <h2>Let's work together</h2>
+      <h2>Let&apos;s work together</h2>
       <p>
         Have an opportunity for me, or questions about my work and skills? Let’s
         chat!
