@@ -14,13 +14,6 @@ module.exports = {
     lastfm: 'yneo97',
   },
   plugins: [
-    {
-      resolve: `gatsby-plugin-s3`,
-      options: {
-        bucketName: process.env.S3_BUCKET_NAME,
-        generateRedirectObjectsForPermanentRedirects: true,
-      },
-    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
     {
