@@ -19,6 +19,12 @@ commands:
       - verify-node-version
       - run: npm install
 jobs:
+  lint_check:
+    executor: node-executor
+    steps:
+      - setup
+      - run: npm run lint
+      - run: npm run prettier-check
   deploy-production:
     executor: node-executor
     steps:
@@ -32,6 +38,9 @@ jobs:
             --cache-control "max-age=86400" \
 workflows:
   version: 2
+  validation:
+    jobs:
+      - lint_check
   deploy-production-workflow:
     jobs:
       - deploy-production:
