@@ -16,8 +16,7 @@ const siteMetadataQuery = graphql`
   }
 `;
 
-const SEO = ({ title, description, image, location }) => {
-  const { pathname } = location;
+const SEO = ({ title, description, image }) => {
   const { site } = useStaticQuery(siteMetadataQuery);
 
   const { defaultTitle, titleTemplate, defaultDescription, siteUrl, twitter } =
@@ -27,7 +26,7 @@ const SEO = ({ title, description, image, location }) => {
     title: title || defaultTitle,
     description: description || defaultDescription,
     image: image && image.src ? `${siteUrl}${image}` : null,
-    url: `${siteUrl}${pathname}`,
+    // url: `${siteUrl}${pathname}`, // TODO: add URL back in #26pmf79
   };
 
   return (
