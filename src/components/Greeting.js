@@ -62,7 +62,7 @@ const Greeting = () => (
       <rt>wa</rt>
       <rp>)</rp>!
     </ruby>
-    <span className="translation">&sol;&sol; means hello!</span>
+    <span className="translation">// means hello!</span>
   </StyledGreeting>
 );
 
