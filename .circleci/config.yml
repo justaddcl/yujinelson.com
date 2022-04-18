@@ -45,4 +45,5 @@ workflows:
           filters:
             branches:
               only: master
-          requires: lint_check
+          requires:
+            - lint_check
