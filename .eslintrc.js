@@ -38,5 +38,8 @@ module.exports = {
         extensions: ['.js', '.jsx'],
       },
     ],
+    'react/function-component-definition': 'off',
+    'react/no-array-index-key': 'warn',
+    'react/prop-types': 'warn',
   },
 };
