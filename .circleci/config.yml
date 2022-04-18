@@ -41,9 +41,8 @@ workflows:
   validation:
     jobs:
       - lint_check
-  deploy-production-workflow:
-    jobs:
       - deploy-production:
           filters:
             branches:
               only: master
+          requires: lint_check
