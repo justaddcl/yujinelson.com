@@ -53,7 +53,18 @@ const Home = ({ data }) => (
     <section id="experience">
       <H2>Experience</H2>
       <ExperienceCard
+        startDate={experience.duffel.startDate}
+        endDate={experience.duffel.endDate}
+        rolePrimary={experience.duffel.primary}
+        roleSecondary={experience.duffel.secondary}
+        logo={data.duffelLogo}
+        roleTeam={experience.duffel.team}
+        location={experience.duffel.location}
+        tags={experience.duffel.tags}
+      />
+      <ExperienceCard
         startDate={experience.magpul.startDate}
+        endDate={experience.magpul.endDate}
         rolePrimary={experience.magpul.primary}
         roleSecondary={experience.magpul.secondary}
         logo={data.magpulLogo}
@@ -84,6 +95,11 @@ export const query = graphql`
     portrait: file(relativePath: { eq: "Moiwayama-portrait.jpg" }) {
       childImageSharp {
         gatsbyImageData(layout: FULL_WIDTH)
+      }
+    }
+    duffelLogo: file(relativePath: { eq: "experience/duffel-logo-white.png" }) {
+      childImageSharp {
+        gatsbyImageData(width: 48, height: 48, layout: FIXED)
       }
     }
     magpulLogo: file(relativePath: { eq: "experience/magpul-logo-white.png" }) {
