@@ -14,6 +14,17 @@ import ExperienceCard from '../components/ExperienceCard';
 import ContactCard from '../components/ContactCard';
 import experience from '../data/experience';
 
+const {
+  startDate,
+  endDate,
+  primary,
+  secondary,
+  team,
+  location,
+  tags,
+  bullets,
+} = experience.duffel;
+
 const AboutPage = styled(ContentContainer)``;
 
 const SkillsList = styled.dl`
@@ -50,8 +61,7 @@ const About = ({ data }) => (
       <div>
         <H1>My story</H1>
         <P>
-          I&apos;m Yuji, a front-end developer and user experience designer
-          based in Austin, TX.
+          I&apos;m Yuji, a front-end software engineer based in Reading, UK.
         </P>
       </div>
       <div>
@@ -92,9 +102,10 @@ const About = ({ data }) => (
       <P>
         While I love what I do, I know life is more than just work and I make
         time to recharge my passion and creativity through some fun and
-        relaxation. Outside of work, you can find me playing board games with
-        friends, watching Marvel movies with my wife, listening to a Mitch Rapp
-        audiobook, or occasionally DJing a wedding.
+        relaxation. Outside of work, you can find me playing football with
+        friends, try-harding at Smash Ultimate or Dominion, watching Marvel
+        movies with my wife, listening to a sci-fi or fantasy audiobook, or
+        occasionally DJing a wedding.
       </P>
       <Link to="/contact" className="button button--primary">
         Contact me{' '}
@@ -102,19 +113,20 @@ const About = ({ data }) => (
       </Link>
     </section>
     <section>
-      <H2>Current role</H2>
+      <H2>My most recent role</H2>
       <ExperienceCard
-        startDate={experience.magpul.startDate}
-        rolePrimary={experience.magpul.primary}
-        roleSecondary={experience.magpul.secondary}
-        logo={data.magpulLogo}
-        roleTeam={experience.magpul.team}
-        location={experience.magpul.location}
-        tags={experience.magpul.tags}
+        startDate={startDate}
+        endDate={endDate}
+        rolePrimary={primary}
+        roleSecondary={secondary}
+        logo={data.duffelLogo}
+        roleTeam={team}
+        location={location}
+        tags={tags}
       >
         <ul className="role-bullets">
-          {experience.magpul.bullets.map((bullet, index) => (
-            <li key={`magpul-bullet-${index}`}>{bullet}</li>
+          {bullets.map((bullet, index) => (
+            <li key={`duffel-bullet-${index}`}>{bullet}</li>
           ))}
         </ul>
       </ExperienceCard>
@@ -131,9 +143,9 @@ const About = ({ data }) => (
           <dd>
             <ul>
               <li>Javascript (ES6+)</li>
-              <li>CSS / Sass / Less / Styled Components</li>
-              <li>HTML / Pug</li>
-              <li>GraphQL</li>
+              <li>TypeScript</li>
+              <li>CSS</li>
+              <li>HTML</li>
             </ul>
           </dd>
         </div>
@@ -142,11 +154,10 @@ const About = ({ data }) => (
           <dd>
             <ul>
               <li>React</li>
+              <li>Next.js</li>
               <li>Gatsby</li>
-              <li>Prisma</li>
-              <li>Apollo</li>
-              <li>Ruby on Rails</li>
-              <li>Bootstrap</li>
+              <li>Node.js</li>
+              <li>Styled Components / CSS modules</li>
             </ul>
           </dd>
         </div>
@@ -155,10 +166,11 @@ const About = ({ data }) => (
           <dd>
             <ul>
               <li>Git / GitHub</li>
-              <li>ESLint / Prettier</li>
-              <li>Chrome / Firefox Dev Tools</li>
+              <li>React Testing Library</li>
               <li>Jest</li>
-              <li>Postman</li>
+              <li>Storybook</li>
+              <li>CI / CD</li>
+              <li>AWS / GCP</li>
             </ul>
           </dd>
         </div>
@@ -166,7 +178,8 @@ const About = ({ data }) => (
           <dt>Design</dt>
           <dd>
             <ul>
-              <li>Adobe XD, Illustrator, Photoshop</li>
+              <li>Figma / Adobe XD</li>
+              <li>Adobe Creative Suite</li>
               <li>Mobile-First Responsive Design</li>
               <li>User Interface & Experience</li>
               <li>Prototyping</li>
@@ -190,7 +203,7 @@ export const query = graphql`
         gatsbyImageData(width: 500, layout: CONSTRAINED)
       }
     }
-    magpulLogo: file(relativePath: { eq: "experience/magpul-logo-white.png" }) {
+    duffelLogo: file(relativePath: { eq: "experience/duffel-logo-white.png" }) {
       childImageSharp {
         gatsbyImageData(width: 48, height: 48, layout: FIXED)
       }

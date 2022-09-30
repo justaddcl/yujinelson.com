@@ -7,6 +7,11 @@ const experience = {
     team: 'UX Products',
     location: 'London, UK',
     tags: ['dev'],
+    bullets: [
+      'Built a site-wide, text-based search using Meilisearch and TypeScript to enable customers to quickly find an order on the Duffel Next.js web application',
+      'Developed new loyalty programmes feature for multi-step search and checkout process with Formik and TypeScript',
+      'Implemented a feed-style homepage for the Duffel Next.js web application to educate users about the product as well as highlight new product features',
+    ],
   },
   magpul: {
     startDate: '09/2017',
