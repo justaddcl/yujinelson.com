@@ -27,8 +27,8 @@ const Home = ({ data }) => (
       <Greeting />
       <H1>I&apos;m Yuji Nelson.</H1>
       <P>
-        A front-end developer and user experience (UX) designer with a knack for
-        business and marketing strategy.
+        A front-end software engineer with 8+ years of experience building and
+        designing responsive user interfaces (UI) with a mobile-first approach.
       </P>
       <GatsbyImage
         image={data.portrait.childImageSharp.gatsbyImageData}
@@ -38,12 +38,13 @@ const Home = ({ data }) => (
     <section id="intro">
       <H2>Introduction</H2>
       <P>
-        I design and build mobile-first, responsive websites and web apps using
-        modern HTML, CSS, and JavaScript (ES6+). As a developer, I love solving
-        puzzles and constantly look for ways to better apply my code and deliver
-        a better product. As a designer, my passion lies in delivering intuitive
-        and delightful experiences through well crafted, beautiful design.
-        Currently based in Austin, TX.
+        Proficient with modern JS (ES6+, React), TypeScript, HTML, and CSS,
+        highly detail-oriented, and passionate about user-centred experience
+        (UX) and design. As a developer, I love solving puzzles and constantly
+        look for ways to better apply my code and deliver a better product. As a
+        designer, my passion lies in delivering intuitive and delightful
+        experiences through well crafted, beautiful design. Currently based in
+        Reading, UK.
       </P>
       <Link to="/about" className="button button--primary">
         Read my story{' '}
