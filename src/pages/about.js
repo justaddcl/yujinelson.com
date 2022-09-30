@@ -102,9 +102,10 @@ const About = ({ data }) => (
       <P>
         While I love what I do, I know life is more than just work and I make
         time to recharge my passion and creativity through some fun and
-        relaxation. Outside of work, you can find me playing board games with
-        friends, watching Marvel movies with my wife, listening to a Mitch Rapp
-        audiobook, or occasionally DJing a wedding.
+        relaxation. Outside of work, you can find me playing football with
+        friends, try-harding at Smash Ultimate or Dominion, watching Marvel
+        movies with my wife, listening to a sci-fi or fantasy audiobook, or
+        occasionally DJing a wedding.
       </P>
       <Link to="/contact" className="button button--primary">
         Contact me{' '}
