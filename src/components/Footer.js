@@ -152,7 +152,7 @@ const Footer = () => {
             <span className="icon">
               <FontAwesomeIcon icon="heart" />
             </span>
-            <span> in Austin, TX.</span>
+            <span> in Reading, UK.</span>
           </div>
           <span className="small copyright">
             ©<CurrentYear /> {data.site.siteMetadata.author}.
