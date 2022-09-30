@@ -61,8 +61,7 @@ const About = ({ data }) => (
       <div>
         <H1>My story</H1>
         <P>
-          I&apos;m Yuji, a front-end developer and user experience designer
-          based in Austin, TX.
+          I&apos;m Yuji, a front-end software engineer based in Reading, UK.
         </P>
       </div>
       <div>
@@ -143,9 +142,9 @@ const About = ({ data }) => (
           <dd>
             <ul>
               <li>Javascript (ES6+)</li>
-              <li>CSS / Sass / Less / Styled Components</li>
-              <li>HTML / Pug</li>
-              <li>GraphQL</li>
+              <li>TypeScript</li>
+              <li>CSS</li>
+              <li>HTML</li>
             </ul>
           </dd>
         </div>
@@ -154,11 +153,10 @@ const About = ({ data }) => (
           <dd>
             <ul>
               <li>React</li>
+              <li>Next.js</li>
               <li>Gatsby</li>
-              <li>Prisma</li>
-              <li>Apollo</li>
-              <li>Ruby on Rails</li>
-              <li>Bootstrap</li>
+              <li>Node.js</li>
+              <li>Styled Components / CSS modules</li>
             </ul>
           </dd>
         </div>
@@ -167,10 +165,11 @@ const About = ({ data }) => (
           <dd>
             <ul>
               <li>Git / GitHub</li>
-              <li>ESLint / Prettier</li>
-              <li>Chrome / Firefox Dev Tools</li>
+              <li>React Testing Library</li>
               <li>Jest</li>
-              <li>Postman</li>
+              <li>Storybook</li>
+              <li>CI / CD</li>
+              <li>AWS / GCP</li>
             </ul>
           </dd>
         </div>
@@ -178,7 +177,8 @@ const About = ({ data }) => (
           <dt>Design</dt>
           <dd>
             <ul>
-              <li>Adobe XD, Illustrator, Photoshop</li>
+              <li>Figma / Adobe XD</li>
+              <li>Adobe Creative Suite</li>
               <li>Mobile-First Responsive Design</li>
               <li>User Interface & Experience</li>
               <li>Prototyping</li>
