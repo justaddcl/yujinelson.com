@@ -9,6 +9,7 @@ import ColorBar from './styles/ColorBar';
 const PageSections = styled.div`
   display: grid;
   grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
 `;
 
 const Layout = ({ children }) => (
