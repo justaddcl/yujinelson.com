@@ -59,6 +59,7 @@ module.exports = {
           'cms',
           'codepen',
           'dribbble',
+          'duffel',
           'ecma',
           'ecommerce',
           'filesystem',

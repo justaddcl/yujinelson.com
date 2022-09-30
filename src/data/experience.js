@@ -1,6 +1,16 @@
 const experience = {
+  duffel: {
+    startDate: '11/2021',
+    endDate: '09/2022',
+    primary: 'Software engineer',
+    secondary: 'Duffel',
+    team: 'UX Products',
+    location: 'London, UK',
+    tags: ['dev'],
+  },
   magpul: {
     startDate: '09/2017',
+    endDate: '05/2021',
     primary: 'Front-end Web Developer',
     secondary: 'Magpul',
     team: 'Marketing',
