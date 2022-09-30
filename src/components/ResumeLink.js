@@ -1,5 +1,5 @@
 import React from 'react';
-import resume from '../assets/pdf/Yuji-Nelson-CV-2021.pdf';
+import resume from '../assets/pdf/Yuji-Nelson-CV-2022.pdf';
 
 const ResumeLink = ({ button, primary, small, children }) => (
   <a
