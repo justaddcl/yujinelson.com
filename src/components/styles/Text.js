@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 import { colors, fonts, mq, spacing } from './theme';
 
+/**
+ * TODO: create <Text> component that would include the style for paragraph
+ * Currently, this violates the id-length eslint rule of < 2 characters
+ */
 const P = styled.p`
   color: ${colors.grey[50]};
   font-family: ${fonts.family.sourceCodePro};

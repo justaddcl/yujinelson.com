@@ -1,21 +1,87 @@
 module.exports = {
-  extends: ['airbnb', 'prettier'],
   env: {
     node: true,
     browser: true,
     es6: true,
   },
-  parser: '@babel/eslint-parser',
+  root: true,
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 2022,
     requireConfigFile: false,
+    project: './tsconfig.json',
   },
-  plugins: ['prettier', 'html', 'react-hooks', 'spellcheck'],
+  extends: [
+    'airbnb',
+    'airbnb-typescript',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+    'prettier',
+  ],
+  plugins: [
+    'prettier',
+    '@typescript-eslint',
+    'spellcheck',
+    'jsx-a11y',
+    'import',
+  ],
   rules: {
-    'jsx-a11y/anchor-is-valid': [
-      'warn',
+    /**
+     * Typescript-related rules.
+     */
+    '@typescript-eslint/no-non-null-assertion': 0,
+    '@typescript-eslint/no-explicit-any': 0,
+    '@typescript-eslint/explicit-function-return-type': 0,
+    '@typescript-eslint/explicit-module-boundary-types': 0,
+    '@typescript-eslint/member-delimiter-style': 0,
+    '@typescript-eslint/camelcase': 0,
+    '@typescript-eslint/no-namespace': 0,
+    '@typescript-eslint/no-unused-vars': [
+      'error',
       {
-        aspects: ['invalidHref'],
+        argsIgnorePattern: '^_',
+        varsIgnorePattern: '^_',
+      },
+    ],
+
+    /**
+     * General code style rules.
+     */
+
+    // TODO: change id-length severity to error once warnings have been resolved
+    'id-length': ['warn', { exceptions: ['_'] }],
+    'no-nested-ternary': 'error',
+    'no-unsafe-finally': 0,
+    'no-useless-escape': 0,
+    'no-console': [
+      'error',
+      {
+        allow: ['info', 'warn', 'error'],
+      },
+    ],
+    'import/order': [
+      'error',
+      {
+        pathGroupsExcludedImportTypes: ['builtin'],
+        pathGroups: [
+          {
+            pattern: '@components/**',
+            group: 'external',
+            position: 'after',
+          },
+          {
+            pattern: '@lib/**',
+            group: 'external',
+            position: 'after',
+          },
+          {
+            pattern: '@modules/**',
+            group: 'external',
+            position: 'after',
+          },
+        ],
       },
     ],
     'no-unused-expressions': [
@@ -32,16 +98,47 @@ module.exports = {
         printWidth: 80,
       },
     ],
-    'react/jsx-filename-extension': [
-      1,
+
+    /**
+     * React-related rules.
+     */
+    'react/no-unescaped-entities': 0,
+    'react-hooks/exhaustive-deps': 0,
+    'react/display-name': 0,
+    'react/react-in-jsx-scope': 0,
+    'react/jsx-boolean-value': 'error',
+    // Overrides airbnb's rule for only function-declaration and function-expression
+    'react/function-component-definition': [
+      'warn',
       {
-        extensions: ['.js', '.jsx'],
+        namedComponents: ['arrow-function'],
       },
     ],
-    'react/function-component-definition': 'off',
-    'react/jsx-no-comment-textnodes': 'warn',
-    'react/no-array-index-key': 'warn',
+    // TODO: remove this rule when all components and pages have been migrated to TS
+    'react/jsx-filename-extension': [
+      'warn',
+      {
+        extensions: ['.js', '.tsx'],
+      },
+    ],
+    // TODO: remove this rule when all components have typed-props
     'react/prop-types': 'warn',
+    // TODO: remove this rule when the About page doesn't use the array index as the key
+    'react/no-array-index-key': 'warn',
+
+    /**
+     * JSX-a11y-related rules.
+     */
+    'jsx-a11y/anchor-is-valid': [
+      'warn',
+      {
+        aspects: ['invalidHref'],
+      },
+    ],
+
+    /**
+     * Spellchecking rules.
+     */
     'spellcheck/spell-checker': [
       1,
       {

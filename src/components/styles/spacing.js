@@ -10,6 +10,10 @@ const spacing = {
   // huge - before homepage hero, before footer
   // p - between paragraphs
 
+  /**
+   * TODO: re-think these size variation names
+   * Currently, the `s`, `m`, `l` variations  violates the id-length eslint rule of < 2 characters
+   */
   // scale
   tiny: '4px',
   xxs: 0.5,

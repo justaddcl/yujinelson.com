@@ -8,6 +8,10 @@ import ContentContainer from '../components/styles/ContentContainer';
 import { colors, fonts, mq, spacing } from '../components/styles/theme';
 import { H1, H2, H3 } from '../components/styles/headers';
 import Hero from '../components/Hero';
+/**
+ * TODO: create <Text> component that would include the style for paragraph
+ * Currently, this violates the id-length eslint rule of < 2 characters
+ */
 import P from '../components/styles/Text';
 import ResumeLink from '../components/ResumeLink';
 import ExperienceCard from '../components/ExperienceCard';
@@ -126,6 +130,7 @@ const About = ({ data }) => (
       >
         <ul className="role-bullets">
           {bullets.map((bullet, index) => (
+            // FIXME: should not be using the array index for the key
             <li key={`duffel-bullet-${index}`}>{bullet}</li>
           ))}
         </ul>

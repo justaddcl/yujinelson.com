@@ -6,6 +6,10 @@ import SEO from '../components/SEO';
 import ContentContainer from '../components/styles/ContentContainer';
 import Hero from '../components/Hero';
 import { H1 } from '../components/styles/headers';
+/**
+ * TODO: create <Text> component that would include the style for paragraph
+ * Currently, this violates the id-length eslint rule of < 2 characters
+ */
 import P from '../components/styles/Text';
 import SocialsList from '../components/SocialsList';
 
