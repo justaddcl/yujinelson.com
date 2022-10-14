@@ -50,7 +50,8 @@ module.exports = {
      * General code style rules.
      */
 
-    'id-length': ['error', { exceptions: ['_'] }],
+    // TODO: change id-length severity to error once warnings have been resolved
+    'id-length': ['warn', { exceptions: ['_'] }],
     'no-nested-ternary': 'error',
     'no-unsafe-finally': 0,
     'no-useless-escape': 0,
@@ -113,6 +114,17 @@ module.exports = {
         namedComponents: ['arrow-function'],
       },
     ],
+    // TODO: remove this rule when all components and pages have been migrated to TS
+    'react/jsx-filename-extension': [
+      'warn',
+      {
+        extensions: ['.js', '.tsx'],
+      },
+    ],
+    // TODO: remove this rule when all components have typed-props
+    'react/prop-types': 'warn',
+    // TODO: remove this rule when the About page doesn't use the array index as the key
+    'react/no-array-index-key': 'warn',
 
     /**
      * JSX-a11y-related rules.

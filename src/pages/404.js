@@ -5,6 +5,10 @@ import { mq, spacing } from '../components/styles/theme';
 import { H1 } from '../components/styles/headers';
 import SEO from '../components/SEO';
 import Hero from '../components/Hero';
+/**
+ * TODO: create <Text> component that would include the style for paragraph
+ * Currently, this violates the id-length eslint rule of < 2 characters
+ */
 import P from '../components/styles/Text';
 import ContentContainer from '../components/styles/ContentContainer';
 
