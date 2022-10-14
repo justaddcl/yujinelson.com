@@ -14,17 +14,18 @@ module.exports = {
   extends: [
     'airbnb',
     'airbnb-typescript',
-    'prettier',
+    'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+    'prettier',
   ],
   plugins: [
     'prettier',
-    'html',
-    'react-hooks',
+    '@typescript-eslint',
     'spellcheck',
     'jsx-a11y',
     'import',
-    '@typescript-eslint',
   ],
   rules: {
     /**
@@ -100,16 +101,18 @@ module.exports = {
     /**
      * React-related rules.
      */
-    'react/jsx-filename-extension': [
-      1,
+    'react/no-unescaped-entities': 0,
+    'react-hooks/exhaustive-deps': 0,
+    'react/display-name': 0,
+    'react/react-in-jsx-scope': 0,
+    'react/jsx-boolean-value': 'error',
+    // Overrides airbnb's rule for only function-declaration and function-expression
+    'react/function-component-definition': [
+      'warn',
       {
-        extensions: ['.js', '.jsx'],
+        namedComponents: ['arrow-function'],
       },
     ],
-    'react/function-component-definition': 'off',
-    'react/jsx-no-comment-textnodes': 'warn',
-    'react/no-array-index-key': 'warn',
-    'react/prop-types': 'warn',
 
     /**
      * JSX-a11y-related rules.
