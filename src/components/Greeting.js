@@ -62,7 +62,8 @@ const Greeting = () => (
       <rt>wa</rt>
       <rp>)</rp>!
     </ruby>
-    <span className="translation">// means hello!</span>
+    {/* the '/' character is replaced with the &#47; HTML code */}
+    <span className="translation">&#47;&#47; means hello!</span>
   </StyledGreeting>
 );
 
