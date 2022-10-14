@@ -10,7 +10,7 @@
     "dev": "env-cmd -f .env.development gatsby develop",
     "dev-m": "env-cmd -f .env.development gatsby develop -H 192.168.1.93 -p 8000",
     "format": "prettier --write \"**/*.{js,jsx,json,ts,tsx}\"",
-    "lint": "eslint src/ --ext .js,.jsx, .ts, .tsx",
+    "lint": "eslint src/ --ext .js,.jsx,.ts,.tsx",
     "pre-commit-check": "lint-staged && npm run check-types",
     "prettier": "prettier --write --loglevel=warn .",
     "prettier-check": "prettier --check .",
