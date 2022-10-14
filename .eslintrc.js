@@ -1,21 +1,85 @@
 module.exports = {
-  extends: ['airbnb', 'prettier'],
   env: {
     node: true,
     browser: true,
     es6: true,
   },
-  parser: '@babel/eslint-parser',
+  root: true,
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 2022,
     requireConfigFile: false,
+    project: './tsconfig.json',
   },
-  plugins: ['prettier', 'html', 'react-hooks', 'spellcheck'],
+  extends: [
+    'airbnb',
+    'airbnb-typescript',
+    'prettier',
+    'plugin:@typescript-eslint/recommended',
+  ],
+  plugins: [
+    'prettier',
+    'html',
+    'react-hooks',
+    'spellcheck',
+    'jsx-a11y',
+    'import',
+    '@typescript-eslint',
+  ],
   rules: {
-    'jsx-a11y/anchor-is-valid': [
-      'warn',
+    /**
+     * Typescript-related rules.
+     */
+    '@typescript-eslint/no-non-null-assertion': 0,
+    '@typescript-eslint/no-explicit-any': 0,
+    '@typescript-eslint/explicit-function-return-type': 0,
+    '@typescript-eslint/explicit-module-boundary-types': 0,
+    '@typescript-eslint/member-delimiter-style': 0,
+    '@typescript-eslint/camelcase': 0,
+    '@typescript-eslint/no-namespace': 0,
+    '@typescript-eslint/no-unused-vars': [
+      'error',
       {
-        aspects: ['invalidHref'],
+        argsIgnorePattern: '^_',
+        varsIgnorePattern: '^_',
+      },
+    ],
+
+    /**
+     * General code style rules.
+     */
+
+    'id-length': ['error', { exceptions: ['_'] }],
+    'no-nested-ternary': 'error',
+    'no-unsafe-finally': 0,
+    'no-useless-escape': 0,
+    'no-console': [
+      'error',
+      {
+        allow: ['info', 'warn', 'error'],
+      },
+    ],
+    'import/order': [
+      'error',
+      {
+        pathGroupsExcludedImportTypes: ['builtin'],
+        pathGroups: [
+          {
+            pattern: '@components/**',
+            group: 'external',
+            position: 'after',
+          },
+          {
+            pattern: '@lib/**',
+            group: 'external',
+            position: 'after',
+          },
+          {
+            pattern: '@modules/**',
+            group: 'external',
+            position: 'after',
+          },
+        ],
       },
     ],
     'no-unused-expressions': [
@@ -32,6 +96,10 @@ module.exports = {
         printWidth: 80,
       },
     ],
+
+    /**
+     * React-related rules.
+     */
     'react/jsx-filename-extension': [
       1,
       {
@@ -42,6 +110,20 @@ module.exports = {
     'react/jsx-no-comment-textnodes': 'warn',
     'react/no-array-index-key': 'warn',
     'react/prop-types': 'warn',
+
+    /**
+     * JSX-a11y-related rules.
+     */
+    'jsx-a11y/anchor-is-valid': [
+      'warn',
+      {
+        aspects: ['invalidHref'],
+      },
+    ],
+
+    /**
+     * Spellchecking rules.
+     */
     'spellcheck/spell-checker': [
       1,
       {
