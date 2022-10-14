@@ -1,7 +1,7 @@
 import type { GatsbyNode } from 'gatsby';
 
 const resume =
-  '/static/Yuji-Nelson-CV-2021-7f148cd5833e9b42302a43cb9979c2fc.pdf';
+  '/static/Yuji-Nelson-CV-2022-21e9515412f6493c7053aaff5ea45134.pdf';
 
 const createPages: GatsbyNode['createPages'] = ({ actions }) => {
   const { createRedirect } = actions;
