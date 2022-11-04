@@ -9,12 +9,16 @@ export type ExperienceTagValues = {
   color: string; // TODO: use the colors from the design system/theme
 };
 
+export type StyledExperienceTagProps = {
+  color: ExperienceTagValues['color'];
+};
+
 export type ExperienceTagProps = {
   tag: ExperienceType;
 };
 
 const StyledExperienceTag = styled.div`
-  background-color: ${(props: ExperienceTagValues) =>
+  background-color: ${(props: StyledExperienceTagProps) =>
     props.color ? colors[props.color][100] : colors.purple[100]};
   border-radius: ${spacing.tiny};
   padding: ${spacing.tiny} ${spacing.xxs}rem;
@@ -26,7 +30,7 @@ const StyledExperienceTag = styled.div`
     font-size: 0.75rem;
 
     &::before {
-      background-color: ${(props: ExperienceTagValues) =>
+      background-color: ${(props: StyledExperienceTagProps) =>
         props.color ? colors[props.color][500] : colors.purple[500]};
       border-radius: 50%;
       content: '';
@@ -61,7 +65,7 @@ export const ExperienceTag: React.FC<ExperienceTagProps> = ({ tag }) => {
   const { text, color } = getExperienceTagValues(tag);
 
   return (
-    <StyledExperienceTag tag={tag} color={color}>
+    <StyledExperienceTag color={color}>
       <span className="tag-label">{text}</span>
     </StyledExperienceTag>
   );
