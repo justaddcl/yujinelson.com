@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
@@ -46,13 +46,13 @@ const StyledContactCard = styled.div`
   }
 `;
 
-const ContactCard = () => (
+const ContactCard: React.FC = () => (
   <StyledContactCard>
     <div>
       <h2>Let&apos;s work together</h2>
       <p>
-        Have an opportunity for me, or questions about my work and skills? Let’s
-        chat!
+        Have an opportunity for me, or questions about my work and skills?
+        Let&apos;s chat!
       </p>
     </div>
     <Link to="/contact" className="button button--primary">
