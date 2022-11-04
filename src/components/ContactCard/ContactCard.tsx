@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
-import { colors, mq, spacing } from './styles/theme';
+import { colors, mq, spacing } from '../styles/theme';
 
 const StyledContactCard = styled.div`
   background: ${colors.grey[700]};
@@ -46,7 +46,7 @@ const StyledContactCard = styled.div`
   }
 `;
 
-const ContactCard: React.FC = () => (
+export const ContactCard: React.FC = () => (
   <StyledContactCard>
     <div>
       <h2>Let&apos;s work together</h2>
@@ -61,5 +61,3 @@ const ContactCard: React.FC = () => (
     </Link>
   </StyledContactCard>
 );
-
-export default ContactCard;

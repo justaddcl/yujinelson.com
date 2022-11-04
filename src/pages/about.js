@@ -15,7 +15,7 @@ import Hero from '../components/Hero';
 import P from '../components/styles/Text';
 import ResumeLink from '../components/ResumeLink';
 import ExperienceCard from '../components/ExperienceCard';
-import ContactCard from '../components/ContactCard';
+import { ContactCard } from '../components/ContactCard/ContactCard';
 import experience from '../data/experience';
 
 const {
