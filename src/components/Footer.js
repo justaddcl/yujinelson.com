@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { colors, fonts, mq, spacing } from './styles/theme';
 import Container from './styles/Container';
-import CurrentYear from './CurrentYear';
+import { CurrentYear } from './CurrentYear';
 import SocialMediaIcons from './SocialMediaIcons';
 import Logo from './Logo';
 import ResumeLink from './ResumeLink';
