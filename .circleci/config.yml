@@ -6,6 +6,14 @@ executors:
     docker:
       - image: cimg/node:24.11.0
 commands:
+  checkout-repo:
+    description: Check out the current commit over HTTPS
+    steps:
+      - run:
+          name: 'Checkout code'
+          command: |
+            git clone https://github.com/justaddcl/yujinelson.com.git .
+            git checkout "$CIRCLE_SHA1"
   verify-node-version:
     description: Check Node.js version used for the build
     steps:
@@ -15,7 +23,7 @@ commands:
   setup:
     description: Set up the project to run commands against
     steps:
-      - checkout
+      - checkout-repo
       - verify-node-version
       - run: npm install
 jobs:
