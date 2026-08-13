@@ -4,7 +4,7 @@ orbs:
 executors:
   node-executor:
     docker:
-      - image: cimg/node:17.9.0
+      - image: cimg/node:24.11.0
 commands:
   verify-node-version:
     description: Check Node.js version used for the build
