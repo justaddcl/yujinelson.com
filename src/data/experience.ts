@@ -79,7 +79,7 @@ const experience: Experience[] = [
       end: '06/2017',
     },
     summary:
-      'Completed a three-year IT career foundation programme, rotating through communications and PC hardware web development teams.',
+      'Delivered and redesigned critical, enterprise-wide internal websites across all three rotations, combining web strategy, user research, and front-end development.',
     classification: 'software-engineering',
     logo: 'boeingLogo',
     companyFirst: true,
