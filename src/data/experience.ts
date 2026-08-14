@@ -25,7 +25,7 @@ export type Experience = {
 
 const experience: Experience[] = [
   {
-    id: 'cleo',
+    roleId: 'cleo',
     company: 'Cleo',
     role: 'Software Engineer',
     location: 'London, UK',
@@ -36,10 +36,9 @@ const experience: Experience[] = [
     summary:
       "Contributing to an in-progress rebuild of Cleo's consumer-finance web experience, with a focus on reusable, responsive interfaces.",
     classification: 'software-engineering',
-    detailPageDestination: null,
   },
   {
-    id: 'teya',
+    roleId: 'teya',
     company: 'Teya',
     role: 'Software Engineer',
     location: 'London, UK',
@@ -50,10 +49,9 @@ const experience: Experience[] = [
     summary:
       'Built and refined merchant-facing payments experiences, with an emphasis on frontend quality, documentation, and collaborative delivery.',
     classification: 'software-engineering',
-    detailPageDestination: null,
   },
   {
-    id: 'duffel',
+    roleId: 'duffel',
     company: 'Duffel',
     role: 'Software engineer',
     location: 'London, UK',
