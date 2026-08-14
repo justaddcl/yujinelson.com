@@ -18,7 +18,8 @@ import ExperienceCard from '../components/ExperienceCard';
 import { ContactCard } from '../components/ContactCard/ContactCard';
 import experience from '../data/experience';
 
-const duffelExperience = experience.find(({ roleId }) => roleId === 'duffel');
+const currentExperience =
+  experience.find(({ dates }) => dates.end === null) || experience[0];
 
 const AboutPage = styled(ContentContainer)``;
 
@@ -110,21 +111,27 @@ const About = ({ data }) => (
     <section>
       <H2>My most recent role</H2>
       <ExperienceCard
-        company={duffelExperience.company}
-        dates={duffelExperience.dates}
-        location={duffelExperience.location}
-        logo={data.duffelLogo}
-        role={duffelExperience.role}
-        roles={duffelExperience.roles}
-        summary={duffelExperience.summary}
-        team={duffelExperience.team}
+        company={currentExperience.company}
+        dates={currentExperience.dates}
+        location={currentExperience.location}
+        logo={
+          currentExperience.roleId === 'duffel' ? data.duffelLogo : undefined
+        }
+        role={currentExperience.role}
+        roles={currentExperience.roles}
+        summary={currentExperience.summary}
+        team={currentExperience.team}
       >
-        <ul className="role-bullets">
-          {duffelExperience.bullets.map((bullet, index) => (
-            // FIXME: should not be using the array index for the key
-            <li key={`duffel-bullet-${index}`}>{bullet}</li>
-          ))}
-        </ul>
+        {currentExperience.bullets && (
+          <ul className="role-bullets">
+            {currentExperience.bullets.map((bullet, index) => (
+              // FIXME: should not be using the array index for the key
+              <li key={`${currentExperience.roleId}-bullet-${index}`}>
+                {bullet}
+              </li>
+            ))}
+          </ul>
+        )}
       </ExperienceCard>
       <ResumeLink button>
         See resume{' '}
