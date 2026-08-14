@@ -27,30 +27,32 @@ const experience: Experience[] = [
   {
     roleId: 'cleo',
     company: 'Cleo',
-    role: 'Software Engineer',
+    role: 'Senior Software Engineer, Front-end',
     location: 'London, UK',
     dates: {
       start: '04/2024',
       end: null,
     },
     summary:
-      "Contributing to an in-progress rebuild of Cleo's consumer-finance web experience, with a focus on reusable, responsive interfaces.",
+      'Led front-end architecture for Cleo’s React Native Earned Wage Access experience, simplifying complex client-side flows through backend-driven states and shipping A/B-tested disbursement improvements across more than two million users.',
     classification: 'software-engineering',
     logo: 'cleoLogo',
+    team: 'Earned Wage Access Core Squad',
   },
   {
     roleId: 'teya',
     company: 'Teya',
-    role: 'Software Engineer',
+    role: 'Senior Software Engineer',
     location: 'London, UK',
     dates: {
       start: '10/2022',
       end: '03/2024',
     },
     summary:
-      'Built and refined merchant-facing payments experiences, with an emphasis on frontend quality, documentation, and collaborative delivery.',
+      'Lead engineer on Teya’s Next.js Customer Service Portal, setting technical direction and engineering standards while owning TypeScript/Node GraphQL BFF changes that enabled the front-end team to ship end-to-end features independently.',
     classification: 'software-engineering',
     logo: 'teyaLogo',
+    team: 'Customer Service Portal',
   },
   {
     roleId: 'duffel',
