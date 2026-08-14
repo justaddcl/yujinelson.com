@@ -1,4 +1,33 @@
-const experience = [
+export type ExperienceDateRange = {
+  start: string;
+  end: string | null;
+};
+
+export type ExperienceRole = {
+  title: string;
+  team: string;
+  startDate: string;
+  endDate: string | null;
+};
+
+export type Experience = {
+  id: string;
+  company: string;
+  role: string;
+  location: string;
+  dates: ExperienceDateRange;
+  summary: string | null;
+  classification?: string;
+  detailPageDestination?: string | null;
+  logo: string;
+  team?: string;
+  companyFirst?: boolean;
+  roles?: ExperienceRole[];
+  tags: string[];
+  bullets?: string[];
+};
+
+const experience: Experience[] = [
   {
     id: 'duffel',
     company: 'Duffel',
