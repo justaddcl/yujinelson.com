@@ -80,6 +80,7 @@ const StyledExperienceCard = styled.div`
 
   .role-primary-group {
     margin-bottom: ${spacing.base}rem;
+    grid-column: 1 / 3;
 
     @media screen and (min-width: ${mq.desktop.small}) {
       order: -1;
@@ -101,6 +102,7 @@ const StyledExperienceCard = styled.div`
 
     .role-team {
       color: ${colors.grey[400]};
+      line-height: 1.3;
     }
   }
 
