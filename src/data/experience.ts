@@ -35,7 +35,7 @@ const experience: Experience[] = [
       end: '09/2022',
     },
     summary:
-      "Built customer-facing features for Duffel's travel platform, including search, checkout, and product discovery experiences.",
+      "Built a TypeScript and Meilisearch search experience to help customers quickly find orders, alongside loyalty checkout and product-discovery features in Duffel's Next.js app.",
     classification: 'software-engineering',
     logo: 'duffelLogo',
     team: 'UX Products',
