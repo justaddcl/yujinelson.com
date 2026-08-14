@@ -14,9 +14,9 @@ const StyledExperienceCard = styled.div`
   --inner-role-primary-size: 1rem;
 
   display: grid;
-  grid-template: auto / var(--role-left-column) 1fr;
+  grid-template-columns: var(--role-left-column) 1fr;
   column-gap: var(--role-column-gap);
-  row-gap: ${spacing.s}rem;
+  row-gap: ${spacing.m}rem;
   font-family: ${fonts.family.sourceCodePro};
   margin-bottom: ${spacing.base}rem;
   padding-top: ${spacing.base}rem;
@@ -31,6 +31,7 @@ const StyledExperienceCard = styled.div`
 
   @media screen and (min-width: ${mq.desktop.small}) {
     --role-column-gap: ${spacing.m}rem;
+    row-gap: ${spacing.xs}rem;
   }
 
   .company-logo {
@@ -93,11 +94,15 @@ const StyledExperienceCard = styled.div`
   .role-impact-summary {
     color: ${colors.grey[200]};
     line-height: 1.5;
-    margin: ${spacing.s}rem 0 0;
+    margin-bottom: ${spacing.base}rem;
+    grid-column: 1 / -1;
+
+    &:not(:last-child) {
+      margin-bottom: ${spacing.s}rem;
+    }
 
     @media screen and (min-width: ${mq.desktop.small}) {
-      grid-column: 1 / 3;
-      grid-row: 2;
+      margin-bottom: 0;
     }
   }
 
@@ -212,12 +217,12 @@ const ExperienceCard = ({
           {team && <span className="role-team">/ {team}</span>}
         </div>
       </div>
-      {summary && <p className="role-impact-summary">{summary}</p>}
       <div className="experience-tags">
         {tags && tags.map((tag) => <ExperienceTag tag={tag} key={tag} />)}
       </div>
       {children}
     </div>
+    {summary && <p className="role-impact-summary">{summary}</p>}
     {roles && (
       <>
         {roles.map((innerRole) => (
