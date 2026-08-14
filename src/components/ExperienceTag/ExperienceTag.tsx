@@ -2,6 +2,10 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { colors, spacing } from '../styles/theme';
 
+/**
+ * @deprecated Experience tags are not currently rendered. Keep this component
+ * for the future, when the experience data has a useful, well-defined tag model.
+ */
 export type ExperienceType = 'dev' | 'ux' | 'ui' | 'ecommerce' | 'cms';
 
 export type ExperienceTagValues = {
@@ -61,6 +65,10 @@ const getExperienceTagValues = (
   }
 };
 
+/**
+ * @deprecated Experience tags are reserved for a future, meaningful tag model.
+ * Do not render this component in experience cards until that model is defined.
+ */
 export const ExperienceTag: React.FC<ExperienceTagProps> = ({ tag }) => {
   const { text, color } = getExperienceTagValues(tag);
 

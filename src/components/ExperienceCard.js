@@ -2,7 +2,6 @@ import React from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import { colors, fonts, mq, spacing } from './styles/theme';
-import { ExperienceTag } from './ExperienceTag/ExperienceTag';
 
 const StyledExperienceCard = styled.div`
   --role-node-size: calc(${spacing.xxs} * ${spacing.basePx}px);
@@ -39,6 +38,20 @@ const StyledExperienceCard = styled.div`
     border-radius: 2px;
   }
 
+  .company-mark {
+    align-items: center;
+    background-color: ${colors.grey[500]};
+    border-radius: 2px;
+    color: ${colors.grey[50]};
+    display: flex;
+    font-family: ${fonts.family.proximaNova};
+    font-size: 1.125rem;
+    font-weight: 700;
+    height: 48px;
+    justify-content: center;
+    width: 48px;
+  }
+
   .role-summary {
     display: grid;
     row-gap: ${spacing.xxs}rem;
@@ -67,6 +80,7 @@ const StyledExperienceCard = styled.div`
 
   .role-primary-group {
     margin-bottom: ${spacing.base}rem;
+    grid-column: 1 / 3;
 
     @media screen and (min-width: ${mq.desktop.small}) {
       order: -1;
@@ -88,6 +102,7 @@ const StyledExperienceCard = styled.div`
 
     .role-team {
       color: ${colors.grey[400]};
+      line-height: 1.3;
     }
   }
 
@@ -164,19 +179,6 @@ const StyledExperienceCard = styled.div`
     }
   }
 
-  .experience-tags {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: start;
-    justify-content: start;
-    margin: -${spacing.xxs}rem;
-
-    & > * {
-      margin: ${spacing.xxs}rem;
-    }
-  }
-
   &:not(:first-of-type) {
     border-top: 1px solid ${colors.purple[700]};
     padding-top: ${spacing.m}rem;
@@ -197,11 +199,16 @@ const ExperienceCard = ({
   location,
   roles,
   summary,
-  tags,
   children,
 }) => (
   <StyledExperienceCard>
-    <GatsbyImage image={logo.childImageSharp.gatsbyImageData} />
+    {logo ? (
+      <GatsbyImage image={logo.childImageSharp.gatsbyImageData} />
+    ) : (
+      <span aria-hidden="true" className="company-mark">
+        {company.charAt(0)}
+      </span>
+    )}
     <div className="role-summary">
       <div className="role-dates token--teal">
         {dates.start} -{' '}
@@ -217,12 +224,9 @@ const ExperienceCard = ({
           {team && <span className="role-team">/ {team}</span>}
         </div>
       </div>
-      <div className="experience-tags">
-        {tags && tags.map((tag) => <ExperienceTag tag={tag} key={tag} />)}
-      </div>
+      {summary && <p className="role-impact-summary">{summary}</p>}
       {children}
     </div>
-    {summary && <p className="role-impact-summary">{summary}</p>}
     {roles && (
       <>
         {roles.map((innerRole) => (
