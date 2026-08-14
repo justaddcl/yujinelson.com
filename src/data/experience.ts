@@ -1,11 +1,43 @@
-const experience = {
-  duffel: {
-    startDate: '11/2021',
-    endDate: '09/2022',
-    primary: 'Software engineer',
-    secondary: 'Duffel',
-    team: 'UX Products',
+export type DateRange = {
+  start: string;
+  end: string | null;
+};
+
+export type ExperienceRole = DateRange & {
+  title: string;
+  team: string;
+};
+
+export type Experience = {
+  roleId: string;
+  company: string;
+  role: string;
+  location: string;
+  dates: DateRange;
+  summary: string | null;
+  classification?: string;
+  logo: string;
+  team?: string;
+  companyFirst?: boolean;
+  roles?: ExperienceRole[];
+  tags: string[];
+  bullets?: string[];
+};
+
+const experience: Experience[] = [
+  {
+    roleId: 'duffel',
+    company: 'Duffel',
+    role: 'Software engineer',
     location: 'London, UK',
+    dates: {
+      start: '11/2021',
+      end: '09/2022',
+    },
+    summary: null,
+    classification: 'software-engineering',
+    logo: 'duffelLogo',
+    team: 'UX Products',
     tags: ['dev'],
     bullets: [
       'Built a site-wide, text-based search using Meilisearch and TypeScript to enable customers to quickly find an order on the Duffel Next.js web application',
@@ -13,13 +45,19 @@ const experience = {
       'Implemented a feed-style homepage for the Duffel Next.js web application to educate users about the product as well as highlight new product features',
     ],
   },
-  magpul: {
-    startDate: '09/2017',
-    endDate: '05/2021',
-    primary: 'Front-end Web Developer',
-    secondary: 'Magpul',
-    team: 'Marketing',
+  {
+    roleId: 'magpul',
+    company: 'Magpul',
+    role: 'Front-end Web Developer',
     location: 'Austin, TX',
+    dates: {
+      start: '09/2017',
+      end: '05/2021',
+    },
+    summary: null,
+    classification: 'software-engineering',
+    logo: 'magpulLogo',
+    team: 'Marketing',
     tags: ['dev', 'ux', 'ecommerce'],
     bullets: [
       'Develop all Magpul business-to-business (B2B) and business-to-customer (B2C) website content and eCommerce activities',
@@ -29,34 +67,41 @@ const experience = {
       'Created website style guide to drive interface consistency and maintain the integrity of the Magpul family of websites',
     ],
   },
-  boeing: {
-    startDate: '07/2014',
-    endDate: '06/2017',
-    primary: 'Boeing',
-    secondary: 'ITCFP Rotation Program',
+  {
+    roleId: 'boeing',
+    company: 'Boeing',
+    role: 'ITCFP Rotation Program',
     location: 'Bellevue, WA',
+    dates: {
+      start: '07/2014',
+      end: '06/2017',
+    },
+    summary: null,
+    classification: 'software-engineering',
+    logo: 'boeingLogo',
+    companyFirst: true,
     roles: [
       {
         title: 'Web Developer',
         team: 'Unified Communications',
-        startDate: '06/2016',
-        endDate: '06/2017',
+        start: '06/2016',
+        end: '06/2017',
       },
       {
         title: 'Web Developer',
         team: 'PC Hardware',
-        startDate: '06/2015',
-        endDate: '06/2016',
+        start: '06/2015',
+        end: '06/2016',
       },
       {
         title: 'Web Developer',
         team: 'Enterprise Communications',
-        startDate: '07/2014',
-        endDate: '06/2015',
+        start: '07/2014',
+        end: '06/2015',
       },
     ],
     tags: ['dev', 'ux'],
   },
-};
+];
 
 export default experience;

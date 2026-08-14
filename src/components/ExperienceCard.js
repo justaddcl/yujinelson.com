@@ -172,11 +172,11 @@ const StyledExperienceCard = styled.div`
 `;
 
 const ExperienceCard = ({
-  startDate,
-  endDate,
-  rolePrimary,
-  roleSecondary,
-  roleTeam,
+  company,
+  role,
+  dates,
+  team,
+  companyFirst,
   logo,
   location,
   roles,
@@ -187,17 +187,17 @@ const ExperienceCard = ({
     <GatsbyImage image={logo.childImageSharp.gatsbyImageData} />
     <div className="role-summary">
       <div className="role-dates token--teal">
-        {startDate} -{' '}
-        {endDate || <span className="token--yellow">Present</span>}
+        {dates.start} -{' '}
+        {dates.end || <span className="token--yellow">Present</span>}
         <div className="role-location-group">
           <span className="token--purple">in</span> {location}
         </div>
       </div>
       <div className="role-primary-group">
-        <div className="role-primary">{rolePrimary}</div>
+        <div className="role-primary">{companyFirst ? company : role}</div>
         <div className="role-secondary">
-          {roleSecondary}{' '}
-          {roleTeam && <span className="role-team">/ {roleTeam}</span>}
+          {companyFirst ? role : company}{' '}
+          {team && <span className="role-team">/ {team}</span>}
         </div>
       </div>
       <div className="experience-tags">
@@ -207,15 +207,19 @@ const ExperienceCard = ({
     </div>
     {roles && (
       <>
-        {roles.map((role) => (
-          <React.Fragment key={`${rolePrimary}-${role.team}-${role.title}`}>
+        {roles.map((innerRole) => (
+          <React.Fragment
+            key={`${company}-${innerRole.team}-${innerRole.title}`}
+          >
             <span className="role-node" />
             <div className="sub-role">
-              <div className="role-primary">{role.title}</div>
-              <div className="role-secondary">{role.team}</div>
+              <div className="role-primary">{innerRole.title}</div>
+              <div className="role-secondary">{innerRole.team}</div>
               <div className="role-dates">
-                {role.startDate} -{' '}
-                {role.endDate || <span className="token--yellow">Present</span>}
+                {innerRole.start} -{' '}
+                {innerRole.end || (
+                  <span className="token--yellow">Present</span>
+                )}
               </div>
             </div>
           </React.Fragment>
