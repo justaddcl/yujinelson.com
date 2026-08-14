@@ -1,13 +1,11 @@
-export type ExperienceDateRange = {
+export type DateRange = {
   start: string;
   end: string | null;
 };
 
-export type ExperienceRole = {
+export type ExperienceRole = DateRange & {
   title: string;
   team: string;
-  startDate: string;
-  endDate: string | null;
 };
 
 export type Experience = {
@@ -15,7 +13,7 @@ export type Experience = {
   company: string;
   role: string;
   location: string;
-  dates: ExperienceDateRange;
+  dates: DateRange;
   summary: string | null;
   classification?: string;
   logo: string;
@@ -86,20 +84,20 @@ const experience: Experience[] = [
       {
         title: 'Web Developer',
         team: 'Unified Communications',
-        startDate: '06/2016',
-        endDate: '06/2017',
+        start: '06/2016',
+        end: '06/2017',
       },
       {
         title: 'Web Developer',
         team: 'PC Hardware',
-        startDate: '06/2015',
-        endDate: '06/2016',
+        start: '06/2015',
+        end: '06/2016',
       },
       {
         title: 'Web Developer',
         team: 'Enterprise Communications',
-        startDate: '07/2014',
-        endDate: '06/2015',
+        start: '07/2014',
+        end: '06/2015',
       },
     ],
     tags: ['dev', 'ux'],

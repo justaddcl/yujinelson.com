@@ -216,8 +216,8 @@ const ExperienceCard = ({
               <div className="role-primary">{innerRole.title}</div>
               <div className="role-secondary">{innerRole.team}</div>
               <div className="role-dates">
-                {innerRole.startDate} -{' '}
-                {innerRole.endDate || (
+                {innerRole.start} -{' '}
+                {innerRole.end || (
                   <span className="token--yellow">Present</span>
                 )}
               </div>
