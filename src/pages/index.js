@@ -62,7 +62,7 @@ const Home = ({ data }) => (
           company={entry.company}
           companyFirst={entry.companyFirst}
           dates={entry.dates}
-          key={entry.id}
+          key={entry.roleId}
           location={entry.location}
           logo={data[entry.logo]}
           role={entry.role}

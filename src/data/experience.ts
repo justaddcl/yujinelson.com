@@ -11,14 +11,13 @@ export type ExperienceRole = {
 };
 
 export type Experience = {
-  id: string;
+  roleId: string;
   company: string;
   role: string;
   location: string;
   dates: ExperienceDateRange;
   summary: string | null;
   classification?: string;
-  detailPageDestination?: string | null;
   logo: string;
   team?: string;
   companyFirst?: boolean;
@@ -29,7 +28,7 @@ export type Experience = {
 
 const experience: Experience[] = [
   {
-    id: 'duffel',
+    roleId: 'duffel',
     company: 'Duffel',
     role: 'Software engineer',
     location: 'London, UK',
@@ -39,7 +38,6 @@ const experience: Experience[] = [
     },
     summary: null,
     classification: 'software-engineering',
-    detailPageDestination: null,
     logo: 'duffelLogo',
     team: 'UX Products',
     tags: ['dev'],
@@ -50,7 +48,7 @@ const experience: Experience[] = [
     ],
   },
   {
-    id: 'magpul',
+    roleId: 'magpul',
     company: 'Magpul',
     role: 'Front-end Web Developer',
     location: 'Austin, TX',
@@ -60,7 +58,6 @@ const experience: Experience[] = [
     },
     summary: null,
     classification: 'software-engineering',
-    detailPageDestination: null,
     logo: 'magpulLogo',
     team: 'Marketing',
     tags: ['dev', 'ux', 'ecommerce'],
@@ -73,7 +70,7 @@ const experience: Experience[] = [
     ],
   },
   {
-    id: 'boeing',
+    roleId: 'boeing',
     company: 'Boeing',
     role: 'ITCFP Rotation Program',
     location: 'Bellevue, WA',
@@ -83,7 +80,6 @@ const experience: Experience[] = [
     },
     summary: null,
     classification: 'software-engineering',
-    detailPageDestination: null,
     logo: 'boeingLogo',
     companyFirst: true,
     roles: [

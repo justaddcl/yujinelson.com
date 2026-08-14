@@ -18,7 +18,7 @@ import ExperienceCard from '../components/ExperienceCard';
 import { ContactCard } from '../components/ContactCard/ContactCard';
 import experience from '../data/experience';
 
-const duffelExperience = experience.find(({ id }) => id === 'duffel');
+const duffelExperience = experience.find(({ roleId }) => roleId === 'duffel');
 
 const AboutPage = styled(ContentContainer)``;
 
