@@ -30,8 +30,8 @@ const experience: Experience[] = [
     role: 'Senior Software Engineer, Front-end',
     location: 'London, UK',
     dates: {
-      start: '06/2024',
-      end: '06/2026',
+      start: 'Jun 2024',
+      end: 'Jun 2026',
     },
     summary:
       'Led front-end architecture for Cleo’s React Native Earned Wage Access experience, simplifying complex client-side flows through backend-driven states and shipping A/B-tested disbursement improvements across more than two million users.',
@@ -45,8 +45,8 @@ const experience: Experience[] = [
     role: 'Senior Software Engineer',
     location: 'London, UK',
     dates: {
-      start: '11/2022',
-      end: '06/2024',
+      start: 'Nov 2022',
+      end: 'Jun 2024',
     },
     summary:
       'Lead engineer on Teya’s Next.js Customer Service Portal, setting technical direction and engineering standards while owning TypeScript/Node GraphQL BFF changes that enabled the front-end team to ship end-to-end features independently.',
@@ -60,8 +60,8 @@ const experience: Experience[] = [
     role: 'Software engineer',
     location: 'London, UK',
     dates: {
-      start: '11/2021',
-      end: '09/2022',
+      start: 'Nov 2021',
+      end: 'Sep 2022',
     },
     summary:
       "Delivered customer-facing discovery, search, and loyalty experiences for Duffel's Next.js app, including Meilisearch-powered order search, a multi-step checkout flow, and a feed-style homepage for product education.",
@@ -80,8 +80,8 @@ const experience: Experience[] = [
     role: 'Front-end Web Developer',
     location: 'Austin, TX',
     dates: {
-      start: '09/2017',
-      end: '05/2021',
+      start: 'Sep 2017',
+      end: 'May 2021',
     },
     summary:
       "Led front-end development and UX delivery for Magpul's B2B and B2C ecommerce websites.",
@@ -102,8 +102,8 @@ const experience: Experience[] = [
     role: 'ITCFP Rotation Program',
     location: 'Bellevue, WA',
     dates: {
-      start: '07/2014',
-      end: '06/2017',
+      start: 'Jul 2014',
+      end: 'Jun 2017',
     },
     summary:
       'Delivered and redesigned critical, enterprise-wide internal websites across all three rotations, combining web strategy, user research, and front-end development.',
@@ -114,20 +114,20 @@ const experience: Experience[] = [
       {
         title: 'Web Developer',
         team: 'Unified Communications',
-        start: '06/2016',
-        end: '06/2017',
+        start: 'Jun 2016',
+        end: 'Jun 2017',
       },
       {
         title: 'Web Developer',
         team: 'PC Hardware',
-        start: '06/2015',
-        end: '06/2016',
+        start: 'Jun 2015',
+        end: 'Jun 2016',
       },
       {
         title: 'Web Developer',
         team: 'Enterprise Mobility',
-        start: '07/2014',
-        end: '06/2015',
+        start: 'Jul 2014',
+        end: 'JUn 2015',
       },
     ],
   },
