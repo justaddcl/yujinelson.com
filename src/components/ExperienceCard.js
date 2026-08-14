@@ -90,6 +90,16 @@ const StyledExperienceCard = styled.div`
     }
   }
 
+  .role-impact-summary {
+    color: ${colors.grey[200]};
+    line-height: 1.5;
+    margin: ${spacing.s}rem 0 0;
+
+    @media screen and (min-width: ${mq.desktop.small}) {
+      grid-column: 1 / 3;
+    }
+  }
+
   .role-bullets {
     list-style-type: disc;
     margin-top: ${spacing.s}rem;
@@ -180,6 +190,7 @@ const ExperienceCard = ({
   logo,
   location,
   roles,
+  summary,
   tags,
   children,
 }) => (
@@ -200,6 +211,7 @@ const ExperienceCard = ({
           {team && <span className="role-team">/ {team}</span>}
         </div>
       </div>
+      {summary && <p className="role-impact-summary">{summary}</p>}
       <div className="experience-tags">
         {tags && tags.map((tag) => <ExperienceTag tag={tag} key={tag} />)}
       </div>

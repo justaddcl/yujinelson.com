@@ -67,6 +67,7 @@ const Home = ({ data }) => (
           logo={data[entry.logo]}
           role={entry.role}
           roles={entry.roles}
+          summary={entry.summary}
           tags={entry.tags}
           team={entry.team}
         />

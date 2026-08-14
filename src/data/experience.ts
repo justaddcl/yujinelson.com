@@ -14,7 +14,7 @@ export type Experience = {
   role: string;
   location: string;
   dates: DateRange;
-  summary: string | null;
+  summary: string;
   classification?: string;
   logo: string;
   team?: string;
@@ -34,7 +34,8 @@ const experience: Experience[] = [
       start: '11/2021',
       end: '09/2022',
     },
-    summary: null,
+    summary:
+      "Built customer-facing features for Duffel's travel platform, including search, checkout, and product discovery experiences.",
     classification: 'software-engineering',
     logo: 'duffelLogo',
     team: 'UX Products',
@@ -54,7 +55,8 @@ const experience: Experience[] = [
       start: '09/2017',
       end: '05/2021',
     },
-    summary: null,
+    summary:
+      "Led front-end development and UX delivery for Magpul's B2B and B2C ecommerce websites.",
     classification: 'software-engineering',
     logo: 'magpulLogo',
     team: 'Marketing',
@@ -76,7 +78,8 @@ const experience: Experience[] = [
       start: '07/2014',
       end: '06/2017',
     },
-    summary: null,
+    summary:
+      'Completed a three-year IT career foundation programme, rotating through communications and PC hardware web development teams.',
     classification: 'software-engineering',
     logo: 'boeingLogo',
     companyFirst: true,
