@@ -18,16 +18,7 @@ import ExperienceCard from '../components/ExperienceCard';
 import { ContactCard } from '../components/ContactCard/ContactCard';
 import experience from '../data/experience';
 
-const {
-  startDate,
-  endDate,
-  primary,
-  secondary,
-  team,
-  location,
-  tags,
-  bullets,
-} = experience.duffel;
+const duffelExperience = experience.find(({ id }) => id === 'duffel');
 
 const AboutPage = styled(ContentContainer)``;
 
@@ -119,17 +110,17 @@ const About = ({ data }) => (
     <section>
       <H2>My most recent role</H2>
       <ExperienceCard
-        startDate={startDate}
-        endDate={endDate}
-        rolePrimary={primary}
-        roleSecondary={secondary}
+        company={duffelExperience.company}
+        dates={duffelExperience.dates}
+        location={duffelExperience.location}
         logo={data.duffelLogo}
-        roleTeam={team}
-        location={location}
-        tags={tags}
+        role={duffelExperience.role}
+        roles={duffelExperience.roles}
+        tags={duffelExperience.tags}
+        team={duffelExperience.team}
       >
         <ul className="role-bullets">
-          {bullets.map((bullet, index) => (
+          {duffelExperience.bullets.map((bullet, index) => (
             // FIXME: should not be using the array index for the key
             <li key={`duffel-bullet-${index}`}>{bullet}</li>
           ))}

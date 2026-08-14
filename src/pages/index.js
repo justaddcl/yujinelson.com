@@ -57,36 +57,20 @@ const Home = ({ data }) => (
     </section>
     <section id="experience">
       <H2>Experience</H2>
-      <ExperienceCard
-        startDate={experience.duffel.startDate}
-        endDate={experience.duffel.endDate}
-        rolePrimary={experience.duffel.primary}
-        roleSecondary={experience.duffel.secondary}
-        logo={data.duffelLogo}
-        roleTeam={experience.duffel.team}
-        location={experience.duffel.location}
-        tags={experience.duffel.tags}
-      />
-      <ExperienceCard
-        startDate={experience.magpul.startDate}
-        endDate={experience.magpul.endDate}
-        rolePrimary={experience.magpul.primary}
-        roleSecondary={experience.magpul.secondary}
-        logo={data.magpulLogo}
-        roleTeam={experience.magpul.team}
-        location={experience.magpul.location}
-        tags={experience.magpul.tags}
-      />
-      <ExperienceCard
-        startDate={experience.boeing.startDate}
-        endDate={experience.boeing.endDate}
-        rolePrimary={experience.boeing.primary}
-        roleSecondary={experience.boeing.secondary}
-        logo={data.boeingLogo}
-        location={experience.boeing.location}
-        roles={experience.boeing.roles}
-        tags={experience.boeing.tags}
-      />
+      {experience.map((entry) => (
+        <ExperienceCard
+          company={entry.company}
+          companyFirst={entry.companyFirst}
+          dates={entry.dates}
+          key={entry.id}
+          location={entry.location}
+          logo={data[entry.logo]}
+          role={entry.role}
+          roles={entry.roles}
+          tags={entry.tags}
+          team={entry.team}
+        />
+      ))}
       <ResumeLink button>
         See resume{' '}
         <FontAwesomeIcon icon="arrow-right" className="icon icon--right" />
