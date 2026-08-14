@@ -97,6 +97,7 @@ const StyledExperienceCard = styled.div`
 
     @media screen and (min-width: ${mq.desktop.small}) {
       grid-column: 1 / 3;
+      grid-row: 2;
     }
   }
 
