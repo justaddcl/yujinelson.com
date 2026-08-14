@@ -98,7 +98,7 @@ const experience: Experience[] = [
       },
       {
         title: 'Web Developer',
-        team: 'Enterprise Communications',
+        team: 'Enterprise Mobility',
         start: '07/2014',
         end: '06/2015',
       },
