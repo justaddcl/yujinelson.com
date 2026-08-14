@@ -117,7 +117,6 @@ const About = ({ data }) => (
         role={duffelExperience.role}
         roles={duffelExperience.roles}
         summary={duffelExperience.summary}
-        tags={duffelExperience.tags}
         team={duffelExperience.team}
       >
         <ul className="role-bullets">

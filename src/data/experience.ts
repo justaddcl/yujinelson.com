@@ -16,17 +16,44 @@ export type Experience = {
   dates: DateRange;
   summary: string;
   classification?: string;
-  logo: string;
+  logo?: string;
   team?: string;
   companyFirst?: boolean;
   roles?: ExperienceRole[];
-  tags: string[];
   bullets?: string[];
 };
 
 const experience: Experience[] = [
   {
-    roleId: 'duffel',
+    id: 'cleo',
+    company: 'Cleo',
+    role: 'Software Engineer',
+    location: 'London, UK',
+    dates: {
+      start: '04/2024',
+      end: null,
+    },
+    summary:
+      "Contributing to an in-progress rebuild of Cleo's consumer-finance web experience, with a focus on reusable, responsive interfaces.",
+    classification: 'software-engineering',
+    detailPageDestination: null,
+  },
+  {
+    id: 'teya',
+    company: 'Teya',
+    role: 'Software Engineer',
+    location: 'London, UK',
+    dates: {
+      start: '10/2022',
+      end: '03/2024',
+    },
+    summary:
+      'Built and refined merchant-facing payments experiences, with an emphasis on frontend quality, documentation, and collaborative delivery.',
+    classification: 'software-engineering',
+    detailPageDestination: null,
+  },
+  {
+    id: 'duffel',
     company: 'Duffel',
     role: 'Software engineer',
     location: 'London, UK',
@@ -39,7 +66,6 @@ const experience: Experience[] = [
     classification: 'software-engineering',
     logo: 'duffelLogo',
     team: 'UX Products',
-    tags: ['dev'],
     bullets: [
       'Built a site-wide, text-based search using Meilisearch and TypeScript to enable customers to quickly find an order on the Duffel Next.js web application',
       'Developed new loyalty programmes feature for multi-step search and checkout process with Formik and TypeScript',
@@ -60,7 +86,6 @@ const experience: Experience[] = [
     classification: 'software-engineering',
     logo: 'magpulLogo',
     team: 'Marketing',
-    tags: ['dev', 'ux', 'ecommerce'],
     bullets: [
       'Develop all Magpul business-to-business (B2B) and business-to-customer (B2C) website content and eCommerce activities',
       'Provide oversight, guidance, and act as subject matter expert to all implementation partners on user experience (UX) design and website development',
@@ -103,7 +128,6 @@ const experience: Experience[] = [
         end: '06/2015',
       },
     ],
-    tags: ['dev', 'ux'],
   },
 ];
 

@@ -68,7 +68,6 @@ const Home = ({ data }) => (
           role={entry.role}
           roles={entry.roles}
           summary={entry.summary}
-          tags={entry.tags}
           team={entry.team}
         />
       ))}
