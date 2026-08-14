@@ -30,8 +30,8 @@ const experience: Experience[] = [
     role: 'Senior Software Engineer, Front-end',
     location: 'London, UK',
     dates: {
-      start: '04/2024',
-      end: null,
+      start: '06/2024',
+      end: '06/2026',
     },
     summary:
       'Led front-end architecture for Cleo’s React Native Earned Wage Access experience, simplifying complex client-side flows through backend-driven states and shipping A/B-tested disbursement improvements across more than two million users.',
@@ -45,8 +45,8 @@ const experience: Experience[] = [
     role: 'Senior Software Engineer',
     location: 'London, UK',
     dates: {
-      start: '10/2022',
-      end: '03/2024',
+      start: '11/2022',
+      end: '06/2024',
     },
     summary:
       'Lead engineer on Teya’s Next.js Customer Service Portal, setting technical direction and engineering standards while owning TypeScript/Node GraphQL BFF changes that enabled the front-end team to ship end-to-end features independently.',
