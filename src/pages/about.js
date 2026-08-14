@@ -114,9 +114,7 @@ const About = ({ data }) => (
         company={currentExperience.company}
         dates={currentExperience.dates}
         location={currentExperience.location}
-        logo={
-          currentExperience.roleId === 'duffel' ? data.duffelLogo : undefined
-        }
+        logo={data[currentExperience.logo]}
         role={currentExperience.role}
         roles={currentExperience.roles}
         summary={currentExperience.summary}
@@ -206,7 +204,17 @@ export const query = graphql`
         gatsbyImageData(width: 500, layout: CONSTRAINED)
       }
     }
+    cleoLogo: file(relativePath: { eq: "experience/cleo-logo-white.png" }) {
+      childImageSharp {
+        gatsbyImageData(width: 48, height: 48, layout: FIXED)
+      }
+    }
     duffelLogo: file(relativePath: { eq: "experience/duffel-logo-white.png" }) {
+      childImageSharp {
+        gatsbyImageData(width: 48, height: 48, layout: FIXED)
+      }
+    }
+    teyaLogo: file(relativePath: { eq: "experience/teya-logo-white.png" }) {
       childImageSharp {
         gatsbyImageData(width: 48, height: 48, layout: FIXED)
       }

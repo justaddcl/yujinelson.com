@@ -36,6 +36,7 @@ const experience: Experience[] = [
     summary:
       "Contributing to an in-progress rebuild of Cleo's consumer-finance web experience, with a focus on reusable, responsive interfaces.",
     classification: 'software-engineering',
+    logo: 'cleoLogo',
   },
   {
     roleId: 'teya',
@@ -49,6 +50,7 @@ const experience: Experience[] = [
     summary:
       'Built and refined merchant-facing payments experiences, with an emphasis on frontend quality, documentation, and collaborative delivery.',
     classification: 'software-engineering',
+    logo: 'teyaLogo',
   },
   {
     roleId: 'duffel',

@@ -86,12 +86,22 @@ export const query = graphql`
         gatsbyImageData(layout: FULL_WIDTH)
       }
     }
+    cleoLogo: file(relativePath: { eq: "experience/cleo-logo-white.png" }) {
+      childImageSharp {
+        gatsbyImageData(width: 48, height: 48, layout: FIXED)
+      }
+    }
     duffelLogo: file(relativePath: { eq: "experience/duffel-logo-white.png" }) {
       childImageSharp {
         gatsbyImageData(width: 48, height: 48, layout: FIXED)
       }
     }
     magpulLogo: file(relativePath: { eq: "experience/magpul-logo-white.png" }) {
+      childImageSharp {
+        gatsbyImageData(width: 48, height: 48, layout: FIXED)
+      }
+    }
+    teyaLogo: file(relativePath: { eq: "experience/teya-logo-white.png" }) {
       childImageSharp {
         gatsbyImageData(width: 48, height: 48, layout: FIXED)
       }
