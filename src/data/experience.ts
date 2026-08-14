@@ -35,7 +35,7 @@ const experience: Experience[] = [
       end: '09/2022',
     },
     summary:
-      "Built a TypeScript and Meilisearch search experience to help customers quickly find orders, alongside loyalty checkout and product-discovery features in Duffel's Next.js app.",
+      "Delivered customer-facing discovery, search, and loyalty experiences for Duffel's Next.js app, including Meilisearch-powered order search, a multi-step checkout flow, and a feed-style homepage for product education.",
     classification: 'software-engineering',
     logo: 'duffelLogo',
     team: 'UX Products',
