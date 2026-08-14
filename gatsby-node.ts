@@ -1,7 +1,7 @@
 import type { GatsbyNode } from 'gatsby';
 
-const resume =
-  '/static/Yuji-Nelson-CV-2022-21e9515412f6493c7053aaff5ea45134.pdf';
+const cv = '/Yuji-Nelson-CV-2026.pdf';
+const cvAliasUrls = ['/resume', '/cv'];
 
 /**
  * Gatsby complains if we use a default export, so disabling the eslint rule to make sure the file exports
@@ -10,10 +10,20 @@ const resume =
 // eslint-disable-next-line import/prefer-default-export
 export const createPages: GatsbyNode['createPages'] = ({ actions }) => {
   const { createRedirect } = actions;
-  createRedirect({
-    fromPath: '/resume',
-    toPath: resume,
-    isPermanent: true,
-    redirectInBrowser: true,
+  cvAliasUrls.forEach((fromPath) => {
+    createRedirect({
+      fromPath: fromPath,
+      toPath: cv,
+      isPermanent: false,
+      redirectInBrowser: true,
+    });
+  });
+};
+
+export const onCreateDevServer: GatsbyNode['onCreateDevServer'] = ({ app }) => {
+  cvAliasUrls.forEach((fromPath) => {
+    app.get(fromPath, (_request, response) => {
+      response.redirect(302, cv);
+    });
   });
 };
