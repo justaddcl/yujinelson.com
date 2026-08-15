@@ -8,6 +8,13 @@ export type ExperienceRole = DateRange & {
   team: string;
 };
 
+export type ExperienceLogoKey =
+  | 'boeingLogo'
+  | 'cleoLogo'
+  | 'duffelLogo'
+  | 'magpulLogo'
+  | 'teyaLogo';
+
 export type Experience = {
   roleId: string;
   company: string;
@@ -16,7 +23,7 @@ export type Experience = {
   dates: DateRange;
   summary: string;
   classification?: string;
-  logo?: string;
+  logo?: ExperienceLogoKey;
   team?: string;
   companyFirst?: boolean;
   roles?: ExperienceRole[];
@@ -90,7 +97,7 @@ const experience: Experience[] = [
     team: 'Marketing',
     bullets: [
       'Develop all Magpul business-to-business (B2B) and business-to-customer (B2C) website content and eCommerce activities',
-      'Provide oversight, guidance, and act as subject matter expert to all implementation partners on user experience (UX) design and website development',
+      'Provide oversight, guidance, and act as subject matter expert to all implementation partners on user experience (UX) design and website development',
       'Collaborate with the marketing team for website innovation and wireframe design, to build responsive web pages',
       'Designed, developed and implemented new website and product pages using HTML, Less, CSS, JavaScript, and Adobe XD which resulted in increased customer engagement and product sales',
       'Created website style guide to drive interface consistency and maintain the integrity of the Magpul family of websites',
