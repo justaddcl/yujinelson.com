@@ -46,17 +46,23 @@ const StyledContactCard = styled.div`
   }
 `;
 
+const content = {
+  heading: "Let's work together",
+  body: "Have an opportunity for me, or questions about my work and skills? Let's chat!",
+  action: {
+    href: '/contact',
+    label: 'Get in touch',
+  },
+};
+
 export const ContactCard: React.FC = () => (
   <StyledContactCard>
     <div>
-      <h2>Let&apos;s work together</h2>
-      <p>
-        Have an opportunity for me, or questions about my work and skills?
-        Let&apos;s chat!
-      </p>
+      <h2>{content.heading}</h2>
+      <p>{content.body}</p>
     </div>
-    <Link to="/contact" className="button button--primary">
-      Get in touch{' '}
+    <Link to={content.action.href} className="button button--primary">
+      {content.action.label}
       <FontAwesomeIcon icon="arrow-right" className="icon--right" />
     </Link>
   </StyledContactCard>
