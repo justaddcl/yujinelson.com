@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { type ReactNode } from 'react';
 import styled from 'styled-components';
 import { colors, mq, spacing } from './styles/theme';
 import { H1 } from './styles/headers';
 
-const StyledHero = styled.section`
+type StyledHeroProps = {
+  $responsiveSplit: boolean;
+};
+
+const StyledHero = styled.section<StyledHeroProps>`
   ${(props) =>
-    props.responsiveSplit &&
+    props.$responsiveSplit &&
     `
     @media screen and (min-width: ${mq.mobile.large}) {
       display: grid;
@@ -35,8 +39,13 @@ const StyledHero = styled.section`
   }
 `;
 
-const Hero = ({ children, responsiveSplit }) => (
-  <StyledHero responsiveSplit={responsiveSplit}>{children}</StyledHero>
+type HeroProps = {
+  children: ReactNode;
+  responsiveSplit?: boolean;
+};
+
+const Hero = ({ children, responsiveSplit = false }: HeroProps) => (
+  <StyledHero $responsiveSplit={responsiveSplit}>{children}</StyledHero>
 );
 
 export default Hero;

@@ -5,6 +5,14 @@ module.exports = {
     es6: true,
   },
   root: true,
+  overrides: [
+    {
+      files: ['*.ts', '*.tsx'],
+      rules: {
+        'react/require-default-props': 0,
+      },
+    },
+  ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 2022,
