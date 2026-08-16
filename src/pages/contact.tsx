@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, type PageProps } from 'gatsby';
 import styled from 'styled-components';
 import { colors, fonts, mq, spacing } from '../components/styles/theme';
 import SEO from '../components/SEO';
@@ -13,9 +13,13 @@ import { H1 } from '../components/styles/headers';
 import P from '../components/styles/Text';
 import SocialsList from '../components/SocialsList';
 
-const ContactPage = styled(ContentContainer)`
+const ContactPage = styled(ContentContainer)<{ gap?: string }>`
   #contact-email {
     justify-self: start;
+  }
+
+  .inline-link {
+    margin-left: 0.25em;
   }
 `;
 
@@ -40,7 +44,15 @@ const StyledEmail = styled.div`
   }
 `;
 
-const Contact = ({ data }) => (
+type ContactPageData = {
+  site: {
+    siteMetadata: {
+      linkedin: string;
+    };
+  };
+};
+
+const Contact = ({ data }: PageProps<ContactPageData>) => (
   <ContactPage gap="xl">
     <SEO title="Connect with me" />
     <Hero>
@@ -51,13 +63,13 @@ const Contact = ({ data }) => (
         Let&apos;s see how we can work together to solve your next challenge!
       </P>
       <P>
-        The best way to reach me is through email or by connecting with me on{' '}
+        The best way to reach me is through email or by connecting with me on
         <span>
           <a
             href={`https://www.linkedin.com/in/${data.site.siteMetadata.linkedin}/`}
             target="_blank"
             rel="noopener noreferrer"
-            className="token--light-blue"
+            className="token--light-blue inline-link"
           >
             LinkedIn
           </a>

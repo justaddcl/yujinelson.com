@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { type ReactNode } from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
+import type { DateRange, ExperienceRole } from '../data/experience';
+import type { GatsbyImageFile } from '../types/gatsby';
 import { colors, fonts, mq, spacing } from './styles/theme';
 
 const StyledExperienceCard = styled.div`
@@ -103,6 +105,7 @@ const StyledExperienceCard = styled.div`
     .role-team {
       color: ${colors.grey[400]};
       line-height: 1.3;
+      margin-left: ${spacing.xxs}rem;
     }
   }
 
@@ -189,21 +192,34 @@ const StyledExperienceCard = styled.div`
   }
 `;
 
+type ExperienceCardProps = {
+  company: string;
+  role: string;
+  dates: DateRange;
+  team?: string;
+  companyFirst?: boolean;
+  logo?: GatsbyImageFile;
+  location: string;
+  roles?: ExperienceRole[];
+  summary: string;
+  children?: ReactNode;
+};
+
 const ExperienceCard = ({
   company,
   role,
   dates,
-  team,
-  companyFirst,
-  logo,
+  team = undefined,
+  companyFirst = false,
+  logo = undefined,
   location,
-  roles,
+  roles = undefined,
   summary,
-  children,
-}) => (
+  children = undefined,
+}: ExperienceCardProps) => (
   <StyledExperienceCard>
     {logo ? (
-      <GatsbyImage image={logo.childImageSharp.gatsbyImageData} />
+      <GatsbyImage alt="" image={logo.childImageSharp.gatsbyImageData} />
     ) : (
       <span aria-hidden="true" className="company-mark">
         {company.charAt(0)}
@@ -211,7 +227,7 @@ const ExperienceCard = ({
     )}
     <div className="role-summary">
       <div className="role-dates token--teal">
-        {dates.start} -{' '}
+        <span>{`${dates.start} - `}</span>
         {dates.end || <span className="token--yellow">Present</span>}
         <div className="role-location-group">
           <span className="token--purple">in</span> {location}
@@ -220,7 +236,7 @@ const ExperienceCard = ({
       <div className="role-primary-group">
         <div className="role-primary">{companyFirst ? company : role}</div>
         <div className="role-secondary">
-          {companyFirst ? role : company}{' '}
+          {companyFirst ? role : company}
           {team && <span className="role-team">/ {team}</span>}
         </div>
       </div>
@@ -238,7 +254,7 @@ const ExperienceCard = ({
               <div className="role-primary">{innerRole.title}</div>
               <div className="role-secondary">{innerRole.team}</div>
               <div className="role-dates">
-                {innerRole.start} -{' '}
+                <span>{`${innerRole.start} - `}</span>
                 {innerRole.end || (
                   <span className="token--yellow">Present</span>
                 )}
