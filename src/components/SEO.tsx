@@ -68,15 +68,15 @@ const SEO = ({
       content: seo.description,
     },
     {
-      name: `og:title`,
+      property: `og:title`,
       content: seo.title,
     },
     {
-      name: `og:description`,
+      property: `og:description`,
       content: seo.description,
     },
     {
-      name: `og:type`,
+      property: `og:type`,
       content: `website`,
     },
     {
