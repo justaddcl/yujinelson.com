@@ -77,11 +77,22 @@ const StyledMobileMenuButton = styled.button`
   }
 `;
 
-const MobileMenuButton = ({ isMenuOpen, toggleMenu }) => (
+type MobileMenuButtonProps = {
+  isMenuOpen: boolean;
+  toggleMenu: () => void;
+};
+
+const MobileMenuButton = ({
+  isMenuOpen,
+  toggleMenu,
+}: MobileMenuButtonProps) => (
   <StyledMobileMenuButton
     type="button"
     onClick={toggleMenu}
     className={isMenuOpen ? 'is-open' : ''}
+    aria-controls="mobile-navigation"
+    aria-expanded={isMenuOpen}
+    aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
   >
     <div className="bars">
       <div className="bar" />
