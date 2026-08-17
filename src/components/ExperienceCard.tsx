@@ -188,7 +188,9 @@ const StyledExperienceCard = styled.div`
   }
 
   &:last-of-type {
-    margin-bottom: ${spacing.l}rem;
+    @media screen and (min-width: ${mq.desktop.small}) {
+      margin-bottom: ${spacing.l}rem;
+    }
   }
 `;
 

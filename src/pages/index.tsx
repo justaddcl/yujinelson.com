@@ -38,6 +38,10 @@ const HomePage = styled(ContentContainer)`
   .hero > p {
     line-height: ${spacing.s}rem;
   }
+
+  .button--primary {
+    margin-top: ${spacing.m}rem;
+  }
 `;
 
 const Home: React.FC<PageProps<HomePageData>> = ({ data }) => (

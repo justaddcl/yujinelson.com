@@ -8,10 +8,10 @@ import { colors, fonts, mq, spacing } from './theme';
 const P = styled.p`
   color: ${colors.grey[50]};
   font-family: ${fonts.family.sourceCodePro};
-  line-height: ${spacing.m}rem;
+  line-height: ${spacing.s}rem;
 
   @media screen and (min-width: ${mq.mobile.large}) {
-    line-height: 32px;
+    line-height: 1.5;
     max-width: 50rem;
   }
 
@@ -19,8 +19,12 @@ const P = styled.p`
     font-size: 1.125rem;
   }
 
-  &:not(:last-child) {
-    margin-bottom: ${spacing.l}rem;
+  &:has(+ p) {
+    margin-bottom: ${spacing.m}rem;
+
+    @media screen and (min-width: ${mq.desktop.small}) {
+      margin-bottom: ${spacing.l}rem;
+    }
   }
 `;
 

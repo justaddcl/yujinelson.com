@@ -13,7 +13,7 @@ import { H1 } from '../components/styles/headers';
 import P from '../components/styles/Text';
 import SocialsList from '../components/SocialsList';
 
-const ContactPage = styled(ContentContainer)<{ gap?: string }>`
+const ContactPage = styled(ContentContainer)`
   #contact-email {
     justify-self: start;
   }
