@@ -75,6 +75,7 @@ const StyledExperienceCard = styled.div`
 
   .role-dates {
     font-size: 0.875rem;
+    grid-column: 1 / -1;
     margin-bottom: ${spacing.xxs}rem;
     text-transform: uppercase;
     line-height: 1.25rem;
@@ -139,9 +140,9 @@ const StyledExperienceCard = styled.div`
     display: grid;
     row-gap: ${spacing.base}rem;
     line-height: 1.5;
+    grid-column: 1 / -1;
 
     @media screen and (min-width: ${mq.desktop.small}) {
-      grid-column: 1 / -1;
     }
   }
 
