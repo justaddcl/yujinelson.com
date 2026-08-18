@@ -8,11 +8,6 @@ import ContentContainer from '../components/styles/ContentContainer';
 import { colors, fonts, mq, spacing } from '../components/styles/theme';
 import { H1, H2, H3 } from '../components/styles/headers';
 import Hero from '../components/Hero';
-/**
- * TODO: create <Text> component that would include the style for paragraph
- * Currently, this violates the id-length eslint rule of < 2 characters
- */
-// eslint-disable-next-line id-length
 import Text from '../components/styles/Text';
 import ResumeLink from '../components/ResumeLink';
 import ExperienceCard from '../components/ExperienceCard';
@@ -71,7 +66,7 @@ const About: React.FC<PageProps<AboutPageData>> = ({ data }) => (
       <Hero responsiveSplit>
         <div>
           <H1>{aboutContent.hero.heading}</H1>
-          <Text>{aboutContent.hero.introduction}</Text>
+          <Text textStyle="paragraph">{aboutContent.hero.introduction}</Text>
         </div>
         <div>
           <GatsbyImage
@@ -86,7 +81,9 @@ const About: React.FC<PageProps<AboutPageData>> = ({ data }) => (
           <div key={storySection.id}>
             {storySection.heading && <H3>{storySection.heading}</H3>}
             {storySection.paragraphs.map((paragraph) => (
-              <Text key={paragraph}>{paragraph}</Text>
+              <Text textStyle="paragraph" key={paragraph}>
+                {paragraph}
+              </Text>
             ))}
           </div>
         ))}

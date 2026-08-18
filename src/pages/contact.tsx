@@ -57,7 +57,7 @@ const Contact = ({ data }: PageProps<ContactPageData>) => (
     <SEO title="Connect with me" />
     <Hero>
       <H1>Let&apos;s connect</H1>
-      <Text>
+      <Text textStyle="paragraph">
         I&apos;d love to hear from you if you have an opportunity that may be a
         good fit for me, or if you want to know more about me or my work.
         Let&apos;s see how we can work together to solve your next challenge!

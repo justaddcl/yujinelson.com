@@ -59,8 +59,8 @@ const Home: React.FC<PageProps<HomePageData>> = ({ data }) => (
     </Hero>
     <section id="intro">
       <H2>Introduction</H2>
-      <Text>{copy.introOne}</Text>
-      <Text>{copy.introTwo}</Text>
+      <Text textStyle="paragraph">{copy.introOne}</Text>
+      <Text textStyle="paragraph">{copy.introTwo}</Text>
       <Link to="/about" className="button button--primary">
         {copy.introCta}
         <FontAwesomeIcon icon="arrow-right" className="icon icon--right" />
