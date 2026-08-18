@@ -56,6 +56,7 @@ const StyledExperienceCard = styled.div`
 
   .role-summary {
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
     row-gap: ${spacing.xxs}rem;
 
     &:not(:last-child) {
@@ -123,7 +124,7 @@ const StyledExperienceCard = styled.div`
     margin-bottom: ${spacing.base}rem;
     grid-column: 1 / -1;
 
-    has(+ p) {
+    &:has(+ ul) {
       margin-bottom: ${spacing.s}rem;
     }
 
@@ -134,7 +135,6 @@ const StyledExperienceCard = styled.div`
 
   .role-bullets {
     list-style-type: disc;
-    margin-top: ${spacing.s}rem;
     margin-left: 1.25rem;
     display: grid;
     row-gap: ${spacing.base}rem;
