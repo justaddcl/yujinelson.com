@@ -58,6 +58,14 @@ const StyledExperienceCard = styled.div`
     display: grid;
     row-gap: ${spacing.xxs}rem;
 
+    &:not(:last-child) {
+      margin-bottom: 0;
+
+      @media screen and (min-width: ${mq.desktop.small}) {
+        margin-bottom: ${spacing.m}rem;
+      }
+    }
+
     @media screen and (min-width: ${mq.desktop.small}) {
       grid-template-columns: repeat(3, 1fr);
       column-gap: ${spacing.m}rem;
@@ -115,7 +123,7 @@ const StyledExperienceCard = styled.div`
     margin-bottom: ${spacing.base}rem;
     grid-column: 1 / -1;
 
-    &:not(:last-child) {
+    has(+ p) {
       margin-bottom: ${spacing.s}rem;
     }
 
@@ -133,7 +141,7 @@ const StyledExperienceCard = styled.div`
     line-height: 1.5;
 
     @media screen and (min-width: ${mq.desktop.small}) {
-      grid-column: 1 / 3;
+      grid-column: 1 / -1;
     }
   }
 
@@ -153,8 +161,9 @@ const StyledExperienceCard = styled.div`
   }
 
   .sub-role {
-    display: grid;
-    row-gap: ${spacing.xxs}rem;
+    display: flex;
+    flex-direction: column;
+    gap: ${spacing.xxs}rem;
     position: relative;
 
     &:not(:last-of-type)::before {
