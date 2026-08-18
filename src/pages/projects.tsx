@@ -27,7 +27,7 @@ const Projects = () => (
       <H1>{projectsContent.hero.heading}</H1>
       <P>{projectsContent.hero.introduction}</P>
     </Hero>
-    <ProjectsList aria-labelledby="project-title-list">
+    <ProjectsList aria-label="Selected projects">
       {projectsContent.projects.map((project) => (
         <ProjectCard key={project.name} project={project} />
       ))}
