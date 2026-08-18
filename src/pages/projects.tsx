@@ -4,7 +4,7 @@ import SEO from '../components/SEO';
 import Hero from '../components/Hero';
 import ContentContainer from '../components/styles/ContentContainer';
 import { H1 } from '../components/styles/headers';
-import P from '../components/styles/Text';
+import Text from '../components/styles/Text';
 import { spacing } from '../components/styles/theme';
 import { ProjectCard } from '../components/ProjectCard';
 import projectsContent from '../content/projects';
@@ -25,7 +25,7 @@ const Projects = () => (
     />
     <Hero>
       <H1>{projectsContent.hero.heading}</H1>
-      <P>{projectsContent.hero.introduction}</P>
+      <Text>{projectsContent.hero.introduction}</Text>
     </Hero>
     <ProjectsList aria-label="Selected projects">
       {projectsContent.projects.map((project) => (

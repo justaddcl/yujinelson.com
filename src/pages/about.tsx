@@ -13,7 +13,7 @@ import Hero from '../components/Hero';
  * Currently, this violates the id-length eslint rule of < 2 characters
  */
 // eslint-disable-next-line id-length
-import P from '../components/styles/Text';
+import Text from '../components/styles/Text';
 import ResumeLink from '../components/ResumeLink';
 import ExperienceCard from '../components/ExperienceCard';
 import { ContactCard } from '../components/ContactCard/ContactCard';
@@ -71,7 +71,7 @@ const About: React.FC<PageProps<AboutPageData>> = ({ data }) => (
       <Hero responsiveSplit>
         <div>
           <H1>{aboutContent.hero.heading}</H1>
-          <P>{aboutContent.hero.introduction}</P>
+          <Text>{aboutContent.hero.introduction}</Text>
         </div>
         <div>
           <GatsbyImage
@@ -86,7 +86,7 @@ const About: React.FC<PageProps<AboutPageData>> = ({ data }) => (
           <div key={storySection.id}>
             {storySection.heading && <H3>{storySection.heading}</H3>}
             {storySection.paragraphs.map((paragraph) => (
-              <P key={paragraph}>{paragraph}</P>
+              <Text key={paragraph}>{paragraph}</Text>
             ))}
           </div>
         ))}

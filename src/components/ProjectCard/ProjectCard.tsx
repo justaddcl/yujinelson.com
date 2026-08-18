@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled, { css } from 'styled-components';
 import { colors, fonts, mq, spacing } from '../styles/theme';
-import P from '../styles/Text';
+import Text from '../styles/Text';
 import type { Project } from '../../content/projects';
 import projectsContent from '../../content/projects';
 
@@ -112,13 +112,13 @@ const ProjectCardContent = ({ project }: ProjectCardProps) => {
         <Status>{project.status}</Status>
       </ProjectHeader>
       <ProjectDetails>
-        <P>{project.summary}</P>
+        <Text>{project.summary}</Text>
         {project.detailPoints && (
           <ProjectDetailPoints>
             {project.detailPoints.map((point) => (
               <li key={point.title}>
                 <h3>{point.title}</h3>
-                <P>{point.description}</P>
+                <Text>{point.description}</Text>
               </li>
             ))}
           </ProjectDetailPoints>

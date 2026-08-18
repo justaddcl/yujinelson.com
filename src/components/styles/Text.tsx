@@ -1,17 +1,13 @@
 import styled from 'styled-components';
 import { colors, fonts, mq, spacing } from './theme';
 
-/**
- * TODO: create <Text> component that would include the style for paragraph
- * Currently, this violates the id-length eslint rule of < 2 characters
- */
-const P = styled.p`
+const Text = styled.p`
   color: ${colors.grey[50]};
   font-family: ${fonts.family.sourceCodePro};
   line-height: ${spacing.s}rem;
 
   @media screen and (min-width: ${mq.mobile.large}) {
-    line-height: 1.5;
+    line-height: 1.777778;
     max-width: 50rem;
   }
 
@@ -28,4 +24,4 @@ const P = styled.p`
   }
 `;
 
-export default P;
+export default Text;

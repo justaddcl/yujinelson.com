@@ -11,7 +11,7 @@ import Hero from '../components/Hero';
  * TODO: create <Text> component that would include the style for paragraph
  * Currently, this violates the id-length eslint rule of < 2 characters
  */
-import P from '../components/styles/Text';
+import Text from '../components/styles/Text';
 import ContentContainer from '../components/styles/ContentContainer';
 import Greeting from '../components/Greeting';
 import ResumeLink from '../components/ResumeLink';
@@ -50,7 +50,7 @@ const Home: React.FC<PageProps<HomePageData>> = ({ data }) => (
     <Hero>
       <Greeting />
       <H1>I&apos;m Yuji Nelson.</H1>
-      <P>{copy.hero}</P>
+      <Text>{copy.hero}</Text>
       <GatsbyImage
         image={data.portrait.childImageSharp.gatsbyImageData}
         className="hero-image"
@@ -59,8 +59,8 @@ const Home: React.FC<PageProps<HomePageData>> = ({ data }) => (
     </Hero>
     <section id="intro">
       <H2>Introduction</H2>
-      <P>{copy.introOne}</P>
-      <P>{copy.introTwo}</P>
+      <Text>{copy.introOne}</Text>
+      <Text>{copy.introTwo}</Text>
       <Link to="/about" className="button button--primary">
         {copy.introCta}
         <FontAwesomeIcon icon="arrow-right" className="icon icon--right" />

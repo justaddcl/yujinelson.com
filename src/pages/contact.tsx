@@ -10,7 +10,7 @@ import { H1 } from '../components/styles/headers';
  * TODO: create <Text> component that would include the style for paragraph
  * Currently, this violates the id-length eslint rule of < 2 characters
  */
-import P from '../components/styles/Text';
+import Text from '../components/styles/Text';
 import SocialsList from '../components/SocialsList';
 
 const ContactPage = styled(ContentContainer)`
@@ -57,12 +57,12 @@ const Contact = ({ data }: PageProps<ContactPageData>) => (
     <SEO title="Connect with me" />
     <Hero>
       <H1>Let&apos;s connect</H1>
-      <P>
+      <Text>
         I&apos;d love to hear from you if you have an opportunity that may be a
         good fit for me, or if you want to know more about me or my work.
         Let&apos;s see how we can work together to solve your next challenge!
-      </P>
-      <P>
+      </Text>
+      <Text>
         The best way to reach me is through email or by connecting with me on
         <span>
           <a
@@ -75,7 +75,7 @@ const Contact = ({ data }: PageProps<ContactPageData>) => (
           </a>
         </span>
         .
-      </P>
+      </Text>
     </Hero>
     <a id="contact-email" href="mailto:hello@yujinelson.com">
       <StyledEmail>
@@ -83,10 +83,10 @@ const Contact = ({ data }: PageProps<ContactPageData>) => (
         <span className="token--blue">.com</span>
       </StyledEmail>
     </a>
-    <P>
+    <Text>
       You can also find me on these other platforms:
       <SocialsList />
-    </P>
+    </Text>
   </ContactPage>
 );
 
