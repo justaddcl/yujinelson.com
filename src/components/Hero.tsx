@@ -11,6 +11,8 @@ const StyledHero = styled.section<StyledHeroProps>`
   ${(props) =>
     props.$responsiveSplit &&
     `
+    margin-bottom: ${spacing.l}rem;
+
     @media screen and (min-width: ${mq.mobile.large}) {
       display: grid;
       align-items: end;

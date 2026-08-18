@@ -47,10 +47,11 @@ const H2 = styled.h2`
 const H3 = styled.h3`
   color: ${colors.blue[400]};
   font-size: 1.25rem;
-  margin-bottom: ${spacing.m}rem;
+  margin-bottom: ${spacing.s}rem;
 
   @media screen and (min-width: ${mq.desktop.small}) {
     font-size: ${spacing.s}rem;
+    margin-bottom: ${spacing.m}rem;
   }
 `;
 

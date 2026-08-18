@@ -8,12 +8,7 @@ import ContentContainer from '../components/styles/ContentContainer';
 import { colors, fonts, mq, spacing } from '../components/styles/theme';
 import { H1, H2, H3 } from '../components/styles/headers';
 import Hero from '../components/Hero';
-/**
- * TODO: create <Text> component that would include the style for paragraph
- * Currently, this violates the id-length eslint rule of < 2 characters
- */
-// eslint-disable-next-line id-length
-import P from '../components/styles/Text';
+import Text from '../components/styles/Text';
 import ResumeLink from '../components/ResumeLink';
 import ExperienceCard from '../components/ExperienceCard';
 import { ContactCard } from '../components/ContactCard/ContactCard';
@@ -26,6 +21,13 @@ type AboutPageData = {
 } & Record<ExperienceLogoKey, GatsbyImageFile>;
 
 const AboutPage = styled(ContentContainer)``;
+
+const ContentSection = styled.section`
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: ${spacing.m}rem;
+`;
 
 const SkillsList = styled.dl`
   @media screen and (min-width: ${mq.mobile.large}) {
@@ -60,35 +62,39 @@ const About: React.FC<PageProps<AboutPageData>> = ({ data }) => (
       title={aboutContent.seo.title}
       description={aboutContent.seo.description}
     />
-    <Hero responsiveSplit>
-      <div>
-        <H1>{aboutContent.hero.heading}</H1>
-        <P>{aboutContent.hero.introduction}</P>
-      </div>
-      <div>
-        <GatsbyImage
-          image={data.headshot.childImageSharp.gatsbyImageData}
-          className="hero-image"
-          alt={aboutContent.hero.imageAlt}
-        />
-      </div>
-    </Hero>
     <section>
-      {aboutContent.story.map((storySection) => (
-        <React.Fragment key={storySection.id}>
-          {storySection.heading && <H3>{storySection.heading}</H3>}
-          {storySection.paragraphs.map((paragraph) => (
-            <P key={paragraph}>{paragraph}</P>
-          ))}
-        </React.Fragment>
-      ))}
-      <Link
-        to={aboutContent.storyAction.href}
-        className="button button--primary"
-      >
-        {aboutContent.storyAction.label}
-        <FontAwesomeIcon icon="arrow-right" className="icon--right" />
-      </Link>
+      <Hero responsiveSplit>
+        <div>
+          <H1>{aboutContent.hero.heading}</H1>
+          <Text textStyle="paragraph">{aboutContent.hero.introduction}</Text>
+        </div>
+        <div>
+          <GatsbyImage
+            image={data.headshot.childImageSharp.gatsbyImageData}
+            className="hero-image"
+            alt={aboutContent.hero.imageAlt}
+          />
+        </div>
+      </Hero>
+      <ContentSection>
+        {aboutContent.story.map((storySection) => (
+          <div key={storySection.id}>
+            {storySection.heading && <H3>{storySection.heading}</H3>}
+            {storySection.paragraphs.map((paragraph) => (
+              <Text textStyle="paragraph" key={paragraph}>
+                {paragraph}
+              </Text>
+            ))}
+          </div>
+        ))}
+        <Link
+          to={aboutContent.storyAction.href}
+          className="button button--primary"
+        >
+          {aboutContent.storyAction.label}
+          <FontAwesomeIcon icon="arrow-right" className="icon--right" />
+        </Link>
+      </ContentSection>
     </section>
     <section>
       <H2>{aboutContent.experience.heading}</H2>

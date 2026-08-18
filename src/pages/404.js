@@ -9,7 +9,7 @@ import Hero from '../components/Hero';
  * TODO: create <Text> component that would include the style for paragraph
  * Currently, this violates the id-length eslint rule of < 2 characters
  */
-import P from '../components/styles/Text';
+import Text from '../components/styles/Text';
 import ContentContainer from '../components/styles/ContentContainer';
 
 const FourOhFourPage = styled(ContentContainer)`
@@ -38,10 +38,10 @@ const FourOhFour = () => (
     <div id="background-404">404</div>
     <Hero>
       <H1>Oh yikes!</H1>
-      <P>
+      <Text>
         It doesn&apos;t look like I have the page you&apos;re looking for
         (yet)...
-      </P>
+      </Text>
       <Link to="/" className="button button--primary">
         Go home
       </Link>

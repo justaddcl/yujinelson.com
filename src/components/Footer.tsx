@@ -138,6 +138,9 @@ const Footer = () => {
               <Link to="/about">About</Link>
             </li>
             <li className="nav__item">
+              <Link to="/projects">Projects</Link>
+            </li>
+            <li className="nav__item">
               <Link to="/contact">Contact</Link>
             </li>
             <li className="nav__item">

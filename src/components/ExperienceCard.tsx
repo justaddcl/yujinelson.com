@@ -56,7 +56,16 @@ const StyledExperienceCard = styled.div`
 
   .role-summary {
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
     row-gap: ${spacing.xxs}rem;
+
+    &:not(:last-child) {
+      margin-bottom: 0;
+
+      @media screen and (min-width: ${mq.desktop.small}) {
+        margin-bottom: ${spacing.m}rem;
+      }
+    }
 
     @media screen and (min-width: ${mq.desktop.small}) {
       grid-template-columns: repeat(3, 1fr);
@@ -66,6 +75,7 @@ const StyledExperienceCard = styled.div`
 
   .role-dates {
     font-size: 0.875rem;
+    grid-column: 1 / -1;
     margin-bottom: ${spacing.xxs}rem;
     text-transform: uppercase;
     line-height: 1.25rem;
@@ -115,7 +125,7 @@ const StyledExperienceCard = styled.div`
     margin-bottom: ${spacing.base}rem;
     grid-column: 1 / -1;
 
-    &:not(:last-child) {
+    &:has(+ ul) {
       margin-bottom: ${spacing.s}rem;
     }
 
@@ -126,14 +136,13 @@ const StyledExperienceCard = styled.div`
 
   .role-bullets {
     list-style-type: disc;
-    margin-top: ${spacing.s}rem;
     margin-left: 1.25rem;
     display: grid;
     row-gap: ${spacing.base}rem;
     line-height: 1.5;
+    grid-column: 1 / -1;
 
     @media screen and (min-width: ${mq.desktop.small}) {
-      grid-column: 1 / 3;
     }
   }
 
@@ -153,8 +162,9 @@ const StyledExperienceCard = styled.div`
   }
 
   .sub-role {
-    display: grid;
-    row-gap: ${spacing.xxs}rem;
+    display: flex;
+    flex-direction: column;
+    gap: ${spacing.xxs}rem;
     position: relative;
 
     &:not(:last-of-type)::before {
@@ -188,7 +198,9 @@ const StyledExperienceCard = styled.div`
   }
 
   &:last-of-type {
-    margin-bottom: ${spacing.l}rem;
+    @media screen and (min-width: ${mq.desktop.small}) {
+      margin-bottom: ${spacing.l}rem;
+    }
   }
 `;
 

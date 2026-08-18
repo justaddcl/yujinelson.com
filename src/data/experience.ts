@@ -45,6 +45,13 @@ const experience: Experience[] = [
     classification: 'software-engineering',
     logo: 'cleoLogo',
     team: 'Earned Wage Access Core Squad',
+    bullets: [
+      'Ensured 100% UI parity across US/UK markets by leading the React Native rebuild of the Earned Wage Access flow; simplified deeply nested, 10-outcome hooks into a backend-driven state architecture, reducing component complexity to 1-3 predictable outcomes.',
+      'Feature-led Earned Wage Access disbursement flow improvements across a 2M+ user A/B test population, recovering delayed delivery, catching a launch-blocking card-linking regression before release, and investigating support-contact issues using Count dashboards and Intercom transcripts.',
+      'Authored the front-end chapter’s Redux Saga to TanStack Query migration playbook, later adopted by Front-End Platform as the guide for a wider migration away from legacy data-fetching patterns.',
+      'Led a same-day production hotfix for an Earned Wage Access reload incident, diagnosing the issue as an API contract/type-boundary problem, shipping a minimal fix, then following up with a Rails/TypeSpec enum change that caught a missing UK payment-rail value within 24 hours.',
+      'Submitted 580+ code reviews across the engineering organisation, becoming a trusted reviewer for complex React Native, TypeScript, Redux Saga, and API-boundary changes.',
+    ],
   },
   {
     roleId: 'teya',

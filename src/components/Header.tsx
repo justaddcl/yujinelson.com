@@ -52,6 +52,11 @@ const StyledNav = styled.nav`
     list-style: none;
   }
 
+  a[aria-current='page'],
+  a.is-active {
+    color: ${colors.blue[400]};
+  }
+
   @media screen and (min-width: ${mq.mobile.large}) {
     display: block;
   }
@@ -84,10 +89,13 @@ const Header = () => {
             isMenuOpen={isMenuOpen}
             toggleMenu={toggleMobileMenu}
           />
-          <StyledNav>
+          <StyledNav aria-label="Primary navigation">
             <ul>
               <li>
                 <Link to="/about">About</Link>
+              </li>
+              <li>
+                <Link to="/projects">Projects</Link>
               </li>
               <li>
                 <Link to="/contact">Contact</Link>
