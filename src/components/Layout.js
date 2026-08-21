@@ -5,6 +5,7 @@ import Header from './Header';
 import Footer from './Footer';
 import GlobalStyles from './styles/GlobalStyles';
 import ColorBar from './styles/ColorBar';
+import AnalyticsConsent from './AnalyticsConsent';
 
 const PageSections = styled.div`
   display: grid;
@@ -22,6 +23,7 @@ const Layout = ({ children }) => (
       <main>{children}</main>
       <Footer />
     </PageSections>
+    <AnalyticsConsent />
   </>
 );
 
