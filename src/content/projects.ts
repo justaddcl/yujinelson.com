@@ -40,8 +40,7 @@ const projectsContent = {
           description: 'Product design and full-stack engineering',
         },
       ],
-      // Enabled when the case study is added below.
-      // caseStudyUrl: '/projects/sanbi',
+      caseStudyUrl: '/projects/sanbi',
     },
   ],
   projectActionLabel: 'View project case study',
