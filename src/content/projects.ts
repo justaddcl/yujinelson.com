@@ -1,7 +1,9 @@
+import sanbiProject from './project-profiles/sanbi';
+
 export type Project = {
   name: string;
   status: string;
-  summary: string;
+  summary: string[];
   detailPoints?: {
     title: string;
     description: string;
@@ -20,10 +22,9 @@ const projectsContent = {
   },
   projects: [
     {
-      name: 'Sanbi',
+      name: sanbiProject.title,
       status: 'Active development · V0',
-      summary:
-        "A mobile-first planning app for church worship leaders to build worship sets and manage a reusable song library. I started with user interviews, product definition and prototyping, and I'm taking it through full-stack implementation, testing and iteration.",
+      summary: sanbiProject.introduction,
       detailPoints: [
         {
           title: 'Tech stack',
@@ -39,8 +40,7 @@ const projectsContent = {
           description: 'Product design and full-stack engineering',
         },
       ],
-      // TODO: add when YUJI-32 is implemented
-      // caseStudyUrl: '/projects/sanbi',
+      caseStudyUrl: '/projects/sanbi',
     },
   ],
   projectActionLabel: 'View project case study',

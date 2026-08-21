@@ -12,7 +12,7 @@ type ProjectCardProps = {
 };
 
 const cardStyles = css`
-  background: ${colors.purple[900]};
+  background: ${colors.purple[700]};
   border: 1px solid ${colors.grey[700]};
   border-radius: 2px;
   display: grid;
@@ -112,7 +112,11 @@ const ProjectCardContent = ({ project }: ProjectCardProps) => {
         <Status>{project.status}</Status>
       </ProjectHeader>
       <ProjectDetails>
-        <Text>{project.summary}</Text>
+        {project.summary.map((paragraph) => (
+          <Text key={paragraph} marginBottomDesktop="0">
+            {paragraph}
+          </Text>
+        ))}
         {project.detailPoints && (
           <ProjectDetailPoints>
             {project.detailPoints.map((point) => (
