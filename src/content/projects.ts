@@ -3,7 +3,7 @@ import sanbiProject from './project-profiles/sanbi';
 export type Project = {
   name: string;
   status: string;
-  summary: string;
+  summary: string[];
   detailPoints?: {
     title: string;
     description: string;
@@ -24,7 +24,7 @@ const projectsContent = {
     {
       name: sanbiProject.title,
       status: 'Active development · V0',
-      summary: `${sanbiProject.introduction} I started with user interviews, product definition and prototyping, and I'm taking it through full-stack implementation, testing and iteration.`,
+      summary: sanbiProject.introduction,
       detailPoints: [
         {
           title: 'Tech stack',

@@ -208,7 +208,9 @@ const CaseStudyHero = <TMediaId extends string>({
         <ProjectInfo>
           <div className="summary-role">
             <SummaryLabel>Overview</SummaryLabel>
-            <Text>{caseStudy.introduction}</Text>
+            {caseStudy.introduction.map((paragraph) => (
+              <Text key={paragraph}>{paragraph}</Text>
+            ))}
           </div>
           <div className="summary-role">
             <SummaryLabel>Role</SummaryLabel>
@@ -221,7 +223,7 @@ const CaseStudyHero = <TMediaId extends string>({
       </ProjectOverview>
       <TechnologyOverview aria-labelledby="technology-summary-title">
         <TechnologyHeading id="technology-summary-title">
-          Tech Stack
+          Built with
         </TechnologyHeading>
         <StackGroups>
           {caseStudy.summary.stack.map((group) => (

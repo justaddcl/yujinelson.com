@@ -15,10 +15,9 @@ const sanbiContent: CaseStudyContent<SanbiMediaId> = {
   title: sanbiProject.title,
   introduction: sanbiProject.introduction,
   summary: {
-    status: 'V0 in progress',
+    status: 'V0 in active development',
     role: 'Product design & full-stack engineering',
-    roleDetail:
-      'I’m designing and building Sanbi end to end, from early user interviews and product definition through prototyping, full-stack implementation, testing and iteration.',
+    roleDetail: `I'm designing and building Sanbi end to end, from early user interviews and defining the first version through prototyping, full-stack implementation, testing, and iteration.`,
     dates: '2022–present',
     links: [
       {
@@ -53,7 +52,7 @@ const sanbiContent: CaseStudyContent<SanbiMediaId> = {
   sections: [
     {
       id: 'the-problem',
-      title: 'The problem',
+      title: `The problem I'm exploring`,
       blocks: [
         {
           type: 'paragraph',
@@ -121,7 +120,7 @@ const sanbiContent: CaseStudyContent<SanbiMediaId> = {
           media: 'figmaAddSong',
           alt: 'Figma prototype showing the flow for adding a song to a worship set.',
           caption:
-            'Exploring how to add a song while keeping its set-specific context close at hand.',
+            'Exploring how song context can stay visible while building a set.',
         },
         {
           type: 'paragraph',
@@ -131,18 +130,20 @@ const sanbiContent: CaseStudyContent<SanbiMediaId> = {
           type: 'figure',
           media: 'desktopSetCreation',
           alt: 'Desktop view of creating and managing a worship set in Sanbi.',
-          caption: 'Creating and managing a set on desktop.',
+          caption:
+            'Structuring a set with songs, sections, and notes in one place.',
         },
         {
           type: 'figure',
           media: 'mobileSetManagement',
           alt: 'Mobile view of managing a worship set in Sanbi.',
-          caption: 'Managing a set on mobile.',
+          caption:
+            'Adding songs and organising set sections without breaking the planning flow.',
           presentation: 'phone',
         },
         {
           type: 'paragraph',
-          text: 'The app uses a typed full-stack architecture with Next.js, React, TypeScript, tRPC and PostgreSQL. Shared types keep frontend and backend changes aligned, while automated tests cover key user flows as the project continues to evolve.',
+          text: 'Sanbi uses a typed full-stack architecture with Next.js, TypeScript, tRPC, and PostgreSQL. I chose this approach because the product is still changing quickly, and shared types help me move between frontend and backend changes with more confidence. Automated tests cover the workflows that matter most, such as creating sets and managing song information.',
         },
       ],
     },

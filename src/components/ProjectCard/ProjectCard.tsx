@@ -112,7 +112,11 @@ const ProjectCardContent = ({ project }: ProjectCardProps) => {
         <Status>{project.status}</Status>
       </ProjectHeader>
       <ProjectDetails>
-        <Text>{project.summary}</Text>
+        {project.summary.map((paragraph) => (
+          <Text key={paragraph} marginBottomDesktop="0">
+            {paragraph}
+          </Text>
+        ))}
         {project.detailPoints && (
           <ProjectDetailPoints>
             {project.detailPoints.map((point) => (

@@ -2,7 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import { colors, fonts, mq, spacing } from './theme';
 
-const StyledText = styled.p<{ textStyle?: 'paragraph' }>`
+const StyledText = styled.p<{
+  textStyle?: 'paragraph';
+  marginBottomDesktop?: string;
+}>`
   color: ${colors.grey[50]};
   font-family: ${fonts.family.sourceCodePro};
   line-height: ${spacing.s}rem;
@@ -20,17 +23,27 @@ const StyledText = styled.p<{ textStyle?: 'paragraph' }>`
     margin-bottom: ${spacing.m}rem;
 
     @media screen and (min-width: ${mq.desktop.small}) {
-      margin-bottom: ${spacing.l}rem;
+      margin-bottom: ${(props) =>
+        props.marginBottomDesktop
+          ? props.marginBottomDesktop
+          : `${spacing.l}rem`};
     }
   }
 `;
 
 type TextProps = React.PropsWithChildren & {
   textStyle?: 'paragraph';
+  marginBottomDesktop?: string;
 };
 
-const Text: React.FC<TextProps> = ({ textStyle, children }) => (
-  <StyledText textStyle={textStyle}>{children}</StyledText>
+const Text: React.FC<TextProps> = ({
+  textStyle,
+  marginBottomDesktop,
+  children,
+}) => (
+  <StyledText textStyle={textStyle} marginBottomDesktop={marginBottomDesktop}>
+    {children}
+  </StyledText>
 );
 
 export default Text;

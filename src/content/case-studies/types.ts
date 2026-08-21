@@ -45,7 +45,7 @@ export type CaseStudyContent<TMediaId extends string> = {
     description: string;
   };
   title: string;
-  introduction: string;
+  introduction: string[];
   summary: CaseStudySummary;
   projectHeroImageAlt: string;
   sections: CaseStudySection<TMediaId>[];
