@@ -1,4 +1,7 @@
 import type { GatsbyBrowser } from 'gatsby';
+import { initializeAnalytics } from './src/analytics/posthog';
+
+initializeAnalytics();
 
 /**
  * Gatsby complains if we use a default export, so disabling the eslint rule to make sure the file exports
