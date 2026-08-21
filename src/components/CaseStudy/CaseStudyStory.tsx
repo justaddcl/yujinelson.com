@@ -11,7 +11,7 @@ import { colors, fonts, mq, spacing } from '../styles/theme';
 
 export type CaseStudyMedia =
   | { type: 'image'; image: IGatsbyImageData }
-  | { type: 'animation'; src: string };
+  | { type: 'animation'; src: string; reducedMotionSrc: string };
 
 export type CaseStudyMediaMap<TMediaId extends string> = Record<
   TMediaId,
@@ -107,7 +107,13 @@ const CaseStudyStory = <TMediaId extends string>({
         {asset.type === 'image' ? (
           <GatsbyImage image={asset.image} alt={block.alt} />
         ) : (
-          <img src={asset.src} alt={block.alt} loading="lazy" />
+          <picture>
+            <source
+              media="(prefers-reduced-motion: reduce)"
+              srcSet={asset.reducedMotionSrc}
+            />
+            <img src={asset.src} alt={block.alt} loading="lazy" />
+          </picture>
         )}
         {block.caption && <Caption>{block.caption}</Caption>}
       </Figure>

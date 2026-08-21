@@ -30,7 +30,9 @@ type SanbiPageData = {
   projectHero: GatsbyImageFile;
   figmaAddSong: GatsbyImageFile;
   desktopSetCreation: AnimationFile;
+  desktopSetCreationStatic: AnimationFile;
   mobileSetManagement: AnimationFile;
+  mobileSetManagementStatic: AnimationFile;
 };
 
 const Sanbi: React.FC<PageProps<SanbiPageData>> = ({ data }) => {
@@ -42,10 +44,12 @@ const Sanbi: React.FC<PageProps<SanbiPageData>> = ({ data }) => {
     desktopSetCreation: {
       type: 'animation',
       src: data.desktopSetCreation.publicURL,
+      reducedMotionSrc: data.desktopSetCreationStatic.publicURL,
     },
     mobileSetManagement: {
       type: 'animation',
       src: data.mobileSetManagement.publicURL,
+      reducedMotionSrc: data.mobileSetManagementStatic.publicURL,
     },
   };
 
@@ -91,8 +95,22 @@ export const query = graphql`
     ) {
       publicURL
     }
+    desktopSetCreationStatic: file(
+      relativePath: {
+        eq: "projects/sanbi/Sanbi-desktop-set-creation-static.png"
+      }
+    ) {
+      publicURL
+    }
     mobileSetManagement: file(
       relativePath: { eq: "projects/sanbi/Sanbi-mobile-set-management.gif" }
+    ) {
+      publicURL
+    }
+    mobileSetManagementStatic: file(
+      relativePath: {
+        eq: "projects/sanbi/Sanbi-mobile-set-management-static.png"
+      }
     ) {
       publicURL
     }
