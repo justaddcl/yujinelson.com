@@ -31,7 +31,7 @@ const sanbiContent: CaseStudyContent<SanbiMediaId> = {
         label: 'Source',
         value: 'View source',
         href: 'https://github.com/justaddcl/sanbi',
-        icon: 'github',
+        icon: { prefix: 'fab', iconName: 'github' },
       },
     ],
     stack: [

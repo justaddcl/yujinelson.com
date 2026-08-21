@@ -193,7 +193,7 @@ const CaseStudyHero = <TMediaId extends string>({
                   >
                     {link.icon && (
                       <FontAwesomeIcon
-                        icon={['fab', link.icon]}
+                        icon={link.icon}
                         className="source-icon"
                       />
                     )}

@@ -1,10 +1,10 @@
-import type { IconName } from '@fortawesome/fontawesome-svg-core';
+import type { IconLookup } from '@fortawesome/fontawesome-svg-core';
 
 export type CaseStudyLink = {
   label: string;
   value: string;
   href: string;
-  icon?: IconName;
+  icon?: IconLookup;
   note?: string;
 };
 
