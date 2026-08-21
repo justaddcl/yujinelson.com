@@ -12,7 +12,7 @@ export const createPages: GatsbyNode['createPages'] = ({ actions }) => {
   const { createRedirect } = actions;
   cvAliasUrls.forEach((fromPath) => {
     createRedirect({
-      fromPath: fromPath,
+      fromPath,
       toPath: cv,
       isPermanent: false,
       redirectInBrowser: true,
