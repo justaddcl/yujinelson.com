@@ -2,6 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
+import { captureAnalyticsEvent } from '../../analytics/posthog';
 import type { CaseStudyContent } from '../../content/case-studies/types';
 import Hero from '../Hero';
 import { H1 } from '../styles/headers';
@@ -190,6 +191,15 @@ const CaseStudyHero = <TMediaId extends string>({
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`${link.label}: ${link.value}`}
+                    onClick={() => {
+                      captureAnalyticsEvent(
+                        'case_study_external_link_clicked',
+                        {
+                          case_study: caseStudy.title,
+                          link_label: link.label,
+                        }
+                      );
+                    }}
                   >
                     {link.icon && (
                       <FontAwesomeIcon

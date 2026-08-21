@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql, type PageProps } from 'gatsby';
 import styled from 'styled-components';
+import { captureAnalyticsEvent } from '../analytics/posthog';
 import { colors, fonts, mq, spacing } from '../components/styles/theme';
 import SEO from '../components/SEO';
 import ContentContainer from '../components/styles/ContentContainer';
@@ -77,7 +78,11 @@ const Contact = ({ data }: PageProps<ContactPageData>) => (
         .
       </Text>
     </Hero>
-    <a id="contact-email" href="mailto:hello@yujinelson.com">
+    <a
+      id="contact-email"
+      href="mailto:hello@yujinelson.com"
+      onClick={() => captureAnalyticsEvent('contact_email_clicked')}
+    >
       <StyledEmail>
         hello<span className="token--blue">@</span>yujinelson
         <span className="token--blue">.com</span>

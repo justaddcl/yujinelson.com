@@ -1,4 +1,5 @@
 import React, { type ReactNode } from 'react';
+import { captureAnalyticsEvent } from '../analytics/posthog';
 
 type ResumeLinkProps = {
   button?: boolean;
@@ -16,6 +17,7 @@ const ResumeLink = ({
   <a
     href="/resume"
     target="_blank"
+    onClick={() => captureAnalyticsEvent('resume_link_clicked')}
     rel="noopener noreferrer"
     className={`${button ? 'button' : ''}${primary ? ' button--primary' : ''}${
       small ? ' button--small' : ''
