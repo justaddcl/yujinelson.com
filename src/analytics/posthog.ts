@@ -2,8 +2,7 @@
 import posthog from 'posthog-js';
 
 const posthogKey = process.env.GATSBY_POSTHOG_KEY;
-const posthogProxyHost = 'https://wa.yujinelson.com';
-const posthogUiHost = 'https://eu.posthog.com';
+const posthogHost = process.env.GATSBY_POSTHOG_HOST;
 
 const analyticsConsentSettingsEvent = 'analytics-consent-settings';
 
@@ -21,22 +20,21 @@ type AnalyticsEventProperties = {
 
 type AnalyticsEvent = keyof AnalyticsEventProperties;
 
-export const isAnalyticsConfigured = Boolean(posthogKey);
+export const isAnalyticsConfigured = Boolean(posthogKey && posthogHost);
 
 export const initializeAnalytics = () => {
-  if (!posthogKey) {
+  if (!posthogKey || !posthogHost) {
     if (process.env.NODE_ENV === 'development') {
       // eslint-disable-next-line no-console
       console.warn(
-        'PostHog is disabled because GATSBY_POSTHOG_KEY is missing.'
+        'PostHog is disabled because GATSBY_POSTHOG_KEY or GATSBY_POSTHOG_HOST is missing.'
       );
     }
     return;
   }
 
   posthog.init(posthogKey, {
-    api_host: posthogProxyHost,
-    ui_host: posthogUiHost,
+    api_host: posthogHost,
     defaults: '2026-05-30',
     capture_pageview: 'history_change',
     custom_campaign_params: ['application_ref'],
