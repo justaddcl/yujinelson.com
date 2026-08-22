@@ -1,6 +1,8 @@
+import { join } from 'node:path';
 import type { GatsbyNode } from 'gatsby';
+import { findLatestCvFilename } from './scripts/find-latest-cv';
 
-const cv = '/Yuji-Nelson-CV-2026.pdf';
+const cv = `/${findLatestCvFilename(join(process.cwd(), 'static'))}`;
 const cvAliasUrls = ['/resume', '/cv'];
 
 /**

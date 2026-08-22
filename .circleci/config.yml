@@ -33,6 +33,7 @@ jobs:
       - setup
       - run: npm run lint
       - run: npm run prettier-check
+      - run: npm run check-cv
   deploy-production:
     executor: node-executor
     steps:
@@ -44,6 +45,9 @@ jobs:
           arguments: |
             --acl public-read \
             --cache-control "max-age=86400" \
+      - run:
+          name: Publish stable CV aliases
+          command: node scripts/publish-cv-aliases.js
 workflows:
   version: 2
   validation:
