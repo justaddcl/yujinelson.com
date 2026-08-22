@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled, { css } from 'styled-components';
+import { captureAnalyticsEvent } from '../../analytics/posthog';
 import { colors, fonts, mq, spacing } from '../styles/theme';
 import Text from '../styles/Text';
 import type { Project } from '../../content/projects';
@@ -141,7 +142,14 @@ const ProjectCardContent = ({ project }: ProjectCardProps) => {
 const ProjectCard = ({ project }: ProjectCardProps) => (
   <li>
     {project.caseStudyUrl ? (
-      <ProjectCardLink to={project.caseStudyUrl}>
+      <ProjectCardLink
+        to={project.caseStudyUrl}
+        onClick={() => {
+          captureAnalyticsEvent('project_case_study_clicked', {
+            project_name: project.name,
+          });
+        }}
+      >
         <ProjectCardContent project={project} />
       </ProjectCardLink>
     ) : (
