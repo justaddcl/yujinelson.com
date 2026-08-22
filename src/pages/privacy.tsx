@@ -73,7 +73,8 @@ const Privacy = () => (
       <Text textStyle="paragraph">
         I use this information to understand how people find and use the site,
         and to improve its content and usability. The processing is based on
-        your consent. PostHog processes the data on my behalf. You can read{' '}
+        your consent. PostHog and its managed proxy process the data on my
+        behalf. You can read{' '}
         <a href="https://posthog.com/privacy">PostHog&apos;s privacy notice</a>.
         Analytics data is reviewed periodically and deleted when it is no longer
         useful.

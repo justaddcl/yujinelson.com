@@ -5,7 +5,7 @@ This is the codebase for my [personal website](https://yujinelson.com) built wit
 
 ## Analytics
 
-PostHog is enabled when `GATSBY_POSTHOG_KEY` and `GATSBY_POSTHOG_HOST` are set. Visitors are opted out until they make an explicit choice in the analytics consent banner.
+PostHog is enabled when `GATSBY_POSTHOG_KEY` is set. Browser analytics requests use the managed proxy at `wa.yujinelson.com`; visitors are opted out until they make an explicit choice in the analytics consent banner.
 
 PostHog automatically captures standard UTM parameters. Use an opaque `application_ref` to associate a visit with a job application without putting a company or person in the URL:
 
