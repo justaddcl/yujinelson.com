@@ -49,8 +49,7 @@ const Privacy = () => (
     <section>
       <H2>What is collected</H2>
       <Text textStyle="paragraph">
-        If you accept, PostHog records usage information that is not linked to
-        your name or email address, including:
+        If you accept, PostHog records usage information, including:
       </Text>
       <ul>
         <li>pages viewed and links or buttons clicked;</li>
@@ -63,9 +62,10 @@ const Privacy = () => (
       <H2>How it is protected</H2>
       <Text textStyle="paragraph">
         Form inputs are masked in session replays, console logs are not
-        recorded, and this site does not attach your name or email address to
-        analytics events. Please avoid putting personal information in campaign
-        parameters when sharing a link to this site.
+        recorded, and this site does not send your name or email address to
+        PostHog. An application_ref can associate a visit with a job application
+        in a private tracker, so please avoid putting personal information in
+        campaign parameters when sharing a link to this site.
       </Text>
     </section>
     <section>
@@ -73,7 +73,8 @@ const Privacy = () => (
       <Text textStyle="paragraph">
         I use this information to understand how people find and use the site,
         and to improve its content and usability. The processing is based on
-        your consent. PostHog processes the data on my behalf. You can read{' '}
+        your consent. PostHog and its managed proxy process the data on my
+        behalf. You can read{' '}
         <a href="https://posthog.com/privacy">PostHog&apos;s privacy notice</a>.
         Analytics data is reviewed periodically and deleted when it is no longer
         useful.
