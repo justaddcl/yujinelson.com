@@ -3,6 +3,7 @@ import posthog from 'posthog-js';
 
 const posthogKey = process.env.GATSBY_POSTHOG_KEY;
 const posthogHost = process.env.GATSBY_POSTHOG_HOST;
+const posthogUiHost = 'https://eu.posthog.com';
 
 const analyticsConsentSettingsEvent = 'analytics-consent-settings';
 
@@ -35,6 +36,7 @@ export const initializeAnalytics = () => {
 
   posthog.init(posthogKey, {
     api_host: posthogHost,
+    ui_host: posthogUiHost,
     defaults: '2026-05-30',
     capture_pageview: 'history_change',
     custom_campaign_params: ['application_ref'],
