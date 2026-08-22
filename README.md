@@ -9,8 +9,8 @@ Add each new CV to `static/` as `Yuji-Nelson-CV-YYYY.pdf`. The highest versioned
 filename is treated as current; `npm run check-cv` verifies that one exists.
 On every `master` deployment, CircleCI uploads it, then makes `/cv` and `/resume`
 S3 website redirects to that filename with no-cache headers and invalidates their
-CloudFront cache entries. This requires the non-secret CircleCI variable
-`CLOUDFRONT_DISTRIBUTION_ID`.
+CloudFront cache entries. This requires the non-secret CircleCI variables
+`S3_BUCKET_NAME` and `CLOUDFRONT_DISTRIBUTION_ID`.
 
 ## Analytics
 
