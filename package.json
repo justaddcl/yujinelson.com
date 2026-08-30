@@ -9,6 +9,7 @@
   },
   "scripts": {
     "build": "gatsby build",
+    "check-cv": "node scripts/find-latest-cv.js static",
     "check-types": "tsc --noEmit --project tsconfig.json",
     "dev": "env-cmd -f .env.development gatsby develop",
     "dev-m": "env-cmd -f .env.development gatsby develop -H 192.168.1.93 -p 8000",

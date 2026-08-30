@@ -3,6 +3,15 @@
 ![Screenshot of yujinelson.com](static/yujinelson.com.png)
 This is the codebase for my [personal website](https://yujinelson.com) built with Gatsby and hosted on AWS.
 
+## CV
+
+Add each new CV to `static/` as `Yuji-Nelson-CV-YYYY.pdf`. The highest versioned
+filename is treated as current; `npm run check-cv` verifies that one exists.
+On every `master` deployment, CircleCI uploads it, then makes `/cv` and `/resume`
+S3 website redirects to that filename with no-cache headers and invalidates their
+CloudFront cache entries. This requires the non-secret CircleCI variables
+`S3_BUCKET_NAME` and `CLOUDFRONT_DISTRIBUTION_ID`.
+
 ## Analytics
 
 PostHog is enabled when `GATSBY_POSTHOG_KEY` and `GATSBY_POSTHOG_HOST` are set. Set `GATSBY_POSTHOG_HOST` to the managed proxy URL (`https://wa.yujinelson.com`) in each environment; visitors are opted out until they make an explicit choice in the analytics consent banner.
